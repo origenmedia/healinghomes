@@ -5,14 +5,28 @@ import nextTs from "eslint-config-next/typescript";
 const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
-  // Override default ignores of eslint-config-next.
-  globalIgnores([
-    // Default ignores of eslint-config-next:
-    ".next/**",
-    "out/**",
-    "build/**",
-    "next-env.d.ts",
-  ]),
+  globalIgnores([".next/**", "out/**", "build/**", "next-env.d.ts"]),
+  {
+    rules: {
+      "no-restricted-syntax": [
+        "error",
+        {
+          selector: "Literal[value=/#[0-9a-fA-F]{6}\\b/]",
+          message: "Hex color values are not allowed outside lib/tokens/. Use a token from @/lib/tokens instead.",
+        },
+        {
+          selector: "TemplateElement[value.raw=/#[0-9a-fA-F]{6}/]",
+          message: "Hex color values are not allowed outside lib/tokens/. Use a token from @/lib/tokens instead.",
+        },
+      ],
+    },
+  },
+  {
+    files: ["lib/tokens/**/*.ts", "lib/brand.ts"],
+    rules: {
+      "no-restricted-syntax": "off",
+    },
+  },
 ]);
 
 export default eslintConfig;

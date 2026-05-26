@@ -1,0 +1,30 @@
+{
+  "home": {
+    "wordmark": "Healing Homes",
+    "subtitle": "MEXICO",
+    "tagline": "The home is the medicine. The craft is how we make it.",
+    "signInPrompt": "Members"
+  },
+  "signin": {
+    "intro": "Members area. Enter your email to receive a sign in link.",
+    "emailLabel": "Email",
+    "emailPlaceholder": "you@example.com",
+    "sendLink": "Send sign in link",
+    "sending": "Sending",
+    "linkSent": "Sign in link sent to {email}. Open it on this device to continue.",
+    "tryAgain": "Try a different email",
+    "errorGeneric": "Something went wrong. Please try again.",
+    "errorInvalidEmail": "Please enter a valid email address."
+  },
+  "common": {
+    "loading": "Loading",
+    "error": "Something went wrong",
+    "signOut": "Sign out"
+  },
+  "theme": {
+    "label": "Theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  }
+}

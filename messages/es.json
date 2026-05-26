@@ -1,0 +1,30 @@
+{
+  "home": {
+    "wordmark": "Healing Homes",
+    "subtitle": "MÉXICO",
+    "tagline": "El hogar es la medicina. El oficio es cómo lo hacemos.",
+    "signInPrompt": "Miembros"
+  },
+  "signin": {
+    "intro": "Área de miembros. Introduce tu correo para recibir un enlace de acceso.",
+    "emailLabel": "Correo electrónico",
+    "emailPlaceholder": "tu@ejemplo.com",
+    "sendLink": "Enviar enlace",
+    "sending": "Enviando",
+    "linkSent": "Enlace enviado a {email}. Ábrelo en este dispositivo para continuar.",
+    "tryAgain": "Probar con otro correo",
+    "errorGeneric": "Algo salió mal. Por favor intenta de nuevo.",
+    "errorInvalidEmail": "Por favor introduce un correo válido."
+  },
+  "common": {
+    "loading": "Cargando",
+    "error": "Algo salió mal",
+    "signOut": "Cerrar sesión"
+  },
+  "theme": {
+    "label": "Tema",
+    "light": "Claro",
+    "dark": "Oscuro",
+    "system": "Sistema"
+  }
+}
