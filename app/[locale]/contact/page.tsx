@@ -24,7 +24,7 @@ export default async function ContactPage({
           <p className="mt-6 font-serif text-lg md:text-xl text-text-secondary leading-relaxed">
             {t('intro')}
           </p>
-          <div className="mt-10 md:mt-12">
+          <div className="mt-14 md:mt-20">
             <ContactForm />
           </div>
         </div>

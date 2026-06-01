@@ -6,9 +6,9 @@ import { useTranslations } from 'next-intl';
 type Status = 'idle' | 'sending' | 'sent' | 'error';
 
 const labelClass =
-  'font-sans text-xs font-medium tracking-[0.15em] uppercase text-text-muted';
+  'font-sans text-[0.6875rem] font-medium tracking-[0.25em] uppercase text-text-muted';
 const fieldClass =
-  'border border-border bg-surface px-4 py-3 text-text-primary text-base focus:outline-none focus:border-voice transition-colors';
+  'w-full border border-border bg-surface px-5 py-4 text-text-primary text-base leading-relaxed focus:outline-none focus:border-voice focus:ring-1 focus:ring-voice/30 transition-colors duration-200';
 
 export function ContactForm() {
   const t = useTranslations('contact.form');
@@ -52,7 +52,7 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-6 w-full max-w-xl">
+    <form onSubmit={handleSubmit} className="flex flex-col gap-8 w-full max-w-xl">
       <div className="flex flex-col gap-2">
         <label htmlFor="name" className={labelClass}>
           {t('nameLabel')}
