@@ -78,7 +78,7 @@ export default async function Home({
             {recognition.map((line, i) => (
               <p
                 key={i}
-                className="font-serif text-2xl md:text-3xl text-text-primary leading-snug"
+                className="font-serif text-2xl md:text-3xl text-text-primary leading-snug text-balance"
               >
                 {line}
               </p>
@@ -107,7 +107,7 @@ export default async function Home({
 
         {/* 4 · The reveal */}
         <Beat>
-          <h2 className="font-serif text-3xl md:text-4xl text-text-primary leading-tight tracking-tight">
+          <h2 className="font-serif text-3xl md:text-4xl text-text-primary leading-tight tracking-tight text-balance">
             {t('reveal.headline')}
           </h2>
           <div className="mt-8 space-y-5">
@@ -220,7 +220,7 @@ export default async function Home({
 
         {/* 10 · The three doors */}
         <Beat wide>
-          <p className="font-serif text-2xl md:text-3xl text-text-primary leading-snug">
+          <p className="font-serif text-2xl md:text-3xl text-text-primary leading-snug text-balance">
             {t('doors.leadIn')}
           </p>
           <div className="mt-10 md:mt-12 grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
@@ -245,7 +245,7 @@ export default async function Home({
             {close.map((line, i) => (
               <p
                 key={i}
-                className="font-serif text-xl md:text-2xl text-text-primary leading-snug"
+                className="font-serif text-xl md:text-2xl text-text-primary leading-snug text-balance"
               >
                 {line}
               </p>
