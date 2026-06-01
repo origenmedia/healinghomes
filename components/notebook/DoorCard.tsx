@@ -15,16 +15,16 @@ export function DoorCard({
   return (
     <Link
       href={href}
-      className="group flex flex-col border border-border bg-surface p-8 md:p-10 hover:border-voice transition-colors"
+      className="group flex flex-col border border-border bg-surface p-10 md:p-12 hover:border-voice transition-colors duration-300 ease-in-out"
     >
-      <p className="font-sans text-xs font-medium tracking-[0.3em] uppercase text-voice mb-5">
+      <p className="font-sans text-xs font-semibold tracking-[0.3em] uppercase text-voice mb-6">
         {label}
       </p>
-      <p className="font-serif text-lg md:text-xl text-text-primary leading-snug">
+      <p className="font-serif text-lg md:text-xl text-text-primary leading-snug flex-1">
         {children}
       </p>
       <span
-        className="mt-6 inline-block text-voice transition-transform group-hover:translate-x-1"
+        className="mt-8 inline-block text-voice transition-transform duration-300 ease-in-out group-hover:translate-x-1"
         aria-hidden
       >
         &rarr;
