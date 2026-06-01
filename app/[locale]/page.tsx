@@ -51,12 +51,12 @@ export default async function Home({
             sizes="100vw"
             className="hidden md:block object-cover object-center"
           />
-          {/* Scrim — strong warm-black gradient over lower half for headline legibility */}
+          {/* Scrim — warm-black gradient over lower portion for headline legibility */}
           <div
             aria-hidden="true"
-            className="absolute inset-0 bg-gradient-to-t from-[rgba(20,15,10,0.68)] via-[rgba(20,15,10,0.30)] via-50% to-transparent"
+            className="absolute inset-x-0 bottom-0 top-1/2 bg-gradient-to-t from-[rgba(20,15,10,0.55)] via-[rgba(20,15,10,0.22)] to-transparent"
           />
-          <div className="relative z-10 mt-auto px-6 md:px-12 lg:px-20 pb-16 md:pb-24">
+          <div className="relative z-10 mt-auto px-6 md:px-12 lg:px-20 pb-16 md:pb-32">
             <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl text-white leading-[1.05] tracking-tight drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)]">
               {t('hero.headline')}
             </h1>
