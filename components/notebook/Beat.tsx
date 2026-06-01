@@ -17,7 +17,7 @@ export function Beat({
         divider ? 'border-t border-border' : ''
       } ${className}`}
     >
-      <div className={wide ? 'max-w-4xl mx-auto' : 'max-w-2xl mx-auto'}>{children}</div>
+      <div className={wide ? 'max-w-4xl' : 'max-w-2xl'}>{children}</div>
     </section>
   );
 }
