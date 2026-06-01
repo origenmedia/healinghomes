@@ -1,73 +1,73 @@
 @import "tailwindcss";
 
 :root, [data-theme="light"] {
-  --color-voice: 59 99 120;
-  --color-voice-deep: 42 74 92;
-  --color-voice-hover: 79 122 145;
+  --hhm-voice: 59 99 120;
+  --hhm-voice-deep: 42 74 92;
+  --hhm-voice-hover: 79 122 145;
 
-  --color-page: 245 242 235;
-  --color-surface: 255 255 255;
-  --color-surface-elevated: 255 255 255;
-  --color-surface-inset: 238 234 224;
-  --color-border: 216 211 197;
-  --color-border-strong: 181 175 157;
+  --hhm-page: 245 242 235;
+  --hhm-surface: 255 255 255;
+  --hhm-surface-elevated: 255 255 255;
+  --hhm-surface-inset: 238 234 224;
+  --hhm-border: 216 211 197;
+  --hhm-border-strong: 181 175 157;
 
-  --color-text-primary: 26 31 42;
-  --color-text-secondary: 61 68 82;
-  --color-text-muted: 107 112 128;
-  --color-text-dim: 156 160 171;
+  --hhm-text-primary: 26 31 42;
+  --hhm-text-secondary: 61 68 82;
+  --hhm-text-muted: 107 112 128;
+  --hhm-text-dim: 156 160 171;
 
-  --color-material-concrete: 156 154 149;
-  --color-material-cantera: 184 92 62;
-  --color-material-lake-fog: 168 181 192;
-  --color-material-mountain-shadow: 63 74 85;
+  --hhm-material-concrete: 156 154 149;
+  --hhm-material-cantera: 184 92 62;
+  --hhm-material-lake-fog: 168 181 192;
+  --hhm-material-mountain-shadow: 63 74 85;
 
-  --color-success: 74 157 95;
-  --color-warning: 217 136 58;
-  --color-critical: 168 65 58;
-  --color-info: 95 122 168;
+  --hhm-success: 74 157 95;
+  --hhm-warning: 217 136 58;
+  --hhm-critical: 168 65 58;
+  --hhm-info: 95 122 168;
 }
 
 [data-theme="dark"] {
-  --color-page: 26 31 42;
-  --color-surface: 36 42 54;
-  --color-surface-elevated: 46 53 67;
-  --color-surface-inset: 20 24 33;
-  --color-border: 58 65 80;
-  --color-border-strong: 78 85 102;
+  --hhm-page: 26 31 42;
+  --hhm-surface: 36 42 54;
+  --hhm-surface-elevated: 46 53 67;
+  --hhm-surface-inset: 20 24 33;
+  --hhm-border: 58 65 80;
+  --hhm-border-strong: 78 85 102;
 
-  --color-text-primary: 245 242 235;
-  --color-text-secondary: 197 192 176;
-  --color-text-muted: 139 134 118;
-  --color-text-dim: 94 90 79;
+  --hhm-text-primary: 245 242 235;
+  --hhm-text-secondary: 197 192 176;
+  --hhm-text-muted: 139 134 118;
+  --hhm-text-dim: 94 90 79;
 }
 
 @theme {
-  --color-voice: rgb(var(--color-voice));
-  --color-voice-deep: rgb(var(--color-voice-deep));
-  --color-voice-hover: rgb(var(--color-voice-hover));
+  --color-voice: rgb(var(--hhm-voice));
+  --color-voice-deep: rgb(var(--hhm-voice-deep));
+  --color-voice-hover: rgb(var(--hhm-voice-hover));
 
-  --color-page: rgb(var(--color-page));
-  --color-surface: rgb(var(--color-surface));
-  --color-surface-elevated: rgb(var(--color-surface-elevated));
-  --color-surface-inset: rgb(var(--color-surface-inset));
-  --color-border: rgb(var(--color-border));
-  --color-border-strong: rgb(var(--color-border-strong));
+  --color-page: rgb(var(--hhm-page));
+  --color-surface: rgb(var(--hhm-surface));
+  --color-surface-elevated: rgb(var(--hhm-surface-elevated));
+  --color-surface-inset: rgb(var(--hhm-surface-inset));
+  --color-border: rgb(var(--hhm-border));
+  --color-border-strong: rgb(var(--hhm-border-strong));
 
-  --color-text-primary: rgb(var(--color-text-primary));
-  --color-text-secondary: rgb(var(--color-text-secondary));
-  --color-text-muted: rgb(var(--color-text-muted));
-  --color-text-dim: rgb(var(--color-text-dim));
+  --color-text-primary: rgb(var(--hhm-text-primary));
+  --color-text-secondary: rgb(var(--hhm-text-secondary));
+  --color-text-muted: rgb(var(--hhm-text-muted));
+  --color-text-dim: rgb(var(--hhm-text-dim));
 
-  --color-material-concrete: rgb(var(--color-material-concrete));
-  --color-material-cantera: rgb(var(--color-material-cantera));
-  --color-material-lake-fog: rgb(var(--color-material-lake-fog));
-  --color-material-mountain-shadow: rgb(var(--color-material-mountain-shadow));
+  --color-material-concrete: rgb(var(--hhm-material-concrete));
+  --color-material-cantera: rgb(var(--hhm-material-cantera));
+  --color-material-lake-fog: rgb(var(--hhm-material-lake-fog));
+  --color-material-mountain-shadow: rgb(var(--hhm-material-mountain-shadow));
 
-  --color-success: rgb(var(--color-success));
-  --color-warning: rgb(var(--color-warning));
-  --color-critical: rgb(var(--color-critical));
-  --color-info: rgb(var(--color-info));
+  --color-success: rgb(var(--hhm-success));
+  --color-warning: rgb(var(--hhm-warning));
+  --color-critical: rgb(var(--hhm-critical));
+  --color-info: rgb(var(--hhm-info));
 
   --font-serif: var(--font-fraunces), Georgia, "Times New Roman", serif;
   --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
@@ -79,8 +79,8 @@
 }
 
 html, body {
-  background: rgb(var(--color-page));
-  color: rgb(var(--color-text-primary));
+  background: var(--color-page);
+  color: var(--color-text-primary);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
