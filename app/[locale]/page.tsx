@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { SiteHeader } from '@/components/chrome/SiteHeader';
 import { SiteFooter } from '@/components/chrome/SiteFooter';
@@ -31,16 +32,43 @@ export default async function Home({
 
       <main>
         {/* 1 · Hero */}
-        <section className="relative flex min-h-[82vh]">
-          <ImageSlot
+        <section className="relative flex min-h-[82vh] overflow-hidden">
+          {/* Desktop hero — hidden below md */}
+          <Image
+            src="/hero-desktop.png"
+            alt=""
             fill
-            kind="ai"
-            label="Homepage hero. A woman in her 50s painting in a sun-filled home, paint on her hands, arrived at her paradise. Two frames: a full-frame desktop image and a different mobile image."
+            priority
+            sizes="100vw"
+            className="hidden md:block object-cover object-center"
+          />
+          {/* Mobile hero — hidden at md and up */}
+          <Image
+            src="/hero-mobile.png"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="block md:hidden object-cover object-center"
+          />
+          {/* Gradient overlay — subtle darkening on lower portion */}
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent"
           />
           <div className="relative z-10 mt-auto px-6 md:px-12 lg:px-20 pb-16 md:pb-24">
-            <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl text-text-primary leading-[1.05] tracking-tight">
+            <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl text-white leading-[1.05] tracking-tight drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)]">
               {t('hero.headline')}
             </h1>
+          </div>
+          {/* Scroll cue */}
+          <div
+            aria-hidden="true"
+            className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 opacity-50 motion-safe:animate-bounce"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
           </div>
         </section>
 
