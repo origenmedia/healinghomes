@@ -14,9 +14,15 @@ export function CtaButton({
   return (
     <Link
       href={href}
-      className="inline-flex items-center justify-center bg-voice text-page font-sans text-sm md:text-base px-7 py-3.5 hover:bg-voice-hover transition-colors"
+      className="group inline-flex items-center gap-2.5 bg-voice text-page font-sans font-medium text-sm tracking-[0.08em] uppercase px-8 py-4 hover:bg-voice-deep motion-safe:hover:-translate-y-0.5 transition-all duration-200 ease-out focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-voice"
     >
-      {children}
+      <span>{children}</span>
+      <span
+        className="inline-block transition-transform duration-200 group-hover:translate-x-1"
+        aria-hidden
+      >
+        &rarr;
+      </span>
     </Link>
   );
 }
