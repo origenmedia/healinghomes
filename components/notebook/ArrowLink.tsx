@@ -1,10 +1,13 @@
-import Link from 'next/link';
+import type { ComponentProps } from 'react';
+import { Link } from '@/lib/i18n/navigation';
+
+type Href = ComponentProps<typeof Link>['href'];
 
 export function ArrowLink({
   href,
   children,
 }: {
-  href: string;
+  href: Href;
   children: React.ReactNode;
 }) {
   return (

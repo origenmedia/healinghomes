@@ -1,3 +1,9 @@
-ignoredBuiltDependencies:
-  - sharp
-  - unrs-resolver
+# These native packages ship prebuilt binaries, so their optional install
+# build-scripts are skipped (false). Resolving each entry here keeps `pnpm
+# install` and `pnpm build` non-interactive so CI and Vercel builds do not
+# stall on the build-approval prompt.
+allowBuilds:
+  '@parcel/watcher': false
+  '@swc/core': false
+  sharp: false
+  unrs-resolver: false

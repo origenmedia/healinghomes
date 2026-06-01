@@ -1,62 +1,297 @@
 {
+  "site": {
+    "copyright": "Healing Homes Mexico, {year}."
+  },
   "home": {
     "wordmark": "Healing Homes",
-    "subtitle": "MÉXICO",
-    "tagline": "El hogar es la medicina. El oficio es cómo lo hacemos.",
-    "signInPrompt": "Miembros",
-    "heroSupporting": "Una práctica arquitectónica en el Lago de Chapala, construyendo sobre los principios más antiguos de la disciplina. Durabilidad, utilidad, belleza.",
-    "heroCta": "Iniciar una conversación",
-    "practiceLabel": "PRÁCTICA",
-    "practiceHeadline": "Construimos hogares que funcionan para quienes los habitan.",
-    "practiceP1": "Healing Homes es una práctica arquitectónica arraigada en el Lago de Chapala, México. Diseñamos y construimos residencias fundamentadas en la tríada vitruviana — durabilidad, utilidad, belleza — porque estos tres principios han sobrevivido a cada tendencia arquitectónica durante dos mil años.",
-    "practiceP2": "El hogar es la forma construida más íntima. Define cómo duermes, cómo cocinas, cómo piensas. Nos lo tomamos en serio. Cada decisión — desde la orientación de una ventana hasta la profundidad de un alero — responde a cómo se vivirá la casa, no a cómo se fotografiará.",
-    "practiceP3": "Nuestro trabajo se nutre de las tradiciones constructivas del centro de México: cantera, ladrillo cocido, aleros profundos contra la lluvia estacional, patios que organizan la luz y el aire. Los combinamos con métodos estructurales contemporáneos donde estos se ganan su lugar.",
-    "principlesLabel": "TRES PRINCIPIOS",
-    "firmitasName": "FIRMITAS",
-    "firmitasSub": "Durabilidad",
-    "firmitasP1": "Una casa debe sobrevivir a quienes la construyen. Usamos materiales y métodos que envejecen con dignidad — cantera que se patina, concreto que fragua, conexiones de acero que sostienen sin quejarse.",
-    "firmitasP2": "Durabilidad no es sobredimensionar. Es elegir el material correcto para cada condición y detallarlo para que el agua, el sol y el tiempo trabajen con la estructura, no contra ella.",
-    "utilitasName": "UTILITAS",
-    "utilitasSub": "Utilidad",
-    "utilitasP1": "Un hogar es útil cuando se ajusta a la vida que contiene. Comenzamos cada proyecto entendiendo cómo una familia atraviesa el día — dónde se reúnen, dónde se retiran, cómo cocinan, cómo descansan.",
-    "utilitasP2": "La planta sigue a la vida, no al revés. Los espacios se ganan su tamaño. La circulación es clara. El almacenamiento está donde lo buscas. Son virtudes silenciosas, pero son las que te acompañan cada mañana.",
-    "venustasName": "VENUSTAS",
-    "venustasSub": "Belleza",
-    "venustasP1": "La belleza en la arquitectura no es decoración. Es proporción, luz y la expresión honesta de cómo se hizo un edificio. Una ventana bien colocada que enmarca la sierra. Un muro que atrapa el sol de la tarde. Una línea de techo que descansa con calma contra el cielo.",
-    "venustasP2": "Creemos que un hogar debe conmoverte como lo hace un paisaje — no exigiendo atención, sino recompensándola.",
-    "founderLabel": "EL CONSTRUCTOR",
-    "founderText": "Llegué al Lago de Chapala buscando un lugar donde construir una vida. Me quedé por cómo se mueve la luz a esta altitud, por cómo llega y se va la lluvia, por cómo la piedra de aquí guarda el calor mucho después de que el sol se oculta. Ahora construyo hogares para personas que sienten la misma atracción. Cada proyecto es una conversación entre lo que ofrece la tierra y lo que necesita una familia. Esa conversación es el trabajo.",
-    "founderReadMore": "Leer más",
-    "contactLabel": "CONTACTO",
-    "contactText": "Si estás considerando un hogar en el Lago de Chapala, nos dará gusto conversar.",
-    "contactCta": "Agendar una conversación",
-    "footerPractice": "Práctica",
-    "footerPrinciples": "Principios",
-    "footerProjects": "Proyectos",
-    "footerInvestors": "Inversionistas",
-    "footerContact": "Contacto",
-    "footerCopyright": "Healing Homes México, {year}. Todos los derechos reservados."
+    "subtitle": "MEXICO",
+    "hero": {
+      "headline": "We build homes that heal."
+    },
+    "recognition": {
+      "lines": [
+        "Are you living your days, or just getting through them?",
+        "You did everything right. So why does it feel wrong?",
+        "What if the life you want is still out there, waiting for you to come build it?"
+      ]
+    },
+    "longing": {
+      "lines": [
+        "It looks like this.",
+        "You wake up to sunshine and birds, not an alarm and the news.",
+        "You grow things. You cook for people you love. You have time for them.",
+        "You're not starting over. You're finally starting to live.",
+        "This isn't a vacation. It's the rest of your life, lived on purpose."
+      ]
+    },
+    "reveal": {
+      "headline": "Your home is the medicine.",
+      "lines": [
+        "You already know this is true. Think of a place that drained you, and a place that made you feel alive.",
+        "Most homes are built to be sold. We build ours to be lived in.",
+        "The world keeps speeding up. A home like this is how you step off."
+      ]
+    },
+    "place": {
+      "lines": [
+        "It's a small town on a lake, in the mountains of central Mexico.",
+        "The weather barely changes. Spring, more or less, all year long.",
+        "It's not a place you visit. It's a place you stop looking.",
+        "It's not perfect. The power goes out. The streets are rough. Things move slowly here.",
+        "And that's part of why it heals. Because slow is the cure."
+      ]
+    },
+    "builder": {
+      "lines": [
+        "I've been building homes my whole life. This is one I built, here on Lake Chapala.",
+        "My son was born right inside my living room. People ask me if Mexico is safe. I am raising my family here. That's my answer."
+      ],
+      "cta": "Come and visit us"
+    },
+    "howIWork": {
+      "lines": [
+        "You've heard the horror stories. The builder who takes your money and disappears.",
+        "That's not how I work. Here's exactly what I promise you.",
+        "We design your whole home before we build it. Every room, every cost, settled on screen first. You can even walk through it, room by room, before a single wall goes up.",
+        "After the deposit to begin, you only pay for progress. Each stage gets finished and checked before the next dollar moves.",
+        "You see everything from anywhere. Every photo, every update, every dollar spent, even from a thousand miles away.",
+        "And you deal with one person the whole way. Me.",
+        "No surprises. No vanishing. No build that drags on for years. Just your home, going up the way we planned it, until you're standing in it."
+      ]
+    },
+    "why": {
+      "lines": [
+        "Let me tell you why I do this.",
+        "I've spent my whole life building. Long enough to learn one thing for certain. The place you live in is quietly shaping you. Every day, for better or worse.",
+        "I've watched it happen. People come here tired, heavy, worn down by the lives they left. And slowly, in a home full of light, in a place that lets them breathe, they come back to life.",
+        "I believe a home is more than walls and a roof. I believe the right home, in the right place, can heal a person. I've seen it too many times to call it anything else.",
+        "That's why I build the way I build. Not to sell houses. To make the kind of place that gives someone their life back.",
+        "Come see for yourself. I live here. I'll show you around."
+      ],
+      "cta": "Come and talk to me"
+    },
+    "bigger": {
+      "lines": [
+        "This is bigger than one house.",
+        "All over the world, people are quietly choosing the same thing. A simpler life. A home that's truly theirs. Roots, in a place that still feels human.",
+        "That's what we're building here. Not a development. A handful of homes, owned by people who came looking for the same thing you are.",
+        "You wouldn't just be buying a home. You'd be helping build a place worth living in.",
+        "That's the whole idea."
+      ]
+    },
+    "doors": {
+      "leadIn": "Three kinds of people find their way here.",
+      "coming": {
+        "label": "COMING TO MEXICO",
+        "text": "You're dreaming of a new life in Mexico, and you're ready to stop dreaming and start."
+      },
+      "building": {
+        "label": "BUILDING HERE",
+        "text": "You're already here, done renting, and ready to build a home of your own."
+      },
+      "rescuing": {
+        "label": "RESCUING A BUILD",
+        "text": "Or you're in the middle of a build that's gone wrong, and you need someone to make it right."
+      },
+      "closing": "Wherever you are, there's a door for you. Start here."
+    },
+    "close": {
+      "lines": [
+        "You've spent long enough getting through your days. Maybe it's time to start living them.",
+        "It all begins with a strong foundation.",
+        "No pressure. No hard sell. Just a conversation about the life you want, and whether I'm the one to help you build it."
+      ],
+      "cta": "Come and talk to me"
+    }
+  },
+  "comingToMexico": {
+    "recognition": {
+      "lines": [
+        "You've been thinking about this for a long time.",
+        "Maybe years. A quiet idea that won't leave you alone. A different life, somewhere warm, somewhere simpler. Somewhere you could finally breathe.",
+        "You haven't told many people. They might not understand. But it keeps coming back, doesn't it?"
+      ]
+    },
+    "guide": {
+      "lines": [
+        "I know that feeling well. I've watched it pull at the people I love most.",
+        "One by one, I've helped them leave the old life behind and come build a new one here. My father. My aunt. Now my own mother.",
+        "I'm the one who helps them cross over. And I've never once seen someone regret it."
+      ]
+    },
+    "father": {
+      "text": "My father was the first. He was getting older, tired, a little scared. He didn't have much saved. He'd worked his whole life and the life he had left didn't look like much. So I flew up, helped him sell what he owned, and we packed a jeep and drove south to a town neither of us had ever seen. He didn't speak the language. He didn't know a soul. Within a year, he was a different man. Out in the sun every day. Lighter. Awake. Like someone gave him back twenty years."
+    },
+    "pattern": {
+      "text": "Then it was my aunt. Same story. She came, she settled, she bloomed. Word started to get around. People came to visit me here, strangers at first, just to see what this life was about. Some of them never left. They bought land. They built homes. They started over, the same way my father had. I watched it happen again and again, until I stopped being surprised by it. This place does something to people. The right home, in the right place, gives them their life back."
+    },
+    "mother": {
+      "lines": [
+        "Right now, I'm helping my own mother make the move.",
+        "She's in her sixties. She's spent years thinking about it, the way you have. And now she's doing it, selling everything she owns up north to come build her home here, near us.",
+        "I asked her what she was feeling. This is what she said."
+      ],
+      "quote": "“Mexico takes me back to the simple life. A community that still honors family, eats real food, and loves to celebrate. I call it the colors of the rainbow. Who wouldn't want to wake up to sunshine, birds saying good morning, and a smile?”",
+      "after": "That's my mother. In a few months, she'll be home."
+    },
+    "questions": {
+      "intro": "By now you're probably feeling the dream and the fear at the same time. Let me answer the questions you're actually lying awake with.",
+      "items": [
+        {
+          "label": "What it costs to live.",
+          "body": "Far less than up north. Many people live well here on a fraction of what their old life cost, in a bigger, brighter home."
+        },
+        {
+          "label": "The visa.",
+          "body": "Simpler than most people fear. You qualify by showing either steady monthly income or savings in the bank, and you only need one of the two. For most people selling a home up north to move here, the sale alone covers it. There's help for every step."
+        },
+        {
+          "label": "Healthcare.",
+          "body": "Good, close, and affordable. Real hospitals, real doctors, a fraction of U.S. prices, and many of them speak English."
+        },
+        {
+          "label": "The language.",
+          "body": "You'll be fine from day one. Plenty of people here speak English, and you'll pick up enough Spanish to feel at home faster than you expect."
+        },
+        {
+          "label": "Being alone.",
+          "body": "You won't be. There's a whole community here who came exactly the way you will, and they remember just what your first week feels like."
+        }
+      ]
+    },
+    "lifeWaiting": {
+      "text": "And once the fear is behind you, here is what's waiting. Mornings that start with sunshine and birdsong, not an alarm. Coffee in the garden. A table full of people you love, eating food that still tastes like food. Time that finally belongs to you. Grandchildren who don't want to go home. Neighbors who know your name. A life that feels simple and good and yours again. The life you've been picturing all these years. It's real. It's here. And it's closer than you think."
+    },
+    "close": {
+      "lines": [
+        "You don't have to figure this out alone. That's the whole point.",
+        "I've walked my own family across, one by one. My father. My aunt. My mother. I know every step of this road, because I've already walked it with the people I love most.",
+        "When you're ready, I'll walk it with you too. We'll get you here, get you settled, and build you a home that gives you your life back.",
+        "You don't have to decide anything today. Just take the first step. Reach out and let's talk. Come and talk to me."
+      ],
+      "cta": "Come and talk to me"
+    }
+  },
+  "buildingHere": {
+    "recognition": {
+      "text": "You're ready to build. What stops you now is the fear of handing it all to the wrong person."
+    },
+    "fear": {
+      "lines": [
+        "The builder who takes your money and disappears. The price that doubles halfway. The project that drags on for years, or just stops.",
+        "It happens here all the time. I built my whole way of working so it never happens to you."
+      ]
+    },
+    "process": {
+      "heading": "A careful process",
+      "steps": [
+        {
+          "title": "First, the design",
+          "lines": [
+            "It starts with a complete design. Every room, every material, every number, settled on screen before a single wall goes up.",
+            "You can even walk through your whole home, room by room, before we build it. So when we start, you know exactly what you're getting, and exactly what it costs. No guessing. No surprises later."
+          ]
+        },
+        {
+          "title": "Your money stays safe",
+          "lines": [
+            "We start with a deposit for materials to get going. After that, you only pay for progress.",
+            "No handing over a lump sum and hoping. Each stage gets finished and signed off before the next dollar moves, tracked week by week in your portal. You're never paying for a promise, only for work already standing in front of you."
+          ]
+        },
+        {
+          "title": "You're never in the dark",
+          "lines": [
+            "Every week, photos and progress go up in your private client portal. Proof of exactly where your money went and what got built, from anywhere in the world.",
+            "And you never chase anyone for an answer. One person is responsible for your whole build. Me. You always know exactly who to call."
+          ]
+        }
+      ]
+    },
+    "standard": {
+      "lines": [
+        "Come see for yourself. I've been building homes my whole life, and I live in one of them.",
+        "I've been in Latin America since 2009, and I speak fluent Spanish. Nothing gets lost between you and the people building your home.",
+        "Come walk through it, foundation to finish. The stone, the light, the rooms. This is the standard. This is what yours would be held to."
+      ]
+    },
+    "close": {
+      "lines": [
+        "Building a home should be one of the best times of your life, not the most frightening. With the right builder, it is.",
+        "One honest thing, so neither of us wastes the other's time. A well-built modern home here starts around 300,000 dollars. It's worth making sure you're ready for that before we begin, because steady funds are what keep a build moving and get you home faster.",
+        "If that sounds right, let's design yours. Come and talk to me. We'll start with your land, your budget, and what you want to build."
+      ],
+      "cta": "Come and talk to me"
+    }
+  },
+  "rescuingABuild": {
+    "recognition": {
+      "lines": [
+        "Something has gone wrong with your build.",
+        "Maybe it's far behind schedule. Maybe the promises keep changing. Maybe you've paid out a lot and there's little to show for it. Maybe your builder stopped answering your texts, or simply walked away.",
+        "However it happened, you're stuck with a half-finished house and a sinking feeling. I know that feeling. And I know how to get you out of it."
+      ]
+    },
+    "lived": {
+      "lines": [
+        "I've been exactly where you are.",
+        "My first build, I did everything right. I found an architect everyone trusted. Charming, well connected, convincing. We signed a contract, with set milestones and payment dates. I paid every one on time, and I believed his excuses.",
+        "Then the final payment came due, and the house was nowhere near finished. He had mismanaged the money, run out, pulled his men, and left me with a sloppy site and an empty bank account. I finished the house myself, slowly, over the next year, as money came in.",
+        "That taught me the one thing that changed everything. Never pay for promises, only pay for work that is already done.",
+        "That is how I built my model."
+      ]
+    },
+    "rescue": {
+      "lines": [
+        "Here is how I help.",
+        "First, I come and walk the site with you, in person. I look at everything, and I tell you the honest truth. What can be saved, what needs to be redone, and what it will really take to finish.",
+        "You get a clear assessment, a real number, and a step-by-step plan. No pressure to decide anything.",
+        "And if you bring me in, you deal with one person from that day on. Me. Until you are standing in a finished home."
+      ]
+    },
+    "close": {
+      "lines": [
+        "A stalled build doesn't fix itself. Every week it sits, it costs you more, in money and in worry.",
+        "So let's not wait. Tell me where things stand, and I'll tell you honestly if I can help.",
+        "You don't have to carry this alone anymore. Reach out, and let's talk today."
+      ],
+      "cta": "Reach out today"
+    }
+  },
+  "contact": {
+    "header": "Let's talk.",
+    "intro": "No pressure, and nothing to sign. Just a conversation. Tell me a bit about you and what you have in mind, and I'll get back to you myself.",
+    "form": {
+      "nameLabel": "Your name",
+      "emailLabel": "Your email",
+      "messageLabel": "What's on your mind",
+      "send": "Send",
+      "sending": "Sending",
+      "success": "Thank you. I'll get back to you soon.",
+      "error": "Something went wrong. Please try again in a moment.",
+      "invalidEmail": "Please enter a valid email address."
+    }
   },
   "signin": {
-    "intro": "Área de miembros. Introduce tu correo para recibir un enlace de acceso.",
-    "emailLabel": "Correo electrónico",
-    "emailPlaceholder": "tu@ejemplo.com",
-    "sendLink": "Enviar enlace",
-    "sending": "Enviando",
-    "linkSent": "Enlace enviado a {email}. Ábrelo en este dispositivo para continuar.",
-    "tryAgain": "Probar con otro correo",
-    "errorGeneric": "Algo salió mal. Por favor intenta de nuevo.",
-    "errorInvalidEmail": "Por favor introduce un correo válido."
+    "intro": "Members area. Enter your email to receive a sign in link.",
+    "emailLabel": "Email",
+    "emailPlaceholder": "you@example.com",
+    "sendLink": "Send sign in link",
+    "sending": "Sending",
+    "linkSent": "Sign in link sent to {email}. Open it on this device to continue.",
+    "tryAgain": "Try a different email",
+    "errorGeneric": "Something went wrong. Please try again.",
+    "errorInvalidEmail": "Please enter a valid email address."
   },
   "common": {
-    "loading": "Cargando",
-    "error": "Algo salió mal",
-    "signOut": "Cerrar sesión"
+    "loading": "Loading",
+    "error": "Something went wrong",
+    "signOut": "Sign out"
   },
   "theme": {
-    "label": "Tema",
-    "light": "Claro",
-    "dark": "Oscuro",
-    "system": "Sistema"
+    "label": "Theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
   }
 }

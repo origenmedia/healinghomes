@@ -1,5 +1,5 @@
 import { useTranslations } from 'next-intl';
-import Link from 'next/link';
+import { Link } from '@/lib/i18n/navigation';
 
 type WordmarkSize = 'sm' | 'base' | 'lg';
 
@@ -20,11 +20,9 @@ const sizeMap: Record<WordmarkSize, { heading: string; sub: string }> = {
 
 export function Wordmark({
   size = 'base',
-  locale,
   linked = true,
 }: {
   size?: WordmarkSize;
-  locale: string;
   linked?: boolean;
 }) {
   const t = useTranslations('home');
@@ -44,7 +42,7 @@ export function Wordmark({
   if (!linked) return content;
 
   return (
-    <Link href={`/${locale}`} className="no-underline">
+    <Link href="/" className="no-underline">
       {content}
     </Link>
   );
