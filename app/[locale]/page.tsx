@@ -33,16 +33,7 @@ export default async function Home({
       <main>
         {/* 1 · Hero */}
         <section className="relative flex min-h-[82vh] overflow-hidden">
-          {/* Desktop hero — hidden below md */}
-          <Image
-            src="/hero-desktop.png"
-            alt=""
-            fill
-            priority
-            sizes="100vw"
-            className="hidden md:block object-cover object-center"
-          />
-          {/* Mobile hero — hidden at md and up */}
+          {/* Mobile hero — visible below md only */}
           <Image
             src="/hero-mobile.png"
             alt=""
@@ -51,10 +42,19 @@ export default async function Home({
             sizes="100vw"
             className="block md:hidden object-cover object-center"
           />
-          {/* Gradient overlay — subtle darkening on lower portion */}
+          {/* Desktop hero — visible at md and up */}
+          <Image
+            src="/hero-desktop.png"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="hidden md:block object-cover object-center"
+          />
+          {/* Scrim — strong warm-black gradient over lower half for headline legibility */}
           <div
             aria-hidden="true"
-            className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent"
+            className="absolute inset-0 bg-gradient-to-t from-[rgba(20,15,10,0.68)] via-[rgba(20,15,10,0.30)] via-50% to-transparent"
           />
           <div className="relative z-10 mt-auto px-6 md:px-12 lg:px-20 pb-16 md:pb-24">
             <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl text-white leading-[1.05] tracking-tight drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)]">
