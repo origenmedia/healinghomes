@@ -73,7 +73,7 @@ export default async function Home({
         </section>
 
         {/* 2 · Recognition */}
-        <Beat divider={false} className="pt-20 md:pt-28">
+        <Beat className="pt-24 md:pt-36">
           <div className="space-y-8 md:space-y-10">
             {recognition.map((line, i) => (
               <p
@@ -123,7 +123,7 @@ export default async function Home({
         </Beat>
 
         {/* 5 · The place */}
-        <Beat>
+        <Beat wide>
           <ImageSlot
             kind="real"
             aspect="panorama"
@@ -142,7 +142,7 @@ export default async function Home({
         </Beat>
 
         {/* 6 · Meeting the builder */}
-        <Beat>
+        <Beat wide>
           <ImageSlot
             kind="real"
             aspect="wide"
@@ -164,7 +164,7 @@ export default async function Home({
         </Beat>
 
         {/* 7 · How I work */}
-        <Beat>
+        <Beat wide>
           <ImageSlot
             kind="real"
             aspect="wide"
@@ -219,7 +219,7 @@ export default async function Home({
         </Beat>
 
         {/* 10 · The three doors */}
-        <Beat>
+        <Beat wide>
           <p className="font-serif text-2xl md:text-3xl text-text-primary leading-snug">
             {t('doors.leadIn')}
           </p>
