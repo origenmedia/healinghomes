@@ -128,11 +128,15 @@ export default async function Home({
 
         {/* 5 · The place */}
         <Beat wide>
-          <ImageSlot
-            kind="real"
-            aspect="panorama"
-            label="Real landscape of Lake Chapala: the lake, the town, the mountains, the light. True, un-glamorous images that match the honesty run."
-          />
+          <div className="relative w-full aspect-[4/3] my-4">
+            <Image
+              src="/lake-chapala-mexico-sunset.jpg"
+              alt={t('place.imageAlt')}
+              fill
+              sizes="(min-width: 768px) 56rem, 100vw"
+              className="object-cover object-center"
+            />
+          </div>
           <div className="mt-10 space-y-5">
             {place.map((line, i) => (
               <p
