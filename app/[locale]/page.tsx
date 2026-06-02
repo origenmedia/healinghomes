@@ -283,13 +283,48 @@ export default async function Home({
             {t('doors.leadIn')}
           </p>
           <div className="mt-10 md:mt-12 grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
-            <DoorCard href="/coming-to-mexico" label={t('doors.coming.label')}>
+            <DoorCard
+              href="/coming-to-mexico"
+              label={t('doors.coming.label')}
+              icon={
+                <svg role="img" aria-label={t('doors.coming.iconLabel')} viewBox="0 0 60 60" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <line x1="10" y1="50" x2="50" y2="50" strokeWidth="1.25"/>
+                  <line x1="22" y1="50" x2="22" y2="16" strokeWidth="1.25"/>
+                  <line x1="22" y1="16" x2="38" y2="16" strokeWidth="1.25"/>
+                  <line x1="38" y1="16" x2="38" y2="50" strokeWidth="1.25"/>
+                  <line x1="30" y1="16" x2="30" y2="50" strokeWidth="0.6" strokeDasharray="2 4"/>
+                </svg>
+              }
+            >
               {t('doors.coming.text')}
             </DoorCard>
-            <DoorCard href="/building-here" label={t('doors.building.label')}>
+            <DoorCard
+              href="/building-here"
+              label={t('doors.building.label')}
+              icon={
+                <svg role="img" aria-label={t('doors.building.iconLabel')} viewBox="0 0 60 60" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="12" y="16" width="36" height="28" strokeWidth="1.25"/>
+                  <line x1="32" y1="16" x2="32" y2="44" strokeWidth="0.9"/>
+                  <line x1="32" y1="30" x2="48" y2="30" strokeWidth="0.9"/>
+                  <line x1="12" y1="24" x2="20" y2="24" strokeWidth="0.6"/>
+                </svg>
+              }
+            >
               {t('doors.building.text')}
             </DoorCard>
-            <DoorCard href="/rescuing-a-build" label={t('doors.rescuing.label')}>
+            <DoorCard
+              href="/rescuing-a-build"
+              label={t('doors.rescuing.label')}
+              icon={
+                <svg role="img" aria-label={t('doors.rescuing.iconLabel')} viewBox="0 0 60 60" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <line x1="14" y1="48" x2="46" y2="48" strokeWidth="1.25"/>
+                  <line x1="20" y1="48" x2="20" y2="14" strokeWidth="1.25"/>
+                  <line x1="20" y1="14" x2="40" y2="14" strokeWidth="1.25"/>
+                  <line x1="26" y1="48" x2="26" y2="20" strokeWidth="0.6" strokeDasharray="2 4"/>
+                  <line x1="20" y1="32" x2="40" y2="26" strokeWidth="0.9"/>
+                </svg>
+              }
+            >
               {t('doors.rescuing.text')}
             </DoorCard>
           </div>

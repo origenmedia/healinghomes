@@ -102,14 +102,17 @@
     "doors": {
       "leadIn": "Three kinds of people find their way here.",
       "coming": {
+        "iconLabel": "A doorway, the threshold of arrival",
         "label": "COMING TO MEXICO",
         "text": "You're dreaming of a new life in Mexico, and you're ready to stop dreaming and start."
       },
       "building": {
+        "iconLabel": "A floor plan, drawn before the build",
         "label": "BUILDING HERE",
         "text": "You're already here, done renting, and ready to build a home of your own."
       },
       "rescuing": {
+        "iconLabel": "A wall section, made sound",
         "label": "RESCUING A BUILD",
         "text": "Or you're in the middle of a build that's gone wrong, and you need someone to make it right."
       },
