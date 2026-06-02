@@ -200,11 +200,15 @@ export default async function Home({
 
         {/* 8 · Why I build this way */}
         <Beat>
-          <ImageSlot
-            kind="real"
-            aspect="wide"
-            label="A real, candid photo of the builder on site or with people. The emotional why, anchored by a real human image."
-          />
+          <div className="relative w-full aspect-[3/2] my-6">
+            <Image
+              src="/home-builder-on-site-lake-chapala-ajijic.jpg"
+              alt={t('why.imageAlt')}
+              fill
+              sizes="(min-width: 768px) 42rem, 100vw"
+              className="object-cover object-center"
+            />
+          </div>
           <div className="mt-10 space-y-5">
             {why.map((line, i) => (
               <p
