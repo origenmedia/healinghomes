@@ -13,9 +13,9 @@ export const routing = defineRouting({
       en: '/coming-to-mexico',
       es: '/vivir-en-mexico',
     },
-    '/building-here': {
-      en: '/building-here',
-      es: '/construir-aqui',
+    '/ready-to-build': {
+      en: '/ready-to-build',
+      es: '/listo-para-construir',
     },
     '/rescuing-a-build': {
       en: '/rescuing-a-build',

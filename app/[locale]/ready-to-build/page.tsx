@@ -8,14 +8,14 @@ import { CtaButton } from '@/components/notebook/CtaButton';
 
 type Step = { title: string; lines: string[] };
 
-export default async function BuildingHere({
+export default async function ReadyToBuild({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const t = await getTranslations('buildingHere');
+  const t = await getTranslations('readyToBuild');
 
   const fear = t.raw('fear.lines') as string[];
   const steps = t.raw('process.steps') as Step[];

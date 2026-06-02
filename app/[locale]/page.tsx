@@ -299,7 +299,7 @@ export default async function Home({
               {t('doors.coming.text')}
             </DoorCard>
             <DoorCard
-              href="/building-here"
+              href="/ready-to-build"
               label={t('doors.building.label')}
               icon={
                 <svg role="img" aria-label={t('doors.building.iconLabel')} viewBox="0 0 60 60" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">

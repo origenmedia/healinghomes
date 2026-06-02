@@ -108,7 +108,7 @@
       },
       "building": {
         "iconLabel": "A floor plan, drawn before the build",
-        "label": "BUILDING HERE",
+        "label": "READY TO BUILD",
         "text": "You're already here, done renting, and ready to build a home of your own."
       },
       "rescuing": {
@@ -205,7 +205,7 @@
       "cta": "Come and talk to me"
     }
   },
-  "buildingHere": {
+  "readyToBuild": {
     "recognition": {
       "text": "You're ready to build. What stops you now is the fear of handing it all to the wrong person."
     },
