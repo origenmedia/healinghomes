@@ -128,9 +128,9 @@ export default async function Home({
 
         {/* 5 · The place */}
         <Beat wide>
-          <div className="relative w-full aspect-[4/3] my-4">
+          <div className="relative w-full aspect-[3/2] my-6">
             <Image
-              src="/lake-chapala-mexico-sunset.jpg"
+              src="/Ajijic_Malecon_Sunset.jpg"
               alt={t('place.imageAlt')}
               fill
               sizes="(min-width: 768px) 56rem, 100vw"
