@@ -88,11 +88,15 @@ export default async function Home({
 
         {/* 3 · The longing */}
         <Beat>
-          <ImageSlot
-            kind="ai"
-            aspect="wide"
-            label="Optional. A warm, painterly morning in the imagined life, same dream register as the hero. Or leave textless."
-          />
+          <div className="relative w-full aspect-[6/7] my-4">
+            <Image
+              src="/woman-gardening-ajijic-lake-chapala.png"
+              alt={t('longing.imageAlt')}
+              fill
+              sizes="(min-width: 768px) 42rem, 100vw"
+              className="object-cover object-center"
+            />
+          </div>
           <div className="mt-10 space-y-5">
             {longing.map((line, i) => (
               <p
