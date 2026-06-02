@@ -151,11 +151,15 @@ export default async function Home({
 
         {/* 6 · Meeting the builder */}
         <Beat wide>
-          <ImageSlot
-            kind="real"
-            aspect="wide"
-            label="The most important real photo on the site. The builder, on site or at his home, ideally a warm shot with his son. Must read unmistakably real."
-          />
+          <div className="relative w-full max-w-md aspect-[9/16] my-6">
+            <Image
+              src="/home-builder-lake-chapala-ajijic-with-his-son.jpg"
+              alt={t('builder.imageAlt')}
+              fill
+              sizes="(min-width: 768px) 28rem, 100vw"
+              className="object-cover object-center"
+            />
+          </div>
           <div className="mt-10 space-y-5">
             {builder.map((line, i) => (
               <p
