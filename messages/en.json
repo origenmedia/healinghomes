@@ -1,6 +1,20 @@
 {
   "site": {
-    "copyright": "Healing Homes Mexico, {year}."
+    "copyright": "Healing Homes Mexico, {year}.",
+    "photoCredits": "Photo credits"
+  },
+  "credits": {
+    "heading": "Photo credits",
+    "intro": "These images are used under Creative Commons licenses, with thanks to their photographers.",
+    "items": [
+      {
+        "title": "Aerial view of Ajijic's Malecon and lakeside park at sunset",
+        "photographer": "SimonVelazquez",
+        "source": "Wikimedia Commons",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    ]
   },
   "home": {
     "wordmark": "Healing Homes",

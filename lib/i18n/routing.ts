@@ -25,6 +25,10 @@ export const routing = defineRouting({
       en: '/contact',
       es: '/contacto',
     },
+    '/credits': {
+      en: '/credits',
+      es: '/creditos',
+    },
     '/signin': '/signin',
   },
 });

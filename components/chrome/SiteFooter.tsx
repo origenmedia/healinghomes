@@ -1,6 +1,7 @@
 import { useTranslations } from 'next-intl';
 import { Wordmark } from '@/components/brand/Wordmark';
 import { LocaleSwitch } from '@/components/chrome/LocaleSwitch';
+import { Link } from '@/lib/i18n/navigation';
 
 export function SiteFooter({ locale }: { locale: string }) {
   const t = useTranslations('site');
@@ -12,9 +13,17 @@ export function SiteFooter({ locale }: { locale: string }) {
         <Wordmark size="sm" />
         <div className="flex flex-col gap-4 md:items-end">
           <LocaleSwitch locale={locale} />
-          <p className="font-sans text-xs text-text-dim">
-            {t('copyright', { year })}
-          </p>
+          <div className="flex items-center gap-4">
+            <Link
+              href="/credits"
+              className="font-sans text-xs text-text-muted hover:text-voice transition-colors"
+            >
+              {t('photoCredits')}
+            </Link>
+            <p className="font-sans text-xs text-text-dim">
+              {t('copyright', { year })}
+            </p>
+          </div>
         </div>
       </div>
     </footer>
