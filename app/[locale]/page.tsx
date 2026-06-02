@@ -35,8 +35,8 @@ export default async function Home({
         <section className="relative flex min-h-[82vh] overflow-hidden">
           {/* Mobile hero — visible below md only */}
           <Image
-            src="/hero-mobile.png"
-            alt=""
+            src="/lake-chapala-modern-home-terrace-mobile.png"
+            alt={t('hero.imageAlt')}
             fill
             priority
             sizes="100vw"
@@ -44,8 +44,8 @@ export default async function Home({
           />
           {/* Desktop hero — visible at md and up */}
           <Image
-            src="/hero-desktop.png"
-            alt=""
+            src="/lake-chapala-modern-home-terrace.png"
+            alt={t('hero.imageAlt')}
             fill
             priority
             sizes="100vw"
