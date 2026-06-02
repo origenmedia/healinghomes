@@ -177,11 +177,15 @@ export default async function Home({
 
         {/* 7 · How I work */}
         <Beat wide>
-          <ImageSlot
-            kind="real"
-            aspect="wide"
-            label="Real construction photos of actual builds, plus a real screenshot or clean mockup of the client portal. Documentary and grounded."
-          />
+          <div className="relative w-full max-w-md aspect-[9/16] my-6">
+            <Image
+              src="/home-building-process-lake-chapala-mexico.jpg"
+              alt={t('howIWork.imageAlt')}
+              fill
+              sizes="(min-width: 768px) 28rem, 100vw"
+              className="object-cover object-center"
+            />
+          </div>
           <div className="mt-10 space-y-5">
             {howIWork.map((line, i) => (
               <p
