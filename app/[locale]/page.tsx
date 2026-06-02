@@ -177,12 +177,12 @@ export default async function Home({
 
         {/* 7 · How I work */}
         <Beat wide>
-          <div className="relative w-full max-w-md aspect-[9/16] my-6">
+          <div className="relative w-full aspect-[16/9] my-6">
             <Image
               src="/home-building-process-lake-chapala-mexico.jpg"
               alt={t('howIWork.imageAlt')}
               fill
-              sizes="(min-width: 768px) 28rem, 100vw"
+              sizes="(min-width: 768px) 56rem, 100vw"
               className="object-cover object-center"
             />
           </div>
