@@ -115,6 +115,16 @@
       },
       "closing": "Wherever you are, there's a door for you. Start here."
     },
+    "notes": {
+      "longing": "Every house I build is turned toward the light. Here the best of it comes off the lake in the morning. So that is where the living happens.",
+      "builder": "I came here for the same reasons you are weighing now. Then I started building.",
+      "why": "Build it to outlast you. Deep footings, honest stone, walls thick enough to keep their cool. Good bones you only feel, never see.",
+      "close": "Beauty is not something added at the end. It is what is left when nothing unnecessary remains."
+    },
+    "diagrams": {
+      "section": "Architectural section drawing: a building cross-section showing structure and sun angle",
+      "plan": "Floor plan sketch: rooms, sight lines, and the breeze path"
+    },
     "close": {
       "lines": [
         "You've spent long enough getting through your days. Maybe it's time to start living them.",
@@ -281,6 +291,7 @@
   "contact": {
     "header": "Let's talk.",
     "intro": "No pressure, and nothing to sign. Just a conversation. Tell me a bit about you and what you have in mind, and I'll get back to you myself.",
+    "personal": "Write to me directly. I read every one of these myself.",
     "form": {
       "nameLabel": "Your name",
       "emailLabel": "Your email",

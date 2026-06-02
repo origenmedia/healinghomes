@@ -78,6 +78,12 @@
   --radius-md: 8px;
 }
 
+.display-carved {
+  font-variation-settings: 'opsz' 144, 'SOFT' 25;
+  letter-spacing: -0.015em;
+  line-height: 1.05;
+}
+
 html, body {
   background: var(--color-page);
   color: var(--color-text-primary);

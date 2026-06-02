@@ -21,7 +21,7 @@ export default function RootLayout({
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body>{children}</body>
+      <body className="relative">{children}</body>
     </html>
   );
 }
