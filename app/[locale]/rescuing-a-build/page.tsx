@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { SiteHeader } from '@/components/chrome/SiteHeader';
 import { SiteFooter } from '@/components/chrome/SiteFooter';
@@ -40,11 +41,15 @@ export default async function RescuingABuild({
 
         {/* 2 · I have lived it */}
         <Beat>
-          <ImageSlot
-            kind="real"
-            aspect="wide"
-            label="Optional but strong. A real photo of the builder's own first build mid-disaster, before he finished it. Proof he survived exactly this."
-          />
+          <div className="relative w-full aspect-[16/9] my-6">
+            <Image
+              src="/home-build-rescue-lake-chapala-jalisco.jpeg"
+              alt={t('lived.imageAlt')}
+              fill
+              sizes="(min-width: 768px) 42rem, 100vw"
+              className="object-cover object-center"
+            />
+          </div>
           <div className="mt-10 space-y-5">
             {lived.map((line, i) => (
               <p
