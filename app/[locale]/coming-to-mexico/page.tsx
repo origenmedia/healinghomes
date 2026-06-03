@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { SiteHeader } from '@/components/chrome/SiteHeader';
 import { SiteFooter } from '@/components/chrome/SiteFooter';
@@ -44,11 +45,15 @@ export default async function ComingToMexico({
 
         {/* 2 · The guide */}
         <Beat>
-          <ImageSlot
-            kind="real"
-            aspect="wide"
-            label="A warm, direct photo of the builder."
-          />
+          <div className="relative w-full max-w-md aspect-[2/3] my-6">
+            <Image
+              src="/home-builder-lake-chapala-ajijic-mexico.jpg"
+              alt={t('guide.imageAlt')}
+              fill
+              sizes="(min-width: 768px) 28rem, 100vw"
+              className="object-cover object-center"
+            />
+          </div>
           <div className="mt-10 space-y-5">
             {guide.map((line, i) => (
               <p
