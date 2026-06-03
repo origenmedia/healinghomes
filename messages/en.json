@@ -218,6 +218,11 @@
     },
     "process": {
       "heading": "A careful process",
+      "imageAlts": [
+        "A line drawing of the finished home design, the whole house resolved on paper before the build",
+        "A line drawing of the same home under construction, the frame and walls rising",
+        "A colored drawing of the same home complete, walls finished and the courtyard planted"
+      ],
       "steps": [
         {
           "title": "First, the design",

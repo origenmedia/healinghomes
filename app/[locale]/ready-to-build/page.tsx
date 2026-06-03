@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { SiteHeader } from '@/components/chrome/SiteHeader';
 import { SiteFooter } from '@/components/chrome/SiteFooter';
@@ -22,11 +23,12 @@ export default async function ReadyToBuild({
   const standard = t.raw('standard.lines') as string[];
   const close = t.raw('close.lines') as string[];
 
-  const stepImages = [
-    'AI storybook illustration: the complete design of a modern eco home, settled on screen before the build.',
-    'AI storybook illustration: foundation and frame rising from the ground up. Within this step, a real screenshot or mockup of the portal for the tracked-week-by-week line.',
-    'AI storybook illustration: the finished home. Light, stone, rooms, complete.',
+  const stepImageSrcs = [
+    '/process-1-design-modern-eco-home.png',
+    '/process-2-construction-modern-eco-home.png',
+    '/process-3-finished-modern-eco-home.png',
   ];
+  const stepImageAlts = t.raw('process.imageAlts') as string[];
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -62,7 +64,15 @@ export default async function ReadyToBuild({
           <div className="mt-4 space-y-16 md:space-y-20">
             {steps.map((step, i) => (
               <div key={i} className="max-w-2xl">
-                <ImageSlot kind="ai" aspect="wide" label={stepImages[i]} />
+                <div className="relative w-full aspect-[16/9] mb-2">
+                  <Image
+                    src={stepImageSrcs[i]}
+                    alt={stepImageAlts[i]}
+                    fill
+                    sizes="(min-width: 768px) 42rem, 100vw"
+                    className="object-cover object-center"
+                  />
+                </div>
                 <h3 className="mt-8 font-serif text-2xl md:text-3xl text-text-primary leading-tight">
                   {step.title}
                 </h3>
