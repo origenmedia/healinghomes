@@ -136,11 +136,15 @@ export default async function ComingToMexico({
 
         {/* 7 · The life waiting */}
         <Beat>
-          <ImageSlot
-            kind="ai"
-            aspect="wide"
-            label="The warm payoff: the imagined daily life (garden, table, morning). AI dream register, or real photos of the actual life."
-          />
+          <div className="relative w-full aspect-[16/9] my-6">
+            <Image
+              src="/life-in-mexico-lake-chapala-morning-garden.png"
+              alt={t('lifeWaiting.imageAlt')}
+              fill
+              sizes="(min-width: 768px) 42rem, 100vw"
+              className="object-cover object-center"
+            />
+          </div>
           <p className="mt-10 font-serif text-lg md:text-xl text-text-secondary leading-relaxed">
             {t('lifeWaiting.text')}
           </p>
