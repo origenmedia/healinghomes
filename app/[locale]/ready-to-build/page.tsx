@@ -93,11 +93,15 @@ export default async function ReadyToBuild({
 
         {/* 4 · The standard */}
         <Beat>
-          <ImageSlot
-            kind="real"
-            aspect="wide"
-            label="The strongest craft proof on the site. Real photos of the actual finished home: the stone, the light, the rooms."
-          />
+          <div className="relative w-full aspect-[3/2] my-6">
+            <Image
+              src="/home-builders-house-lake-chapala-mexico.jpg"
+              alt={t('standard.imageAlt')}
+              fill
+              sizes="(min-width: 768px) 42rem, 100vw"
+              className="object-cover object-center"
+            />
+          </div>
           <div className="mt-10 space-y-5">
             {standard.map((line, i) => (
               <p
