@@ -6,6 +6,7 @@ import { Beat } from '@/components/notebook/Beat';
 import { ImageSlot } from '@/components/notebook/ImageSlot';
 import { PullQuote } from '@/components/notebook/PullQuote';
 import { CtaButton } from '@/components/notebook/CtaButton';
+import { ThresholdMark } from '@/components/notebook/ThresholdMark';
 
 type QA = { label: string; body: string };
 
@@ -115,8 +116,10 @@ export default async function ComingToMexico({
           </p>
         </Beat>
 
+        <ThresholdMark />
+
         {/* 6 · The real questions */}
-        <Beat>
+        <Beat className="pt-10 md:pt-20">
           <p className="font-serif text-lg md:text-xl text-text-secondary leading-relaxed">
             {t('questions.intro')}
           </p>
@@ -134,8 +137,10 @@ export default async function ComingToMexico({
           </dl>
         </Beat>
 
+        <ThresholdMark />
+
         {/* 7 · The life waiting */}
-        <Beat>
+        <Beat className="pt-10 md:pt-20">
           <div className="relative w-full aspect-[16/9] my-6">
             <Image
               src="/life-in-mexico-lake-chapala-morning-garden.png"

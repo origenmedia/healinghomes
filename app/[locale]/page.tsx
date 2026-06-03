@@ -10,6 +10,7 @@ import { Marginalia } from '@/components/notebook/Marginalia';
 import { ArchitecturalDiagram } from '@/components/notebook/ArchitecturalDiagram';
 import { FadeIn } from '@/components/notebook/FadeIn';
 import { PaperGrain } from '@/components/notebook/PaperGrain';
+import { ThresholdMark } from '@/components/notebook/ThresholdMark';
 
 export default async function Home({
   params,
@@ -263,8 +264,10 @@ export default async function Home({
           </FadeIn>
         </Beat>
 
+        <ThresholdMark />
+
         {/* 9 · The bigger thing */}
-        <Beat>
+        <Beat className="pt-10 md:pt-20">
           <div className="space-y-5">
             {bigger.map((line, i) => (
               <p
@@ -277,8 +280,10 @@ export default async function Home({
           </div>
         </Beat>
 
+        <ThresholdMark />
+
         {/* 10 · The three doors */}
-        <Beat wide>
+        <Beat wide className="pt-10 md:pt-20">
           <p className="font-serif text-2xl md:text-3xl text-text-primary leading-snug text-balance">
             {t('doors.leadIn')}
           </p>
