@@ -63,7 +63,10 @@ export function SiteHeader({
         <div className="flex items-center justify-between px-6 md:px-12 lg:px-20 py-4 md:py-5">
           {/* Wordmark */}
           <Link href="/" className="no-underline">
-            <div className="flex flex-col items-start gap-0.5">
+            <div
+              className="flex flex-col items-start gap-0.5 transition-[filter] duration-300"
+              style={transparent ? { filter: 'drop-shadow(0 1px 8px rgba(0,0,0,0.35))' } : undefined}
+            >
               <span
                 className={`font-serif font-normal text-2xl leading-none transition-colors duration-300 ${
                   transparent ? 'text-white' : 'text-text-primary'

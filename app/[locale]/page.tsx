@@ -57,7 +57,12 @@ export default async function Home({
             sizes="100vw"
             className="hidden md:block object-cover object-center"
           />
-          {/* Scrim — warm-black gradient over lower portion for headline legibility */}
+          {/* Top scrim — gentle tint for header wordmark legibility */}
+          <div
+            aria-hidden="true"
+            className="absolute inset-x-0 top-0 h-[160px] bg-gradient-to-b from-[rgba(20,15,10,0.45)] to-transparent"
+          />
+          {/* Bottom scrim — warm-black gradient for headline legibility */}
           <div
             aria-hidden="true"
             className="absolute inset-x-0 bottom-0 top-1/2 bg-gradient-to-t from-[rgba(20,15,10,0.55)] via-[rgba(20,15,10,0.22)] to-transparent"
