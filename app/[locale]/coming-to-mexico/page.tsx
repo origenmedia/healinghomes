@@ -68,15 +68,14 @@ export default async function ComingToMexico({
 
         {/* 3 · The father */}
         <Beat>
-          <div className="relative w-full aspect-[3/4] my-6">
-            <Image
-              src="/leaving-for-mexico-father-and-son.jpg"
-              alt={t('father.imageAlt')}
-              fill
-              sizes="(min-width: 768px) 42rem, 100vw"
-              className="object-cover object-center"
-            />
-          </div>
+          <Image
+            src="/leaving-for-mexico-father-and-son.jpg"
+            alt={t('father.imageAlt')}
+            width={1536}
+            height={2048}
+            sizes="(min-width: 768px) 42rem, 100vw"
+            className="mx-auto my-8 h-auto w-auto max-h-[60vh] md:max-h-[520px] max-w-full"
+          />
           <p className="mt-10 font-serif text-lg md:text-xl text-text-secondary leading-relaxed">
             {t('father.text')}
           </p>
@@ -84,15 +83,14 @@ export default async function ComingToMexico({
 
         {/* 4 · The pattern */}
         <Beat>
-          <div className="relative w-full aspect-[4/3] my-6">
-            <Image
-              src="/family-dinner-ajijic-lake-chapala.jpg"
-              alt={t('pattern.imageAlt')}
-              fill
-              sizes="(min-width: 768px) 42rem, 100vw"
-              className="object-cover object-center"
-            />
-          </div>
+          <Image
+            src="/family-dinner-ajijic-lake-chapala.jpg"
+            alt={t('pattern.imageAlt')}
+            width={1874}
+            height={1405}
+            sizes="(min-width: 768px) 42rem, 100vw"
+            className="mx-auto my-8 h-auto w-auto max-h-[60vh] md:max-h-[520px] max-w-full"
+          />
           <p className="mt-10 font-serif text-lg md:text-xl text-text-secondary leading-relaxed">
             {t('pattern.text')}
           </p>
@@ -100,15 +98,14 @@ export default async function ComingToMexico({
 
         {/* 5 · The mother (peak) */}
         <Beat>
-          <div className="relative w-full aspect-[9/16] my-6">
-            <Image
-              src="/mother-and-son-horseback-mexico.jpeg"
-              alt={t('mother.imageAlt')}
-              fill
-              sizes="(min-width: 768px) 42rem, 100vw"
-              className="object-cover object-center"
-            />
-          </div>
+          <Image
+            src="/mother-and-son-horseback-mexico.jpeg"
+            alt={t('mother.imageAlt')}
+            width={2880}
+            height={5120}
+            sizes="(min-width: 768px) 42rem, 100vw"
+            className="mx-auto my-8 h-auto w-auto max-h-[60vh] md:max-h-[520px] max-w-full"
+          />
           <div className="mt-10 space-y-5">
             {mother.map((line, i) => (
               <p
@@ -168,15 +165,14 @@ export default async function ComingToMexico({
 
         {/* 8 · The close */}
         <Beat>
-          <div className="relative w-full aspect-[4/5] my-6">
-            <Image
-              src="/builder-traveling-mexico-camera.png"
-              alt={t('close.imageAlt')}
-              fill
-              sizes="(min-width: 768px) 42rem, 100vw"
-              className="object-cover object-center"
-            />
-          </div>
+          <Image
+            src="/builder-traveling-mexico-camera.png"
+            alt={t('close.imageAlt')}
+            width={686}
+            height={852}
+            sizes="(min-width: 768px) 42rem, 100vw"
+            className="mx-auto my-8 h-auto w-auto max-h-[60vh] md:max-h-[520px] max-w-full"
+          />
           <div className="mt-10 space-y-5">
             {close.map((line, i) => (
               <p
