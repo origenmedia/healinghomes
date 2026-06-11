@@ -3,7 +3,6 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { SiteHeader } from '@/components/chrome/SiteHeader';
 import { SiteFooter } from '@/components/chrome/SiteFooter';
 import { Beat } from '@/components/notebook/Beat';
-import { ImageSlot } from '@/components/notebook/ImageSlot';
 import { PullQuote } from '@/components/notebook/PullQuote';
 import { CtaButton } from '@/components/notebook/CtaButton';
 import { ThresholdMark } from '@/components/notebook/ThresholdMark';
@@ -69,11 +68,15 @@ export default async function ComingToMexico({
 
         {/* 3 · The father */}
         <Beat>
-          <ImageSlot
-            kind="real"
-            aspect="wide"
-            label="Real photos of the father, ideally a then and a year-later feel. The jeep, the drive, the early days if available."
-          />
+          <div className="relative w-full aspect-[3/4] my-6">
+            <Image
+              src="/leaving-for-mexico-father-and-son.jpg"
+              alt={t('father.imageAlt')}
+              fill
+              sizes="(min-width: 768px) 42rem, 100vw"
+              className="object-cover object-center"
+            />
+          </div>
           <p className="mt-10 font-serif text-lg md:text-xl text-text-secondary leading-relaxed">
             {t('father.text')}
           </p>
@@ -81,11 +84,15 @@ export default async function ComingToMexico({
 
         {/* 4 · The pattern */}
         <Beat>
-          <ImageSlot
-            kind="real"
-            aspect="wide"
-            label="The aunt, the guests, the strangers who stayed. Candid photos of real people who made the move and settled happily."
-          />
+          <div className="relative w-full aspect-[4/3] my-6">
+            <Image
+              src="/family-dinner-ajijic-lake-chapala.jpg"
+              alt={t('pattern.imageAlt')}
+              fill
+              sizes="(min-width: 768px) 42rem, 100vw"
+              className="object-cover object-center"
+            />
+          </div>
           <p className="mt-10 font-serif text-lg md:text-xl text-text-secondary leading-relaxed">
             {t('pattern.text')}
           </p>
@@ -93,11 +100,15 @@ export default async function ComingToMexico({
 
         {/* 5 · The mother (peak) */}
         <Beat>
-          <ImageSlot
-            kind="real"
-            aspect="tall"
-            label="Essential. The real photo of the mother, paired with her approved quote. The single most important image on this page."
-          />
+          <div className="relative w-full aspect-[9/16] my-6">
+            <Image
+              src="/mother-and-son-horseback-mexico.jpeg"
+              alt={t('mother.imageAlt')}
+              fill
+              sizes="(min-width: 768px) 42rem, 100vw"
+              className="object-cover object-center"
+            />
+          </div>
           <div className="mt-10 space-y-5">
             {mother.map((line, i) => (
               <p
@@ -157,11 +168,15 @@ export default async function ComingToMexico({
 
         {/* 8 · The close */}
         <Beat>
-          <ImageSlot
-            kind="real"
-            aspect="wide"
-            label="The builder, or the builder with family. The offer to walk her across, anchored by his real face once more."
-          />
+          <div className="relative w-full aspect-[4/5] my-6">
+            <Image
+              src="/builder-traveling-mexico-camera.png"
+              alt={t('close.imageAlt')}
+              fill
+              sizes="(min-width: 768px) 42rem, 100vw"
+              className="object-cover object-center"
+            />
+          </div>
           <div className="mt-10 space-y-5">
             {close.map((line, i) => (
               <p

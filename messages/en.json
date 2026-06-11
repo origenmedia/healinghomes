@@ -154,12 +154,15 @@
       ]
     },
     "father": {
+      "imageAlt": "The builder and his father the day they left to drive to Mexico, the loaded car behind them.",
       "text": "My father was the first. He was getting older, tired, a little scared. He didn't have much saved. He'd worked his whole life and the life he had left didn't look like much. So I flew up, helped him sell what he owned, and we packed a jeep and drove south to a town neither of us had ever seen. He didn't speak the language. He didn't know a soul. Within a year, he was a different man. Out in the sun every day. Lighter. Awake. Like someone gave him back twenty years."
     },
     "pattern": {
+      "imageAlt": "The builder, his aunt, and his father at dinner in Ajijic, the lake through the window.",
       "text": "Then it was my aunt. Same story. She came, she settled, she bloomed. Word started to get around. People came to visit me here, strangers at first, just to see what this life was about. Some of them never left. They bought land. They built homes. They started over, the same way my father had. I watched it happen again and again, until I stopped being surprised by it. This place does something to people. The right home, in the right place, gives them their life back."
     },
     "mother": {
+      "imageAlt": "The builder and his mother riding horses through the green mountains, a road they traveled together.",
       "lines": [
         "Right now, I'm helping my own mother make the move.",
         "She's in her sixties. She's spent years thinking about it, the way you have. And now she's doing it, selling everything she owns up north to come build her home here, near us.",
@@ -198,6 +201,7 @@
       "text": "And once the fear is behind you, here is what's waiting. Mornings that start with sunshine and birdsong, not an alarm. Coffee in the garden. A table full of people you love, eating food that still tastes like food. Time that finally belongs to you. Grandchildren who don't want to go home. Neighbors who know your name. A life that feels simple and good and yours again. The life you've been picturing all these years. It's real. It's here. And it's closer than you think."
     },
     "close": {
+      "imageAlt": "The builder traveling through a Mexican town with his camera, at home in the place he builds in.",
       "lines": [
         "You don't have to figure this out alone. That's the whole point.",
         "I've walked my own family across, one by one. My father. My aunt. My mother. I know every step of this road, because I've already walked it with the people I love most.",
