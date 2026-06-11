@@ -81,8 +81,13 @@ export function SiteHeader({
             </div>
           </Link>
 
-          {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-8" aria-label="Main">
+          {/* Desktop nav — hidden while transparent over the hero */}
+          <nav
+            className={`hidden md:flex items-center gap-8 motion-safe:transition-opacity motion-safe:duration-300 ${
+              transparent ? 'opacity-0 pointer-events-none' : 'opacity-100'
+            }`}
+            aria-label="Main"
+          >
             {NAV_LINKS.map(({ href, key }) => {
               const active = pathname === href;
               return (
@@ -91,12 +96,8 @@ export function SiteHeader({
                   href={href}
                   className={`font-serif text-sm transition-colors duration-200 ${
                     active
-                      ? transparent
-                        ? 'text-white'
-                        : 'text-voice'
-                      : transparent
-                        ? 'text-white/80 hover:text-white'
-                        : 'text-text-muted hover:text-voice'
+                      ? 'text-voice'
+                      : 'text-text-muted hover:text-voice'
                   }`}
                 >
                   {t(`nav.${key}`)}
@@ -105,14 +106,15 @@ export function SiteHeader({
             })}
           </nav>
 
-          {/* Mobile menu button */}
+          {/* Mobile menu button — hidden while transparent over the hero */}
           <button
             type="button"
-            className={`md:hidden p-2 -mr-2 transition-colors duration-300 ${
-              transparent ? 'text-white' : 'text-text-primary'
+            className={`md:hidden p-2 -mr-2 motion-safe:transition-opacity motion-safe:duration-300 ${
+              transparent ? 'opacity-0 pointer-events-none' : 'text-text-primary opacity-100'
             }`}
             onClick={() => setMenuOpen(true)}
             aria-label="Open menu"
+            tabIndex={transparent ? -1 : undefined}
           >
             <svg
               width="24"
