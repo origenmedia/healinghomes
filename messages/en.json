@@ -1,7 +1,13 @@
 {
   "site": {
     "copyright": "Healing Homes Mexico, {year}.",
-    "photoCredits": "Photo credits"
+    "photoCredits": "Photo credits",
+    "nav": {
+      "comingToMexico": "Coming to Mexico",
+      "readyToBuild": "Ready to Build",
+      "rescuingABuild": "Rescuing a Build",
+      "contact": "Contact"
+    }
   },
   "credits": {
     "heading": "Photo credits",

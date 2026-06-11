@@ -34,11 +34,11 @@ export default async function Home({
   return (
     <div className="min-h-screen flex flex-col">
       <PaperGrain />
-      <SiteHeader locale={locale} />
+      <SiteHeader locale={locale} isHome />
 
       <main className="relative z-10">
         {/* 1 · Hero */}
-        <section className="relative flex min-h-[82vh] overflow-hidden">
+        <section data-hero className="relative flex min-h-[82vh] overflow-hidden">
           {/* Mobile hero — visible below md only */}
           <Image
             src="/lake-chapala-modern-home-terrace-mobile.png"
