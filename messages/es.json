@@ -6,6 +6,7 @@
       "comingToMexico": "Coming to Mexico",
       "readyToBuild": "Ready to Build",
       "rescuingABuild": "Rescuing a Build",
+      "gallery": "Gallery",
       "contact": "Contact"
     }
   },
@@ -308,6 +309,47 @@
         "You don't have to carry this alone anymore. Reach out, and let's talk today."
       ],
       "cta": "Reach out today"
+    }
+  },
+  "gallery": {
+    "meta": {
+      "title": "Gallery | Healing Homes Mexico",
+      "description": "A modern home built above Lake Chapala, Mexico, room by room. Stone, wood, light, and the lake."
+    },
+    "label": "Gallery",
+    "headline": "This is the standard.",
+    "intro": "I built this home above Lake Chapala, and I live in it. Every home I build is held to this.",
+    "photos": [
+      {
+        "caption": "Set into the hillside, a terrace on every level.",
+        "alt": "Vista aérea de casas modernas blancas escalonadas en una ladera verde cerca del Lago de Chapala, con una terraza en cada nivel y montañas al fondo"
+      },
+      {
+        "caption": "The roof terrace, for meals, sun, and the hot tub.",
+        "alt": "La casa vista desde arriba: una terraza en la azotea con mesa de comedor, camastros y jacuzzi, y una escalera que sube entre un jardín de cactus hasta la puerta principal"
+      },
+      {
+        "caption": "The living room, open to the lake.",
+        "alt": "La sala abierta con un sofá gris largo, pisos oscuros y ventanales con vista al Lago de Chapala, y al fondo el comedor y la cocina"
+      },
+      {
+        "caption": "The kitchen, warm wood and black stone.",
+        "alt": "La cocina, con gabinetes de madera cálida, cubiertas de piedra negra, una barra con tres bancos y una ventana larga y baja hacia el jardín"
+      },
+      {
+        "caption": "The dining room, with room for everyone.",
+        "alt": "El comedor, con una mesa redonda de madera, sillas de madera y cuerda negra, y repisas abiertas de madera en la pared"
+      }
+    ],
+    "viewer": {
+      "label": "Visor de fotos",
+      "close": "Cerrar",
+      "previous": "Foto anterior",
+      "next": "Foto siguiente"
+    },
+    "close": {
+      "text": "Photos only show so much. Come walk through it with me, foundation to finish.",
+      "cta": "Come and visit us"
     }
   },
   "contact": {

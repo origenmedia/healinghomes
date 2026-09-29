@@ -6,6 +6,7 @@
       "comingToMexico": "Coming to Mexico",
       "readyToBuild": "Ready to Build",
       "rescuingABuild": "Rescuing a Build",
+      "gallery": "Gallery",
       "contact": "Contact"
     }
   },
@@ -308,6 +309,47 @@
         "You don't have to carry this alone anymore. Reach out, and let's talk today."
       ],
       "cta": "Reach out today"
+    }
+  },
+  "gallery": {
+    "meta": {
+      "title": "Gallery | Healing Homes Mexico",
+      "description": "A modern home built above Lake Chapala, Mexico, room by room. Stone, wood, light, and the lake."
+    },
+    "label": "Gallery",
+    "headline": "This is the standard.",
+    "intro": "I built this home above Lake Chapala, and I live in it. Every home I build is held to this.",
+    "photos": [
+      {
+        "caption": "Set into the hillside, a terrace on every level.",
+        "alt": "An aerial view of modern white homes stepped into a green hillside near Lake Chapala, a terrace on every level and mountains behind"
+      },
+      {
+        "caption": "The roof terrace, for meals, sun, and the hot tub.",
+        "alt": "Looking straight down on the home: a roof terrace with a dining table, sun loungers and a hot tub, and a stair rising through a cactus garden to the front door"
+      },
+      {
+        "caption": "The living room, open to the lake.",
+        "alt": "The open living room with a long gray sofa, dark tile floors, and tall windows looking out over Lake Chapala, the dining table and kitchen beyond"
+      },
+      {
+        "caption": "The kitchen, warm wood and black stone.",
+        "alt": "The kitchen, with warm wood cabinets, black stone counters, a breakfast bar with three stools, and a long low window onto the garden"
+      },
+      {
+        "caption": "The dining room, with room for everyone.",
+        "alt": "The dining room, with a round wood table, wood and black rope chairs, and open wood shelves along the wall"
+      }
+    ],
+    "viewer": {
+      "label": "Photo viewer",
+      "close": "Close",
+      "previous": "Previous photo",
+      "next": "Next photo"
+    },
+    "close": {
+      "text": "Photos only show so much. Come walk through it with me, foundation to finish.",
+      "cta": "Come and visit us"
     }
   },
   "contact": {

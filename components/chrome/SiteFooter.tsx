@@ -6,6 +6,7 @@ const NAV_LINKS = [
   { href: '/coming-to-mexico', key: 'comingToMexico' },
   { href: '/ready-to-build', key: 'readyToBuild' },
   { href: '/rescuing-a-build', key: 'rescuingABuild' },
+  { href: '/gallery', key: 'gallery' },
   { href: '/contact', key: 'contact' },
 ] as const;
 

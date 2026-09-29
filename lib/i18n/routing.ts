@@ -21,6 +21,10 @@ export const routing = defineRouting({
       en: '/rescuing-a-build',
       es: '/rescatar-una-obra',
     },
+    '/gallery': {
+      en: '/gallery',
+      es: '/galeria',
+    },
     '/contact': {
       en: '/contact',
       es: '/contacto',

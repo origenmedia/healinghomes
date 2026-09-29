@@ -8,6 +8,7 @@ const NAV_LINKS = [
   { href: '/coming-to-mexico', key: 'comingToMexico' },
   { href: '/ready-to-build', key: 'readyToBuild' },
   { href: '/rescuing-a-build', key: 'rescuingABuild' },
+  { href: '/gallery', key: 'gallery' },
   { href: '/contact', key: 'contact' },
 ] as const;
 
@@ -84,9 +85,10 @@ export function SiteHeader({
             </div>
           </Link>
 
-          {/* Desktop nav — hidden while transparent over the hero */}
+          {/* Desktop nav — hidden while transparent over the hero.
+              Starts at lg: five links crowd the wordmark on tablets. */}
           <nav
-            className={`hidden md:flex items-center gap-8 motion-safe:transition-opacity motion-safe:duration-300 ${
+            className={`hidden lg:flex items-center gap-8 motion-safe:transition-opacity motion-safe:duration-300 ${
               transparent ? 'opacity-0 pointer-events-none' : 'opacity-100'
             }`}
             aria-label="Main"
@@ -112,7 +114,7 @@ export function SiteHeader({
           {/* Mobile menu button — hidden while transparent over the hero */}
           <button
             type="button"
-            className={`md:hidden p-2 -mr-2 motion-safe:transition-opacity motion-safe:duration-300 ${
+            className={`lg:hidden p-2 -mr-2 motion-safe:transition-opacity motion-safe:duration-300 ${
               transparent ? 'opacity-0 pointer-events-none' : 'text-text-primary opacity-100'
             }`}
             onClick={() => setMenuOpen(true)}
