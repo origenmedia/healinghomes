@@ -33,6 +33,19 @@ export const routing = defineRouting({
       en: '/credits',
       es: '/creditos',
     },
+    '/el-refugio': '/el-refugio',
+    '/how-it-works': {
+      en: '/how-it-works',
+      es: '/como-funciona',
+    },
+    '/my-story': {
+      en: '/my-story',
+      es: '/mi-historia',
+    },
+    '/privacy': {
+      en: '/privacy',
+      es: '/privacidad',
+    },
     '/signin': '/signin',
   },
 });

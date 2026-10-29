@@ -1,39 +1,21 @@
-import { getTranslations, setRequestLocale } from 'next-intl/server';
-import { SiteHeader } from '@/components/chrome/SiteHeader';
-import { SiteFooter } from '@/components/chrome/SiteFooter';
+import type { Metadata } from 'next';
+import { setRequestLocale } from 'next-intl/server';
+import { SitePage } from '@/components/site/SitePage';
 import { ContactForm } from '@/components/contact/ContactForm';
+import { html } from '@/lib/site/pages/contact';
+import '@/lib/site/css/site-std.css';
 
-export default async function ContactPage({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
+export const metadata: Metadata = {
+  title: 'Book a call · Healing Homes',
+  description: 'Book a 20 minute call with Nathaniel, or join the founding list for El Refugio.',
+};
+
+export default async function ContactPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const t = await getTranslations('contact');
-
   return (
-    <div className="min-h-screen flex flex-col">
-      <SiteHeader locale={locale} />
-
-      <main className="flex-1 px-6 md:px-12 lg:px-20 py-16 md:py-24">
-        <div className="max-w-xl">
-          <h1 className="font-serif text-4xl md:text-5xl text-text-primary leading-tight tracking-tight">
-            {t('header')}
-          </h1>
-          <p className="mt-6 font-serif text-lg md:text-xl text-text-secondary leading-relaxed">
-            {t('intro')}
-          </p>
-          <p className="mt-8 font-serif text-sm italic text-text-muted leading-relaxed">
-            {t('personal')}
-          </p>
-          <div className="mt-10 md:mt-14">
-            <ContactForm />
-          </div>
-        </div>
-      </main>
-
-      <SiteFooter locale={locale} />
-    </div>
+    <SitePage html={html} theme="std">
+      <ContactForm />
+    </SitePage>
   );
 }

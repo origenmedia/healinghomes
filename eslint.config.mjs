@@ -22,7 +22,7 @@ const eslintConfig = defineConfig([
     },
   },
   {
-    files: ["lib/tokens/**/*.ts", "lib/brand.ts"],
+    files: ["lib/tokens/**/*.ts", "lib/brand.ts", "lib/site/**/*.{ts,js}"],
     rules: {
       "no-restricted-syntax": "off",
     },
