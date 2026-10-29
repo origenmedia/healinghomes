@@ -440,5 +440,12 @@ ol.road span { font-size: 14.5px; line-height: 1.4; color: var(--ink-2); }
 .cf .btn:disabled { opacity: 0.6; cursor: wait; }
 .cf-error { color: var(--warn, var(--ink)); }
 .cf-thanks { margin-top: 36px; font: 400 clamp(22px, 2.4vw, 28px)/1.4 var(--display); max-width: 34ch; }
+.archsvg { --paper2: #ECE6D9; --brick: #B85C3E; --agave: #6E7F62; --water: #9DB7C2; --lot: #E6DECD; --lake: #7E9FAE; --line: #CFC6B4; --line2: #B9AD97; --lime: #FBF8F1; --muted: #5B5F66; --earth: #A9826A; overflow-x: auto; }
+.archsvg svg { display: block; width: 100%; height: auto; }
+.archsvg svg .lab { font: 500 11px var(--body); fill: var(--ink); letter-spacing: .02em; }
+.archsvg svg .lk { fill: #F5F2EB; letter-spacing: .12em; }
+.archsvg svg .fl { font: 500 9.5px var(--body); fill: var(--ink); }
+.archsvg svg .num { font: 600 10px var(--body); fill: var(--muted); }
+.archsvg.plan-home svg { max-width: 460px; margin: 0 auto; }
 
 }
