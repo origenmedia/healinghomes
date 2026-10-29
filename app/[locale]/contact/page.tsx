@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import { SitePage } from '@/components/site/SitePage';
-import { ContactForm } from '@/components/contact/ContactForm';
+import { SiteContactForm } from '@/components/site/SiteContactForm';
 import { html } from '@/lib/site/pages/contact';
 import '@/lib/site/css/site-std.css';
 
@@ -15,7 +15,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
   setRequestLocale(locale);
   return (
     <SitePage html={html} theme="std">
-      <ContactForm />
+      <SiteContactForm />
     </SitePage>
   );
 }
