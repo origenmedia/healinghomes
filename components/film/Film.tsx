@@ -322,7 +322,7 @@ export function Film() {
           <div className="st">
               {s.bg && <div className="bgblur" style={{ backgroundImage: `url(/film/${s.bg}-thumb.webp)` }} aria-hidden="true" />}
             <div className="fr">
-              {s.body}
+              <div className="pic">{s.body}</div>
               {s.caps.length > 0 && (
                 <div className="cap">
                   {s.caps.map((c, j) => (
