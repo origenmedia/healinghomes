@@ -280,6 +280,7 @@ export function Film() {
       el.style.setProperty('--film', String(overall));
       el.classList.toggle('in', r0.top < vh * 0.5 && r0.bottom > vh * 0.5);
       el.classList.toggle('ask', overall > 0.12 && overall < 0.9);
+      el.classList.toggle('top', r0.top <= 0 && r0.bottom > vh * 0.5);
 
       secs.forEach((s, i) => {
         const r = s.getBoundingClientRect();
