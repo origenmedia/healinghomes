@@ -6,7 +6,7 @@ import '@/lib/site/css/site-refugio.css';
 
 export const metadata: Metadata = {
   title: 'El Refugio · Healing Homes',
-  description: '14 finished homes on 10 hectares above Lake Chapala. Each home catches its own rain, makes its own power and has its own garden.',
+  description: '12 homes around one garden, one pool and one long table, above Lake Chapala, Mexico. Each home has its own water, food and power. Homes from $336,000.',
 };
 
 export default async function Page({ params }: { params: Promise<{ locale: string }> }) {
