@@ -6,8 +6,8 @@ import { html } from '@/lib/site/pages/contact';
 import '@/lib/site/css/site-std.css';
 
 export const metadata: Metadata = {
-  title: 'Book a call · Healing Homes',
-  description: 'Book a 20 minute call with Nathaniel, or join the founding list for El Refugio.',
+  title: 'Talk with Nathaniel · Healing Homes',
+  description: 'Become a founding family at El Refugio, or talk with Nathaniel on a 20 minute call.',
 };
 
 export default async function ContactPage({ params }: { params: Promise<{ locale: string }> }) {

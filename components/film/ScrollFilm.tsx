@@ -19,14 +19,13 @@ const CHAPTERS: Chapter[] = [
   { at: [0, 5], title: 'A place to feel human again.', sub: '12 homes above Lake Chapala, near Guadalajara, Mexico.', still: 'lake' },
   { at: [5, 17], title: "I'm Nathaniel.", sub: 'I build homes here at Lake Chapala.', still: 'nathaniel' },
   { at: [17, 30], title: 'Built by hand, by master masons.', sub: 'Watch every step from home. Your money moves only when each step is done.', still: 'build', concept: true },
-  { at: [30, 35], title: 'Thick earth walls.', sub: 'Cool in May. Warm in January.', still: 'lane' },
-  { at: [35, 40], title: '12 homes. One garden. One long table.', sub: 'A village small enough to know every name.', still: 'village' },
+  { at: [30, 40], title: 'Thick earth walls.', sub: 'Cool in May. Warm in January.', still: 'lane' },
   { at: [40, 50], title: 'Your own water.', sub: 'Rain from your roof, cleaned for drinking and stored under your home.', still: 'storm' },
   { at: [50, 55], title: 'Your own food. Your own power.', sub: "Our gardener does the hard work. Solar keeps your lights on when the town's go out.", still: 'garden' },
   { at: [55, 65], title: 'Every age is welcome.', sub: 'Grandparents on the porch. Kids on the path. Neighbors who know your name.', still: 'dusk' },
-  { at: [65, 72], title: 'Picked at 5. On the table at 7.', still: 'table' },
-  { at: [72, 81.5], title: "More stars than you've seen in years.", still: 'fire' },
-  { at: [81.5, 85], title: '12 founding families. One long table.', sub: 'Finished homes from $321,000, land included. Founding families pick their lots first, at the founding price.', still: 'night' },
+  { at: [65, 74], title: 'Picked at 5. On the table at 7.', still: 'table' },
+  { at: [74, 82.5], title: "More stars than you've seen in years.", still: 'fire' },
+  { at: [82.5, 85], title: '12 founding families. One long table.', sub: 'Finished homes from $321,000, land included. Founding families pick their lots first.', still: 'night' },
 ];
 const DURATION = 85;
 
@@ -86,11 +85,14 @@ export function ScrollFilm() {
       const at = (target * DURATION) / len;
       el.style.setProperty('--film', String(p));
       el.classList.toggle('in', el.getBoundingClientRect().top < window.innerHeight * 0.5);
-      el.classList.toggle('ask', p > 0.08 && p < 0.86);
       let idx = 0;
       CHAPTERS.forEach((c, i) => {
         if (at >= c.at[0]) idx = i;
       });
+      // The sticky join button shows through the film, hides while the last
+      // screen's own buttons are up, and comes back once the film is past.
+      const past = el.getBoundingClientRect().bottom < window.innerHeight * 0.9;
+      el.classList.toggle('ask', past || (p > 0.08 && idx < CHAPTERS.length - 1));
       if (idx !== shown) {
         shown = idx;
         caps.forEach((c, i) => c.classList.toggle('on', i === idx));
@@ -169,7 +171,7 @@ export function ScrollFilm() {
             <Link href="/en/how-it-works">How it works</Link>
             <Link href="/en/my-story">My story</Link>
             <Link href="/en/contact?topic=call" className="sf-call">
-              Book a call
+              Talk with Nathaniel
             </Link>
           </nav>
         </header>

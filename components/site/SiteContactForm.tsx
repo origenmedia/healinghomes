@@ -8,26 +8,30 @@ type Status = 'idle' | 'sending' | 'sent' | 'error';
 const TOPICS: { id: Topic; label: string; prefix: string }[] = [
   { id: 'list', label: 'Become a founding family', prefix: 'Founding families list' },
   { id: 'call', label: 'Talk with Nathaniel (20 minute call)', prefix: 'Book a 20 minute call' },
-  { id: 'invest', label: 'I am thinking about investing', prefix: 'Investor enquiry' },
+  { id: 'invest', label: 'Talk about investing', prefix: 'Investor enquiry' },
   { id: 'question', label: 'Just a question', prefix: 'Question' },
 ];
 
 // The page head and intro change with the topic. They live in the static page
 // HTML (lib/site/pages/contact.ts) as #cf-head and #cf-lede.
-const HEADS: Record<Topic, { head: string; lede: string }> = {
+const HEADS: Record<Topic, { eyebrow: string; head: string; lede: string }> = {
   list: {
+    eyebrow: 'Founding families',
     head: 'Become a founding family',
     lede: 'Be one of the first 12. Nathaniel reads every message and writes back within a day.',
   },
   call: {
+    eyebrow: 'A 20 minute call',
     head: 'Talk with Nathaniel',
     lede: 'Tell us when suits you. Nathaniel writes back within a day with times for a 20 minute call.',
   },
   invest: {
+    eyebrow: 'Investors',
     head: 'Thinking about investing?',
     lede: "Tell Nathaniel a little about what you're looking for, and he'll set up a call.",
   },
   question: {
+    eyebrow: 'Questions',
     head: "Let's talk.",
     lede: 'Ask anything. Nathaniel reads every message himself and writes back within a day.',
   },
@@ -40,7 +44,7 @@ const PACKET = 'https://go.healinghomes.mx/el-refugio-founding/';
 
 const THANKS: Record<Exclude<Topic, 'list'>, string> = {
   call: 'Thank you. Nathaniel will write back within a day with a few times for your call.',
-  invest: 'Thank you. Nathaniel will write back within a day to set up a call.',
+  invest: 'Thank you. Nathaniel will write to you within a day to set up a call.',
   question: 'Thank you. Nathaniel will write back within a day.',
 };
 
@@ -64,6 +68,8 @@ export function SiteContactForm() {
 
   // Keep the page head and intro in step with the chosen topic.
   useEffect(() => {
+    const e = document.getElementById('cf-eyebrow');
+    if (e) e.textContent = HEADS[topic].eyebrow;
     const h = document.getElementById('cf-head');
     const l = document.getElementById('cf-lede');
     if (h) h.textContent = HEADS[topic].head;
@@ -90,7 +96,7 @@ export function SiteContactForm() {
     // The API stores one message text, so the extra answers ride inside it.
     const prefix = TOPICS.find((x) => x.id === topic)!.prefix;
     const lines = [`[${prefix}]`];
-    if (whatsapp.trim()) lines.push(`WhatsApp: ${whatsapp.trim()}`);
+    if (topic === 'list' && whatsapp.trim()) lines.push(`WhatsApp: ${whatsapp.trim()}`);
     if (topic === 'list') {
       if (home) lines.push(`Home: ${home}`);
       if (when) lines.push(`Move: ${when}`);
@@ -155,12 +161,12 @@ export function SiteContactForm() {
         <span>Your email</span>
         <input id="cf-email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required autoComplete="email" />
       </label>
-      <label className="cf-field" htmlFor="cf-wa">
-        <span>WhatsApp (optional)</span>
-        <input id="cf-wa" type="tel" value={whatsapp} onChange={(e) => setWhatsapp(e.target.value)} autoComplete="tel" />
-      </label>
       {topic === 'list' && (
         <>
+          <label className="cf-field" htmlFor="cf-wa">
+            <span>WhatsApp (optional)</span>
+            <input id="cf-wa" type="tel" value={whatsapp} onChange={(e) => setWhatsapp(e.target.value)} autoComplete="tel" />
+          </label>
           <fieldset className="cf-topics">
             <legend>Which home calls to you?</legend>
             {HOMES.map((h) => (

@@ -43,7 +43,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               </Link>
               <Link href="/en/how-it-works">
                 <b>How it works</b>
-                <span>A bank trust holds your money. You pay as it is built.</span>
+                <span>You pay in steps as your home is built, and watch every step from home.</span>
               </Link>
               <Link href="/en/my-story">
                 <b>My story</b>
