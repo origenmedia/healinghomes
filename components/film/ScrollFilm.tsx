@@ -10,26 +10,29 @@ import { useEffect, useRef, useState } from 'react';
 
 type Chapter = { at: [number, number]; title: string; sub?: string; still: string; concept?: boolean };
 
-// Times are seconds into the film. Each leg is 5 seconds. The film opens on the
-// lake at dawn, flies into the mist, finds Nathaniel at his plan table, then one
-// home's lines become stakes on the ground and the build runs until the wall
-// becomes the finished street wall and door. From the door on: the home, rain to
-// glass, the garden, the long table, the fire and the stars.
+// Times are seconds into the film, measured from the built file. The film opens
+// on a city crowd bowed over phones, a storm cuts the power, and a gold line in
+// the dark becomes the lake at dawn. Then Nathaniel at his plan table, the build,
+// the app, the finished wall and door, the home, rain to glass, the garden, the
+// long table, the fire and the stars.
 const CHAPTERS: Chapter[] = [
-  { at: [0, 5.1], title: 'A place to feel human again.', sub: '12 homes above Lake Chapala, near Guadalajara, Mexico.', still: 'lake' },
-  { at: [5.1, 17], title: "I'm Nathaniel.", sub: 'I build homes in Mexico.', still: 'nathaniel' },
-  { at: [17, 31], title: 'Your home, built by hand.', still: 'build', concept: true },
-  { at: [31, 42], title: 'Your new home, on your phone.', sub: 'You pay in steps as your home is built, and watch every step from home.', still: 'app', concept: true },
-  { at: [42, 48.75], title: 'Thick earth walls.', sub: 'Cool on hot days. Warm on cold nights.', still: 'lane' },
-  { at: [48.75, 58.9], title: 'Your own water.', sub: 'Rain from your roof, cleaned for drinking and stored under your home.', still: 'storm' },
-  { at: [58.9, 64], title: 'Your own food. Your own power.', sub: 'A gardener does the hard work. Solar keeps the lights on.', still: 'garden' },
-  { at: [64, 74.2], title: 'Every age is welcome.', sub: 'Grandparents, parents and kids. Neighbors who know your name.', still: 'dusk' },
-  { at: [74.2, 83.5], title: 'Dinner from the garden, with your neighbors.', still: 'table' },
-  { at: [83.5, 92], title: 'A sky full of stars.', still: 'fire' },
-  { at: [92, 94.5], title: 'Be one of the first 12 families.', sub: 'Finished homes from $321,000, land included. Pick your lot before anyone else.', still: 'night' },
+  { at: [0, 1.2], title: 'Life is speeding up.', still: 'rush' },
+  { at: [1.2, 3.93], title: 'The future is unpredictable.', still: 'citystorm' },
+  { at: [3.93, 8.19], title: "What's your plan?", still: 'answer' },
+  { at: [8.19, 13.29], title: 'A place to feel human again.', sub: 'El Refugio: 12 homes above Lake Chapala, near Guadalajara, Mexico.', still: 'lake' },
+  { at: [13.29, 25.19], title: "I'm Nathaniel.", sub: 'I build homes in Mexico.', still: 'nathaniel' },
+  { at: [25.19, 39.19], title: 'Your home, built by hand.', still: 'build', concept: true },
+  { at: [39.19, 50.19], title: 'Your new home, on your phone.', sub: 'You pay in steps as your home is built, and watch every step from home.', still: 'app', concept: true },
+  { at: [50.19, 56.94], title: 'Thick earth walls.', sub: 'Cool on hot days. Warm on cold nights.', still: 'lane' },
+  { at: [56.94, 67.09], title: 'Your own water.', sub: 'Rain from your roof, cleaned for drinking and stored under your home.', still: 'storm' },
+  { at: [67.09, 72.19], title: 'Your own food. Your own power.', sub: 'A gardener does the hard work. Solar keeps the lights on.', still: 'garden' },
+  { at: [72.19, 84.86], title: 'Every age is welcome.', sub: 'Grandparents, parents and kids. Neighbors who know your name.', still: 'dusk' },
+  { at: [84.86, 90.24], title: 'Dinner from the garden, with your neighbors.', still: 'table' },
+  { at: [90.24, 100.19], title: 'A sky full of stars.', still: 'fire' },
+  { at: [100.19, 102.7], title: 'Be one of the first 12 families.', sub: 'Finished homes from $321,000, land included. Pick your lot before anyone else.', still: 'night' },
 ];
 // Seconds, matching the film file. Chapter times are scaled to the real length.
-const DURATION = 94.5;
+const DURATION = 102.7;
 
 export function ScrollFilm() {
   const root = useRef<HTMLDivElement>(null);
