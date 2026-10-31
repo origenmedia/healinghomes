@@ -37,6 +37,7 @@
 .sf-cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
 .sf-cta a { font: 600 15px/1 var(--body); padding: 16px 20px; text-decoration: none; text-shadow: none; }
 .sf .sf-cta .main { background: var(--paper); color: var(--ink); }
+.sf .sf-cta .inv { flex-basis: 100%; padding: 6px 0 0; color: var(--on-image-2); font-weight: 500; text-decoration: underline; text-underline-offset: 3px; }
 .sf .sf-cta .quiet { color: var(--on-image); border: 1px solid rgba(255, 255, 255, 0.85); }
 
 .sf-line { position: absolute; z-index: 4; left: 0; bottom: 0; height: 3px; width: calc(var(--film, 0) * 100%); background: var(--paper); opacity: 0.9; }

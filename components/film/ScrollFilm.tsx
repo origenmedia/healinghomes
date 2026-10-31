@@ -16,17 +16,17 @@ type Chapter = { at: [number, number]; title: string; sub?: string; still: strin
 // becomes the finished street wall and door. From the door on: the home, rain to
 // glass, the garden, the long table, the fire and the stars.
 const CHAPTERS: Chapter[] = [
-  { at: [0, 5], title: 'A place to feel human again.', sub: '12 homes above Lake Chapala, Mexico.', still: 'lake' },
+  { at: [0, 5], title: 'A place to feel human again.', sub: '12 homes above Lake Chapala, near Guadalajara, Mexico.', still: 'lake' },
   { at: [5, 17], title: "I'm Nathaniel.", sub: 'I build homes here at Lake Chapala.', still: 'nathaniel' },
-  { at: [17, 30], title: 'Built by hand, by master masons.', still: 'build', concept: true },
+  { at: [17, 30], title: 'Built by hand, by master masons.', sub: 'Watch every step from home. Your money moves only when each step is done.', still: 'build', concept: true },
   { at: [30, 35], title: 'Thick earth walls.', sub: 'Cool in May. Warm in January.', still: 'lane' },
   { at: [35, 40], title: '12 homes. One garden. One long table.', sub: 'A village small enough to know every name.', still: 'village' },
   { at: [40, 50], title: 'Your own water.', sub: 'Rain from your roof, cleaned for drinking and stored under your home.', still: 'storm' },
-  { at: [50, 55], title: 'Your own food. Your own power.', sub: 'Pick dinner from the garden. Solar and a battery on every home.', still: 'garden' },
-  { at: [55, 65], title: 'Every age is welcome.', sub: 'Couples, kids and grandparents. Neighbors by name.', still: 'dusk' },
+  { at: [50, 55], title: 'Your own food. Your own power.', sub: "Our gardener does the hard work. Solar keeps your lights on when the town's go out.", still: 'garden' },
+  { at: [55, 65], title: 'Every age is welcome.', sub: 'Grandparents on the porch. Kids on the path. Neighbors who know your name.', still: 'dusk' },
   { at: [65, 72], title: 'Picked at 5. On the table at 7.', still: 'table' },
   { at: [72, 81.5], title: "More stars than you've seen in years.", still: 'fire' },
-  { at: [81.5, 85], title: '12 founding families. One long table.', sub: 'Homes from $321,000. Founding families choose their lot first.', still: 'night' },
+  { at: [81.5, 85], title: '12 founding families. One long table.', sub: 'Finished homes from $321,000, land included. Founding families pick their lots first, at the founding price.', still: 'night' },
 ];
 const DURATION = 85;
 
@@ -187,6 +187,9 @@ export function ScrollFilm() {
                   </Link>
                   <Link href="/en/contact?topic=call" className="quiet">
                     Talk with Nathaniel
+                  </Link>
+                  <Link href="/en/contact?topic=invest" className="inv">
+                    Investing? Let&apos;s talk.
                   </Link>
                 </div>
               )}

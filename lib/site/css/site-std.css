@@ -437,6 +437,9 @@ ol.road span { font-size: 14.5px; line-height: 1.4; color: var(--ink-2); }
 .cf-field input, .cf-field textarea { font: 16px/1.5 var(--body); color: var(--ink); background: var(--white, #fff); border: 1px solid var(--line); padding: 13px 14px; width: 100%; }
 .cf-field input:focus, .cf-field textarea:focus { outline: 2px solid var(--lake); outline-offset: 0; border-color: var(--lake); }
 .cf .btn { justify-self: start; cursor: pointer; }
+.cf-check { align-items: flex-start; }
+.cf-thanks p { margin: 0 0 18px; }
+.cf-thanks .btn { font: 600 15px/1 var(--body); }
 .cf .btn:disabled { opacity: 0.6; cursor: wait; }
 .cf-error { color: var(--warn, var(--ink)); }
 .cf-thanks { margin-top: 36px; font: 400 clamp(22px, 2.4vw, 28px)/1.4 var(--display); max-width: 34ch; }
