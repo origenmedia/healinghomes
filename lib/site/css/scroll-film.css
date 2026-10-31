@@ -18,22 +18,22 @@
 .sf-stills picture { opacity: 0; transition: opacity 0.6s ease; }
 .sf-stills picture.on { opacity: 1; }
 .sf.playing .sf-stills { opacity: 0; transition: opacity 0.4s ease; }
-.sf-shade { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(to bottom, rgba(10, 12, 16, 0.45), rgba(10, 12, 16, 0) 22%, rgba(10, 12, 16, 0) 40%, rgba(10, 12, 16, 0.55) 68%, rgba(10, 12, 16, 0.78)); }
+.sf-shade { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(to bottom, rgba(10, 12, 16, 0.6), rgba(10, 12, 16, 0) 24%, rgba(10, 12, 16, 0) 40%, rgba(10, 12, 16, 0.55) 68%, rgba(10, 12, 16, 0.78)); }
 
-.sf-top { position: absolute; z-index: 5; top: 0; left: 0; right: 0; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: calc(18px + env(safe-area-inset-top, 0px)) max(22px, env(safe-area-inset-right, 0px)) 0 max(22px, env(safe-area-inset-left, 0px)); }
+.sf-top { position: absolute; z-index: 5; top: 0; left: 0; right: 0; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: calc(18px + env(safe-area-inset-top, 0px)) max(22px, env(safe-area-inset-right, 0px)) 0 max(22px, env(safe-area-inset-left, 0px)); text-shadow: 0 1px 12px rgba(0, 0, 0, 0.5); }
 .sf .sf-mark { display: grid; color: var(--on-image); text-decoration: none; font: 400 22px/1.1 var(--display); }
 .sf-mark small { font: 600 9px/1.6 var(--body); letter-spacing: 0.22em; opacity: 0.85; }
 .sf-top nav { display: flex; align-items: center; gap: 22px; }
 .sf .sf-top nav a { color: var(--on-image); text-decoration: none; font: 500 14px/1 var(--body); }
 .sf .sf-top nav a.sf-call { border: 1px solid rgba(255, 255, 255, 0.8); padding: 10px 14px; }
-@media (max-width: 760px) { .sf-top nav a:not(.sf-call) { display: none; } .sf-cap p { font-size: 15px; max-width: none; } }
+@media (max-width: 760px) { .sf-top nav a:not(.sf-call) { display: none; } }
 
 .sf-caps { position: absolute; z-index: 4; left: 0; right: 0; bottom: 0; padding: 0 max(24px, env(safe-area-inset-right, 0px)) calc(96px + env(safe-area-inset-bottom, 0px)) max(26px, env(safe-area-inset-left, 0px)); display: grid; pointer-events: none; }
 .sf-cap { grid-area: 1 / 1; align-self: end; display: grid; gap: 10px; max-width: 760px; opacity: 0; transform: translateY(10px); transition: opacity 0.5s ease, transform 0.5s ease; text-shadow: 0 1px 18px rgba(0, 0, 0, 0.45); }
 .sf-cap.on { opacity: 1; transform: none; pointer-events: auto; }
 .sf-cap h2 { margin: 0; color: var(--on-image); font: 400 clamp(32px, 5.4vw, 72px)/1.05 var(--display); letter-spacing: -0.01em; text-wrap: balance; text-shadow: 0 1px 24px rgba(0, 0, 0, 0.35); }
-.sf-tag { justify-self: start; font: 600 11px/1 var(--body); letter-spacing: 0.18em; text-transform: uppercase; color: var(--on-image); border: 1px solid rgba(255, 255, 255, 0.7); padding: 6px 8px; }
 .sf-cap p { margin: 0; color: var(--on-image-2); font: 400 clamp(16px, 1.4vw, 20px)/1.45 var(--body); max-width: 40ch; }
+@media (max-width: 760px) { .sf-cap p { font-size: 17px; color: var(--on-image); max-width: none; } }
 .sf-cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
 .sf-cta a { font: 600 15px/1 var(--body); padding: 16px 20px; text-decoration: none; text-shadow: none; }
 .sf .sf-cta .main { background: var(--paper); color: var(--ink); }
@@ -50,14 +50,43 @@
 .sf.is-still .sf-stills { opacity: 1; }
 @media (prefers-reduced-motion: reduce) { .sf-cap, .sf-stills picture { transition: none; } }
 
-/* After the film: the next steps, on paper. */
-.sf-after { background: var(--paper, #F5F2EB); color: #1A1F2A; padding-block: clamp(64px, 9vw, 120px); }
-.sf-after .wrap { max-width: 1100px; margin: 0 auto; padding-left: max(22px, env(safe-area-inset-left, 0px)); padding-right: max(22px, env(safe-area-inset-right, 0px)); display: grid; gap: 28px; }
+/* After the film: the night carries on, with the next steps and the same ask. */
+.sf-after { background: #0E1116; color: #F5F2EB; padding-block: clamp(56px, 8vw, 110px) clamp(72px, 9vw, 120px); }
+.sf-after .wrap { max-width: 1180px; margin: 0 auto; padding-left: var(--gl); padding-right: var(--gr); display: grid; gap: 28px; }
 .sf-after h2 { margin: 0; font: 300 clamp(32px, 4.6vw, 56px)/1.08 var(--font-fraunces), Georgia, serif; text-wrap: balance; }
 .sf-after .links { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 28px; }
 @media (max-width: 760px) { .sf-after .links { grid-template-columns: minmax(0, 1fr); } }
-.sf-after .links a { display: grid; gap: 6px; padding: 20px 0; border-top: 1px solid #D8D3C5; color: #1A1F2A; text-decoration: none; }
+.sf-after .links a { display: grid; gap: 6px; padding: 20px 0; border-top: 1px solid rgba(245, 242, 235, 0.16); color: #F5F2EB; text-decoration: none; }
+.sf-after .links a:hover b, .sf-after .links a:focus-visible b { text-decoration: underline; text-underline-offset: 5px; }
 .sf-after .links b { font: 400 24px/1.2 var(--font-fraunces), Georgia, serif; }
-.sf-after .links span { color: #565B62; font: 400 16px/1.45 var(--font-inter), system-ui, sans-serif; }
-.sf-after .inv { color: #565B62; font: 400 16px/1.5 var(--font-inter), system-ui, sans-serif; }
-.sf-after .inv a { color: #3B6378; font-weight: 600; }
+.sf-after .links span { color: #AEB3BA; font: 400 16px/1.45 var(--font-inter), system-ui, sans-serif; }
+.sf-after .next { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 28px; margin-top: 10px; }
+.sf-after .next .btn { font-size: 16px; padding: 18px 26px; }
+.sf-after .next .call { color: #F5F2EB; font: 600 16px/1 var(--body); text-decoration: underline; text-underline-offset: 5px; padding: 14px 0; }
+.sf-after .inv { color: #AEB3BA; font: 400 16px/1.5 var(--font-inter), system-ui, sans-serif; }
+.sf-after .inv a { color: #F5F2EB; font-weight: 600; display: inline-block; padding: 8px 0; }
+@media (max-width: 760px) { .sf-after .next { display: grid; justify-items: start; gap: 8px; } .sf-after .next .btn { width: 100%; text-align: center; } }
+
+/* Concept label: one quiet line under the logo while concept pictures are up. */
+.sf-concept { position: absolute; z-index: 5; top: calc(66px + env(safe-area-inset-top, 0px)); left: max(22px, env(safe-area-inset-left, 0px)); font: 600 10px/1 var(--body); letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255, 255, 255, 0.78); text-shadow: 0 1px 10px rgba(0, 0, 0, 0.55); opacity: 0; transition: opacity 0.4s ease; pointer-events: none; }
+.sf.concept .sf-concept { opacity: 1; }
+
+/* The ending: the stars dim a little and the last screen becomes a centered
+   card, so the call to action reads as its own page. */
+.sf-endshade { position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity 0.6s ease; background: radial-gradient(ellipse at 50% 55%, rgba(14, 17, 22, 0.35), rgba(14, 17, 22, 0.75) 70%), linear-gradient(to bottom, rgba(14, 17, 22, 0) 70%, #0E1116); }
+.sf.ending .sf-endshade { opacity: 1; }
+.sf.ending .sf-line { opacity: 0; transition: opacity 0.4s ease; }
+.sf-caps { top: 0; }
+.sf-cap.end { align-self: center; justify-self: center; justify-items: center; text-align: center; max-width: 680px; padding-top: 40px; }
+.sf-cap.end h2 { font-size: clamp(38px, 6vw, 76px); }
+.sf-cap.end p { max-width: 34ch; }
+.sf-eyebrow { font: 600 12px/1 var(--body); letter-spacing: 0.22em; text-transform: uppercase; color: var(--on-image-2); }
+.sf-cap.end .sf-cta { justify-content: center; gap: 12px; margin-top: 14px; }
+.sf-cap.end .sf-cta a { font-size: 16px; padding: 18px 26px; }
+.sf .sf-cap.end .sf-cta .inv { padding: 14px 0 4px; text-align: center; }
+@media (max-width: 760px) {
+  .sf-cap.end { padding-top: 0; }
+  .sf-cap.end .sf-cta { flex-direction: column; flex-wrap: nowrap; align-items: stretch; width: min(100%, 340px); }
+  .sf-cap.end .sf-cta a { text-align: center; }
+  .sf .sf-cap.end .sf-cta .inv { flex-basis: auto; }
+}
