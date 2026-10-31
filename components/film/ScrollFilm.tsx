@@ -17,8 +17,8 @@ type Chapter = { at: [number, number]; title: string; sub?: string; still: strin
 // glass, the garden, the long table, the fire and the stars.
 const CHAPTERS: Chapter[] = [
   { at: [0, 5], title: 'A place to feel human again.', sub: '12 homes above Lake Chapala, near Guadalajara, Mexico.', still: 'lake' },
-  { at: [5, 17], title: "I'm Nathaniel.", sub: 'I build homes here at Lake Chapala.', still: 'nathaniel' },
-  { at: [17, 30], title: 'Built by hand, by master masons.', sub: 'Watch every step from home. Your money moves only when each step is done.', still: 'build', concept: true },
+  { at: [5, 17], title: "I'm Nathaniel.", sub: 'I build homes at Lake Chapala, with respected local architects.', still: 'nathaniel' },
+  { at: [17, 30], title: 'Built by hand, by master masons.', sub: 'You pay in steps as your home is built, and watch every step from home.', still: 'build', concept: true },
   { at: [30, 40], title: 'Thick earth walls.', sub: 'Cool in May. Warm in January.', still: 'lane' },
   { at: [40, 50], title: 'Your own water.', sub: 'Rain from your roof, cleaned for drinking and stored under your home.', still: 'storm' },
   { at: [50, 55], title: 'Your own food. Your own power.', sub: "Our gardener does the hard work. Solar keeps your lights on when the town's go out.", still: 'garden' },

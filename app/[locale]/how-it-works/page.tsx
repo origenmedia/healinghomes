@@ -6,7 +6,7 @@ import '@/lib/site/css/site-std.css';
 
 export const metadata: Metadata = {
   title: 'How it works · Healing Homes',
-  description: 'A bank trust, payments one stage at a time, and every photo and receipt in our app. How your money stays safe from far away.',
+  description: 'You pay in steps as your home is built, and watch every step from home in our app, with every photo and receipt.',
 };
 
 export default async function Page({ params }: { params: Promise<{ locale: string }> }) {

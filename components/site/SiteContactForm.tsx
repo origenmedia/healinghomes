@@ -38,7 +38,7 @@ const HEADS: Record<Topic, { eyebrow: string; head: string; lede: string }> = {
 };
 
 const HOMES = ['Casa Semilla', 'Casa Raíz', 'Casa Tierra', 'Not sure yet'];
-const WHEN = ['This year', 'In 1 to 2 years', 'Just dreaming'];
+const WHEN = ['Soon', 'In the next few years', 'Just dreaming'];
 
 const PACKET = 'https://go.healinghomes.mx/el-refugio-founding/';
 
@@ -99,7 +99,7 @@ export function SiteContactForm() {
     if (topic === 'list' && whatsapp.trim()) lines.push(`WhatsApp: ${whatsapp.trim()}`);
     if (topic === 'list') {
       if (home) lines.push(`Home: ${home}`);
-      if (when) lines.push(`Move: ${when}`);
+      if (when) lines.push(`Hoping to change: ${when}`);
     }
     if (investing) lines.push('Also interested in investing: yes');
     lines.push('', message.trim().slice(0, 4000) || '(no message)');
@@ -177,7 +177,7 @@ export function SiteContactForm() {
             ))}
           </fieldset>
           <fieldset className="cf-topics">
-            <legend>When might you move?</legend>
+            <legend>When are you hoping to make a change?</legend>
             {WHEN.map((w) => (
               <label key={w} className="cf-topic">
                 <input type="radio" name="when" value={w} checked={when === w} onChange={() => setWhen(w)} />
