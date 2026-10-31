@@ -10,21 +10,22 @@ import { useEffect, useRef, useState } from 'react';
 
 type Chapter = { at: [number, number]; title: string; sub?: string; still: string };
 
-// Times are seconds into the film. Each leg is 5 seconds; the water chapter is two
+// Times are seconds into the film. It opens on Nathaniel at his plan table; the
+// plans glow gold and unfold into the village. Each leg is 5 seconds; the water chapter is two
 // legs (the storm, then the glass at the tap). The ending runs from the fire up
 // into the stars; the call to action sits over the stars.
 const CHAPTERS: Chapter[] = [
-  { at: [0, 5], title: 'A place to feel human again.', sub: '12 homes above Lake Chapala, Mexico.', still: 'lake' },
-  { at: [5, 10], title: '12 homes. One garden. One long table.', sub: 'A village small enough to know every name.', still: 'village' },
-  { at: [10, 15], title: 'Walls from the earth they stand on.', sub: 'Cool in May. Warm in January.', still: 'lane' },
-  { at: [15, 25], title: 'Your own water.', sub: 'Rain from your roof, cleaned for drinking and stored under your home.', still: 'storm' },
-  { at: [25, 30], title: 'Your own food. Your own power.', sub: 'Pick dinner from the garden. Solar and a battery on every home.', still: 'garden' },
-  { at: [30, 35], title: 'Every age is welcome.', sub: 'Couples, kids and grandparents. Neighbors by name.', still: 'dusk' },
-  { at: [35, 42], title: 'Picked at 5. On the table at 7.', still: 'table' },
-  { at: [42, 47.5], title: "More stars than you've seen in years.", still: 'fire' },
-  { at: [47.5, 50], title: '12 founding families. One long table.', sub: 'Homes from $321,000. Founding families choose their lot first.', still: 'night' },
+  { at: [0, 5], title: 'A place to feel human again.', sub: '12 homes above Lake Chapala, Mexico.', still: 'nathaniel' },
+  { at: [5, 15], title: '12 homes. One garden. One long table.', sub: 'A village small enough to know every name.', still: 'village' },
+  { at: [15, 20], title: 'Walls from the earth they stand on.', sub: 'Cool in May. Warm in January.', still: 'lane' },
+  { at: [20, 30], title: 'Your own water.', sub: 'Rain from your roof, cleaned for drinking and stored under your home.', still: 'storm' },
+  { at: [30, 35], title: 'Your own food. Your own power.', sub: 'Pick dinner from the garden. Solar and a battery on every home.', still: 'garden' },
+  { at: [35, 40], title: 'Every age is welcome.', sub: 'Couples, kids and grandparents. Neighbors by name.', still: 'dusk' },
+  { at: [40, 47], title: 'Picked at 5. On the table at 7.', still: 'table' },
+  { at: [47, 52.5], title: "More stars than you've seen in years.", still: 'fire' },
+  { at: [52.5, 55], title: '12 founding families. One long table.', sub: 'Homes from $321,000. Founding families choose their lot first.', still: 'night' },
 ];
-const DURATION = 50;
+const DURATION = 55;
 
 export function ScrollFilm() {
   const root = useRef<HTMLDivElement>(null);
