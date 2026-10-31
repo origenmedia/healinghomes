@@ -25,15 +25,15 @@ const CHAPTERS: Chapter[] = [
   { at: [38.63, 44.13], title: 'Your home, built by hand.', still: 'build' },
   { at: [44.13, 52.32], title: 'The whole build, on your phone.', sub: 'You pay in steps as your home is built, and watch every step from home.', still: 'app' },
   { at: [52.32, 59.07], title: 'Thick earth walls.', sub: 'Cool on hot days. Warm on cold nights.', still: 'lane' },
-  { at: [59.07, 71.33], title: 'Your own water.', sub: 'Rain from your roof, cleaned for drinking and stored under your home.', still: 'storm' },
-  { at: [71.33, 74.32], title: 'Your own food. Your own power.', sub: 'A gardener does the hard work. Solar keeps the lights on.', still: 'garden' },
-  { at: [74.32, 86.99], title: 'Every age is welcome.', sub: 'Grandparents, parents and kids. Neighbors who know your name.', still: 'dusk' },
-  { at: [86.99, 92.37], title: 'Dinner from the garden, with your neighbors.', still: 'table' },
-  { at: [92.37, 102.32], title: 'A warm fire under a sky full of stars.', still: 'fire' },
-  { at: [102.32, 104.83], title: 'Be one of the first 12 families.', sub: 'Finished homes from US$321,000, land included. Pick your lot before anyone else.', still: 'night', end: true },
+  { at: [59.07, 73.6], title: 'Your own water.', sub: 'Rain from your roof, cleaned for drinking and stored under your home.', still: 'storm' },
+  { at: [73.6, 79.1], title: 'Your own food. Your own power.', sub: 'A gardener does the hard work. Solar keeps the lights on.', still: 'garden' },
+  { at: [79.1, 89.12], title: 'Every age is welcome.', sub: 'Grandparents, parents and kids. Neighbors who know your name.', still: 'dusk' },
+  { at: [89.12, 94.5], title: 'Dinner from the garden, with your neighbors.', still: 'table' },
+  { at: [94.5, 104.45], title: 'A warm fire under a sky full of stars.', still: 'fire' },
+  { at: [104.45, 106.95], title: 'Be one of the first 12 families.', sub: 'Finished homes from US$321,000, land included. Pick your lot before anyone else.', still: 'night', end: true },
 ];
 // Seconds, matching the film file. Chapter times are scaled to the real length.
-const DURATION = 104.83;
+const DURATION = 106.95;
 // From the lake on, every picture is a concept image of homes not built yet.
 const FIRST_CONCEPT = 3;
 // Extra scroll (in svh) that holds the last screen before the page moves on.
