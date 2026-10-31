@@ -74,13 +74,16 @@ export function ScrollFilm() {
     const frame = () => {
       raf = 0;
       const p = progress();
-      target = p * (DURATION - 0.05);
+      // Use the real length of the file; chapter times are scaled to match it.
+      const len = v && v.duration > 0 && Number.isFinite(v.duration) ? v.duration : DURATION;
+      target = p * (len - 0.05);
+      const at = (target * DURATION) / len;
       el.style.setProperty('--film', String(p));
       el.classList.toggle('in', el.getBoundingClientRect().top < window.innerHeight * 0.5);
       el.classList.toggle('ask', p > 0.08 && p < 0.86);
       let idx = 0;
       CHAPTERS.forEach((c, i) => {
-        if (target >= c.at[0]) idx = i;
+        if (at >= c.at[0]) idx = i;
       });
       if (idx !== shown) {
         shown = idx;
