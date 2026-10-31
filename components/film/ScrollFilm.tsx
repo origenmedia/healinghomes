@@ -27,8 +27,8 @@ const CHAPTERS: Chapter[] = [
   { at: [52.32, 59.07], title: 'Thick earth walls.', sub: 'Cool on hot days. Warm on cold nights.', still: 'lane' },
   { at: [59.07, 73.6], title: 'Your own water.', sub: 'Rain from your roof, cleaned for drinking and stored under your home.', still: 'storm' },
   { at: [73.6, 79.1], title: 'Your own food. Your own power.', sub: 'A gardener does the hard work. Solar keeps the lights on.', still: 'garden' },
-  { at: [79.1, 89.12], title: 'Every age is welcome.', sub: 'Grandparents, parents and kids. Neighbors who know your name.', still: 'dusk' },
-  { at: [89.12, 94.5], title: 'Dinner from the garden, with your neighbors.', still: 'table' },
+  { at: [79.1, 89.6], title: 'Every age is welcome.', sub: 'Grandparents, parents and kids. Neighbors who know your name.', still: 'dusk' },
+  { at: [89.6, 94.5], title: 'Dinner from the garden, with your neighbors.', still: 'table' },
   { at: [94.5, 104.45], title: 'A warm fire under a sky full of stars.', still: 'fire' },
   { at: [104.45, 106.95], title: 'Be one of the first 12 families.', sub: 'Finished homes from US$321,000, land included. Pick your lot before anyone else.', still: 'night', end: true },
 ];
