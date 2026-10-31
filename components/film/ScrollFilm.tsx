@@ -11,7 +11,8 @@ import { useEffect, useRef, useState } from 'react';
 type Chapter = { at: [number, number]; title: string; sub?: string; still: string };
 
 // Times are seconds into the film. Each leg is 5 seconds; the water chapter is two
-// legs (the storm, then the glass at the tap).
+// legs (the storm, then the glass at the tap). The ending runs from the fire up
+// into the stars; the call to action sits over the stars.
 const CHAPTERS: Chapter[] = [
   { at: [0, 5], title: 'A place to feel human again.', sub: '12 homes above Lake Chapala, Mexico.', still: 'lake' },
   { at: [5, 10], title: '12 homes. One garden. One long table.', sub: 'A village small enough to know every name.', still: 'village' },
@@ -20,9 +21,10 @@ const CHAPTERS: Chapter[] = [
   { at: [25, 30], title: 'Your own food. Your own power.', sub: 'Pick dinner from the garden. Solar and a battery on every home.', still: 'garden' },
   { at: [30, 35], title: 'Every age is welcome.', sub: 'Couples, kids and grandparents. Neighbors by name.', still: 'dusk' },
   { at: [35, 40], title: 'Picked at 5. On the table at 7.', still: 'table' },
-  { at: [40, 45], title: '12 founding families. One long table.', sub: 'Homes from $321,000. Founding families choose their lot first.', still: 'night' },
+  { at: [40, 46], title: "More stars than you've seen in years.", still: 'fire' },
+  { at: [46, 50], title: '12 founding families. One long table.', sub: 'Homes from $321,000. Founding families choose their lot first.', still: 'night' },
 ];
-const DURATION = 45;
+const DURATION = 50;
 
 export function ScrollFilm() {
   const root = useRef<HTMLDivElement>(null);
