@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   title: 'Healing Homes · A place to feel human again',
   description:
-    '12 homes above Lake Chapala, Mexico, with their own water, food and power. Every age is welcome. Founding families choose first.',
+    '12 homes above Lake Chapala, Mexico, with their own water, food and power. Every age is welcome. Finished homes from $321,000, land included.',
 };
 
 // The home page is the film. Details live on the inner pages.

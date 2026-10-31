@@ -596,3 +596,23 @@ footer .lockup .s { margin-top: 6px; }
 .archsvg.plan-home svg { max-width: 460px; margin: 0 auto; }
 
 }
+
+/* Phones: plan sheets swipe side to side; facts two per row. */
+@media (max-width: 760px) {
+  .hh-refugio .sheets { display: flex; grid-template-columns: none; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 10px; margin-top: 28px; }
+  .hh-refugio .sheets > .sheet { flex: 0 0 88%; scroll-snap-align: start; min-width: 0; }
+  .hh-refugio .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hh-refugio .facts > div { padding-right: 12px; }
+  .hh-refugio .facts b { font-size: 19px; }
+  .hh-refugio .facts span { font-size: 14px; }
+}
+
+/* Computers: the two pictures side by side; the three plan sheets in a row. */
+@media (min-width: 1000px) {
+  .hh-refugio #look .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
+  .hh-refugio .sheets { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+}
+
+/* Sheet titles get their own line so the labels never crowd them. */
+.hh-refugio .sheet-head { grid-template-columns: minmax(0, 1fr); align-items: start; }
+.hh-refugio .sheet-head .sheet-meta { justify-content: flex-start; }

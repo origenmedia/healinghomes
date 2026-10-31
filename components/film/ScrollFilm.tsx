@@ -17,16 +17,16 @@ type Chapter = { at: [number, number]; title: string; sub?: string; still: strin
 // glass, the garden, the long table, the fire and the stars.
 const CHAPTERS: Chapter[] = [
   { at: [0, 5.1], title: 'A place to feel human again.', sub: '12 homes above Lake Chapala, near Guadalajara, Mexico.', still: 'lake' },
-  { at: [5.1, 17], title: "I'm Nathaniel.", sub: 'I build homes at Lake Chapala, with respected local architects.', still: 'nathaniel' },
-  { at: [17, 31], title: 'Built by hand, by master masons.', still: 'build', concept: true },
-  { at: [31, 42], title: 'Your build, on your phone.', sub: 'You pay in steps as your home is built, and watch every step from home.', still: 'app', concept: true },
-  { at: [42, 48.75], title: 'Thick earth walls.', sub: 'Cool in May. Warm in January.', still: 'lane' },
+  { at: [5.1, 17], title: "I'm Nathaniel.", sub: 'I build homes in Mexico.', still: 'nathaniel' },
+  { at: [17, 31], title: 'Your home, built by hand.', still: 'build', concept: true },
+  { at: [31, 42], title: 'Your new home, on your phone.', sub: 'You pay in steps as your home is built, and watch every step from home.', still: 'app', concept: true },
+  { at: [42, 48.75], title: 'Thick earth walls.', sub: 'Cool on hot days. Warm on cold nights.', still: 'lane' },
   { at: [48.75, 58.9], title: 'Your own water.', sub: 'Rain from your roof, cleaned for drinking and stored under your home.', still: 'storm' },
-  { at: [58.9, 64], title: 'Your own food. Your own power.', sub: "Our gardener does the hard work. Solar keeps your lights on when the town's go out.", still: 'garden' },
-  { at: [64, 74.2], title: 'Every age is welcome.', sub: 'Grandparents on the porch. Kids on the path. Neighbors who know your name.', still: 'dusk' },
-  { at: [74.2, 83.5], title: 'Picked at 5. On the table at 7.', still: 'table' },
-  { at: [83.5, 92], title: "More stars than you've seen in years.", still: 'fire' },
-  { at: [92, 94.5], title: '12 founding families. One long table.', sub: 'Finished homes from $321,000, land included. Founding families pick their lots first.', still: 'night' },
+  { at: [58.9, 64], title: 'Your own food. Your own power.', sub: 'A gardener does the hard work. Solar keeps the lights on.', still: 'garden' },
+  { at: [64, 74.2], title: 'Every age is welcome.', sub: 'Grandparents, parents and kids. Neighbors who know your name.', still: 'dusk' },
+  { at: [74.2, 83.5], title: 'Dinner from the garden, with your neighbors.', still: 'table' },
+  { at: [83.5, 92], title: 'A sky full of stars.', still: 'fire' },
+  { at: [92, 94.5], title: 'Be one of the first 12 families.', sub: 'Finished homes from $321,000, land included. Pick your lot before anyone else.', still: 'night' },
 ];
 // Seconds, matching the film file. Chapter times are scaled to the real length.
 const DURATION = 94.5;
