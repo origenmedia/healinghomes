@@ -10,18 +10,19 @@ import { useEffect, useRef, useState } from 'react';
 
 type Chapter = { at: [number, number]; title: string; sub?: string; still: string };
 
-// Times are seconds into the film. Each chapter is one 5 second leg.
+// Times are seconds into the film. Each leg is 5 seconds; the water chapter is two
+// legs (the storm, then the glass at the tap).
 const CHAPTERS: Chapter[] = [
   { at: [0, 5], title: 'A place to feel human again.', sub: '12 homes above Lake Chapala, Mexico.', still: 'lake' },
   { at: [5, 10], title: '12 homes. One garden. One long table.', sub: 'A village small enough to know every name.', still: 'village' },
   { at: [10, 15], title: 'Walls from the earth they stand on.', sub: 'Cool in May. Warm in January.', still: 'lane' },
-  { at: [15, 20], title: 'Your own water.', sub: 'Rain from your roof, cleaned for drinking and stored under your home.', still: 'storm' },
-  { at: [20, 25], title: 'Your own food. Your own power.', sub: 'Pick dinner from the garden. Solar and a battery on every home.', still: 'garden' },
-  { at: [25, 30], title: 'Every age is welcome.', sub: 'Couples, kids and grandparents. Neighbors by name.', still: 'dusk' },
-  { at: [30, 35], title: 'Picked at 5. On the table at 7.', still: 'table' },
-  { at: [35, 40], title: '12 founding families. One long table.', sub: 'Homes from $321,000. Founding families choose their lot first.', still: 'night' },
+  { at: [15, 25], title: 'Your own water.', sub: 'Rain from your roof, cleaned for drinking and stored under your home.', still: 'storm' },
+  { at: [25, 30], title: 'Your own food. Your own power.', sub: 'Pick dinner from the garden. Solar and a battery on every home.', still: 'garden' },
+  { at: [30, 35], title: 'Every age is welcome.', sub: 'Couples, kids and grandparents. Neighbors by name.', still: 'dusk' },
+  { at: [35, 40], title: 'Picked at 5. On the table at 7.', still: 'table' },
+  { at: [40, 45], title: '12 founding families. One long table.', sub: 'Homes from $321,000. Founding families choose their lot first.', still: 'night' },
 ];
-const DURATION = 40;
+const DURATION = 45;
 
 export function ScrollFilm() {
   const root = useRef<HTMLDivElement>(null);
@@ -125,7 +126,7 @@ export function ScrollFilm() {
   const kind = tall ? 'tall' : 'wide';
 
   return (
-    <div className={`sf${still ? ' is-still' : ''}`} ref={root} style={{ height: `${CHAPTERS.length * 125}svh` }}>
+    <div className={`sf${still ? ' is-still' : ''}`} ref={root} style={{ height: `${(DURATION / 5) * 125}svh` }}>
       <div className="sf-stage">
         {tall !== null && !still && (
           <video
