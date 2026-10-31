@@ -19,7 +19,7 @@ const CHAPTERS: Chapter[] = [
   { at: [20, 25], title: 'Your own food. Your own power.', sub: 'Pick dinner from the garden. Solar and a battery on every home.', still: 'garden' },
   { at: [25, 30], title: 'Every age is welcome.', sub: 'Couples, kids and grandparents. Neighbors by name.', still: 'dusk' },
   { at: [30, 35], title: 'Picked at 5. On the table at 7.', still: 'table' },
-  { at: [35, 40], title: '12 founding families. One long table.', sub: 'Homes from $336,000. Founding families choose their lot first.', still: 'night' },
+  { at: [35, 40], title: '12 founding families. One long table.', sub: 'Homes from $321,000. Founding families choose their lot first.', still: 'night' },
 ];
 const DURATION = 40;
 
