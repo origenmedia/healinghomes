@@ -49,6 +49,11 @@ const THANKS: Record<Exclude<Topic, 'list'>, string> = {
 };
 
 // Only ever rendered on the client (inside FormSlot), so reading the URL here is safe.
+function urlHasTopic(): boolean {
+  const t = new URLSearchParams(window.location.search).get('topic');
+  return TOPICS.some((x) => x.id === t);
+}
+
 function topicFromUrl(): Topic {
   const t = new URLSearchParams(window.location.search).get('topic');
   return TOPICS.some((x) => x.id === t) ? (t as Topic) : 'call';
@@ -63,6 +68,8 @@ export function SiteContactForm() {
   const [when, setWhen] = useState('');
   const [investing, setInvesting] = useState(() => topicFromUrl() === 'invest');
   const [message, setMessage] = useState('');
+  // Arriving from a button with a topic: show the choice as one line.
+  const [chooserOpen, setChooserOpen] = useState(() => !urlHasTopic());
   const [status, setStatus] = useState<Status>('idle');
   const [error, setError] = useState<string | null>(null);
 
@@ -144,15 +151,26 @@ export function SiteContactForm() {
 
   return (
     <form className="cf" onSubmit={handleSubmit} noValidate>
-      <fieldset className="cf-topics">
-        <legend>What would you like?</legend>
-        {TOPICS.map((t) => (
-          <label key={t.id} className="cf-topic">
-            <input type="radio" name="topic" value={t.id} checked={topic === t.id} onChange={() => pickTopic(t.id)} />
-            <span>{t.label}</span>
-          </label>
-        ))}
-      </fieldset>
+      {chooserOpen ? (
+        <fieldset className="cf-topics">
+          <legend>What would you like?</legend>
+          {TOPICS.map((t) => (
+            <label key={t.id} className="cf-topic">
+              <input type="radio" name="topic" value={t.id} checked={topic === t.id} onChange={() => pickTopic(t.id)} />
+              <span>{t.label}</span>
+            </label>
+          ))}
+        </fieldset>
+      ) : (
+        <p className="cf-chosen">
+          <span>
+            You chose: <b>{TOPICS.find((x) => x.id === topic)!.label}</b>
+          </span>
+          <button type="button" className="cf-change" onClick={() => setChooserOpen(true)}>
+            Change
+          </button>
+        </p>
+      )}
       <label className="cf-field" htmlFor="cf-name">
         <span>Your name</span>
         <input id="cf-name" type="text" value={name} onChange={(e) => setName(e.target.value)} required autoComplete="name" />
@@ -167,19 +185,19 @@ export function SiteContactForm() {
             <span>WhatsApp (optional)</span>
             <input id="cf-wa" type="tel" value={whatsapp} onChange={(e) => setWhatsapp(e.target.value)} autoComplete="tel" />
           </label>
-          <fieldset className="cf-topics">
+          <fieldset className="cf-topics cf-chips">
             <legend>Which home calls to you?</legend>
             {HOMES.map((h) => (
-              <label key={h} className="cf-topic">
+              <label key={h} className="cf-topic cf-chip">
                 <input type="radio" name="home" value={h} checked={home === h} onChange={() => setHome(h)} />
                 <span>{h}</span>
               </label>
             ))}
           </fieldset>
-          <fieldset className="cf-topics">
+          <fieldset className="cf-topics cf-chips">
             <legend>When are you hoping to make a change?</legend>
             {WHEN.map((w) => (
-              <label key={w} className="cf-topic">
+              <label key={w} className="cf-topic cf-chip">
                 <input type="radio" name="when" value={w} checked={when === w} onChange={() => setWhen(w)} />
                 <span>{w}</span>
               </label>
@@ -193,7 +211,7 @@ export function SiteContactForm() {
       </label>
       <label className="cf-field" htmlFor="cf-message">
         <span>{topic === 'call' ? 'Good days and times for you (optional)' : 'Message (optional)'}</span>
-        <textarea id="cf-message" rows={4} value={message} onChange={(e) => setMessage(e.target.value)} maxLength={4000} />
+        <textarea id="cf-message" rows={3} value={message} onChange={(e) => setMessage(e.target.value)} maxLength={4000} />
       </label>
       {error && (
         <p className="cf-error" role="alert">

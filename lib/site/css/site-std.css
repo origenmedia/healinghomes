@@ -256,9 +256,11 @@ nav.main a:hover { color: var(--ink); }
 nav.main a[aria-current="page"] { color: var(--ink); text-decoration: underline; text-underline-offset: 6px; }
 nav.main a.btn { color: var(--paper); padding: 11px 16px; font-size: 14px; text-decoration: none; }
 @media (max-width: 760px) {
-  nav.main { width: 100%; flex-wrap: nowrap; overflow-x: auto; gap: 18px; padding-bottom: 2px; }
-  nav.main a { white-space: nowrap; }
-  nav.main a.btn { margin-left: auto; }
+  /* Phones: logo and the one button, same as the film header. */
+  .top .wrap { flex-wrap: nowrap; }
+  nav.main { flex-wrap: nowrap; }
+  nav.main a:not(.btn) { display: none; }
+  nav.main a.btn { white-space: nowrap; }
 }
 @media (max-width: 430px) {
   nav.main { gap: 12px; font-size: 13.5px; }
@@ -438,6 +440,15 @@ ol.road span { font-size: 14.5px; line-height: 1.4; color: var(--ink-2); }
 .cf-field input:focus, .cf-field textarea:focus { outline: 2px solid var(--lake); outline-offset: 0; border-color: var(--lake); }
 .cf .btn { justify-self: start; cursor: pointer; }
 .cf-check { align-items: flex-start; }
+.cf-chosen { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; margin: 0; padding: 12px 14px; border: 1px solid var(--line); background: var(--white, #fff); font-size: 15px; }
+.cf-chosen b { font-weight: 600; }
+.cf-change { font: 600 14px/1 var(--body); color: var(--lake); background: none; border: 0; padding: 4px 0; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+.cf-change:focus-visible { outline: 2px solid var(--lake); outline-offset: 2px; }
+.cf-chips { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.cf-chips legend { grid-column: 1 / -1; }
+.cf-chip { padding: 10px 12px; font-size: 15px; gap: 8px; }
+.cf-chip input { width: 16px; height: 16px; }
+@media (max-width: 760px) { .cf { gap: 16px; margin-top: 24px; } }
 .cf-thanks p { margin: 0 0 18px; }
 .cf-thanks .btn { font: 600 15px/1 var(--body); }
 .cf .btn:disabled { opacity: 0.6; cursor: wait; }

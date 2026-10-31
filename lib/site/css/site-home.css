@@ -253,9 +253,11 @@ nav.main a:hover { color: var(--ink); }
 nav.main a[aria-current="page"] { color: var(--ink); text-decoration: underline; text-underline-offset: 6px; }
 nav.main a.btn { color: var(--paper); padding: 11px 16px; font-size: 14px; text-decoration: none; }
 @media (max-width: 760px) {
-  nav.main { width: 100%; flex-wrap: nowrap; overflow-x: auto; gap: 18px; padding-bottom: 2px; }
-  nav.main a { white-space: nowrap; }
-  nav.main a.btn { margin-left: auto; }
+  /* Phones: logo and the one button, same as the film header. */
+  .top .wrap { flex-wrap: nowrap; }
+  nav.main { flex-wrap: nowrap; }
+  nav.main a:not(.btn) { display: none; }
+  nav.main a.btn { white-space: nowrap; }
 }
 @media (max-width: 430px) {
   nav.main { gap: 12px; font-size: 13.5px; }
