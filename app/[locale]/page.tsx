@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { setRequestLocale } from 'next-intl/server';
 import { ScrollFilm } from '@/components/film/ScrollFilm';
 import { footer } from '@/lib/site/pages/home';
+import { BOOK_CALL } from '@/lib/site/links';
 import '@/lib/site/css/site-home.css';
 import '@/lib/site/css/scroll-film.css';
 
@@ -54,9 +55,9 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               <Link href="/en/contact?topic=list" className="btn light">
                 Become a founding family
               </Link>
-              <Link href="/en/contact?topic=call" className="call">
+              <a href={BOOK_CALL} className="call">
                 Talk with Nathaniel
-              </Link>
+              </a>
             </div>
             <p className="inv">
               Thinking about investing? <Link href="/en/contact?topic=invest">Let&apos;s talk.</Link>

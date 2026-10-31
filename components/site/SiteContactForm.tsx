@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { BOOK_CALL } from '@/lib/site/links';
 
 type Topic = 'call' | 'list' | 'invest' | 'question';
 type Status = 'idle' | 'sending' | 'sent' | 'error';
@@ -23,7 +24,7 @@ const HEADS: Record<Topic, { eyebrow: string; head: string; lede: string }> = {
   call: {
     eyebrow: 'A 20 minute call',
     head: 'Talk with Nathaniel',
-    lede: 'Tell us when suits you. Nathaniel writes back within a day with times for a 20 minute call.',
+    lede: 'Pick a time that works for you. The call takes 20 minutes.',
   },
   invest: {
     eyebrow: 'Investors',
@@ -56,7 +57,7 @@ function urlHasTopic(): boolean {
 
 function topicFromUrl(): Topic {
   const t = new URLSearchParams(window.location.search).get('topic');
-  return TOPICS.some((x) => x.id === t) ? (t as Topic) : 'call';
+  return TOPICS.some((x) => x.id === t) ? (t as Topic) : 'question';
 }
 
 export function SiteContactForm() {
@@ -171,56 +172,66 @@ export function SiteContactForm() {
           </button>
         </p>
       )}
-      <label className="cf-field" htmlFor="cf-name">
-        <span>Your name</span>
-        <input id="cf-name" type="text" value={name} onChange={(e) => setName(e.target.value)} required autoComplete="name" />
-      </label>
-      <label className="cf-field" htmlFor="cf-email">
-        <span>Your email</span>
-        <input id="cf-email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required autoComplete="email" />
-      </label>
-      {topic === 'list' && (
+      {topic === 'call' ? (
+        <p className="cf-book">
+          <a className="btn" href={BOOK_CALL}>
+            Pick a time for your call
+          </a>
+        </p>
+      ) : (
         <>
-          <label className="cf-field" htmlFor="cf-wa">
-            <span>WhatsApp (optional)</span>
-            <input id="cf-wa" type="tel" value={whatsapp} onChange={(e) => setWhatsapp(e.target.value)} autoComplete="tel" />
+          <label className="cf-field" htmlFor="cf-name">
+            <span>Your name</span>
+            <input id="cf-name" type="text" value={name} onChange={(e) => setName(e.target.value)} required autoComplete="name" />
           </label>
-          <fieldset className="cf-topics cf-chips">
-            <legend>Which home calls to you?</legend>
-            {HOMES.map((h) => (
-              <label key={h} className="cf-topic cf-chip">
-                <input type="radio" name="home" value={h} checked={home === h} onChange={() => setHome(h)} />
-                <span>{h}</span>
+          <label className="cf-field" htmlFor="cf-email">
+            <span>Your email</span>
+            <input id="cf-email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required autoComplete="email" />
+          </label>
+          {topic === 'list' && (
+            <>
+              <label className="cf-field" htmlFor="cf-wa">
+                <span>WhatsApp (optional)</span>
+                <input id="cf-wa" type="tel" value={whatsapp} onChange={(e) => setWhatsapp(e.target.value)} autoComplete="tel" />
               </label>
-            ))}
-          </fieldset>
-          <fieldset className="cf-topics cf-chips">
-            <legend>When are you hoping to make a change?</legend>
-            {WHEN.map((w) => (
-              <label key={w} className="cf-topic cf-chip">
-                <input type="radio" name="when" value={w} checked={when === w} onChange={() => setWhen(w)} />
-                <span>{w}</span>
-              </label>
-            ))}
-          </fieldset>
+              <fieldset className="cf-topics cf-chips">
+                <legend>Which home calls to you?</legend>
+                {HOMES.map((h) => (
+                  <label key={h} className="cf-topic cf-chip">
+                    <input type="radio" name="home" value={h} checked={home === h} onChange={() => setHome(h)} />
+                    <span>{h}</span>
+                  </label>
+                ))}
+              </fieldset>
+              <fieldset className="cf-topics cf-chips">
+                <legend>When are you hoping to make a change?</legend>
+                {WHEN.map((w) => (
+                  <label key={w} className="cf-topic cf-chip">
+                    <input type="radio" name="when" value={w} checked={when === w} onChange={() => setWhen(w)} />
+                    <span>{w}</span>
+                  </label>
+                ))}
+              </fieldset>
+            </>
+          )}
+          <label className="cf-topic cf-check">
+            <input type="checkbox" checked={investing} onChange={(e) => setInvesting(e.target.checked)} />
+            <span>I&apos;m also interested in investing</span>
+          </label>
+          <label className="cf-field" htmlFor="cf-message">
+            <span>Message (optional)</span>
+            <textarea id="cf-message" rows={3} value={message} onChange={(e) => setMessage(e.target.value)} maxLength={4000} />
+          </label>
+          {error && (
+            <p className="cf-error" role="alert">
+              {error}
+            </p>
+          )}
+          <button className="btn" type="submit" disabled={status === 'sending'}>
+            {button}
+          </button>
         </>
       )}
-      <label className="cf-topic cf-check">
-        <input type="checkbox" checked={investing} onChange={(e) => setInvesting(e.target.checked)} />
-        <span>I&apos;m also interested in investing</span>
-      </label>
-      <label className="cf-field" htmlFor="cf-message">
-        <span>{topic === 'call' ? 'Good days and times for you (optional)' : 'Message (optional)'}</span>
-        <textarea id="cf-message" rows={3} value={message} onChange={(e) => setMessage(e.target.value)} maxLength={4000} />
-      </label>
-      {error && (
-        <p className="cf-error" role="alert">
-          {error}
-        </p>
-      )}
-      <button className="btn" type="submit" disabled={status === 'sending'}>
-        {button}
-      </button>
     </form>
   );
 }

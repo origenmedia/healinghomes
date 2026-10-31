@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
+import { BOOK_CALL } from '@/lib/site/links';
 
 // The home page film. One continuous camera flight, rendered twice: wide for
 // computers, tall (9:16) for phones. The scroll sets the video time, so the
@@ -182,9 +183,9 @@ export function ScrollFilm() {
             <Link href="/en/el-refugio">El Refugio</Link>
             <Link href="/en/how-it-works">How it works</Link>
             <Link href="/en/my-story">My story</Link>
-            <Link href="/en/contact?topic=call" className="sf-call">
+            <a href={BOOK_CALL} className="sf-call">
               Talk with Nathaniel
-            </Link>
+            </a>
           </nav>
         </header>
         <span className="sf-concept">Concept images</span>
@@ -200,9 +201,9 @@ export function ScrollFilm() {
                   <Link href="/en/contact?topic=list" className="main">
                     Become a founding family
                   </Link>
-                  <Link href="/en/contact?topic=call" className="quiet">
+                  <a href={BOOK_CALL} className="quiet">
                     Talk with Nathaniel
-                  </Link>
+                  </a>
                   <Link href="/en/contact?topic=invest" className="inv">
                     Investing? Let&apos;s talk.
                   </Link>
