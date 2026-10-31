@@ -22,10 +22,10 @@ const CHAPTERS: Chapter[] = [
   { at: [30, 35], title: 'Your own food. Your own power.', sub: 'Pick dinner from the garden. Solar and a battery on every home.', still: 'garden' },
   { at: [35, 40], title: 'Every age is welcome.', sub: 'Couples, kids and grandparents. Neighbors by name.', still: 'dusk' },
   { at: [40, 47], title: 'Picked at 5. On the table at 7.', still: 'table' },
-  { at: [47, 52.5], title: "More stars than you've seen in years.", still: 'fire' },
-  { at: [52.5, 55], title: '12 founding families. One long table.', sub: 'Homes from $321,000. Founding families choose their lot first.', still: 'night' },
+  { at: [47, 56.5], title: "More stars than you've seen in years.", still: 'fire' },
+  { at: [56.5, 60], title: '12 founding families. One long table.', sub: 'Homes from $321,000. Founding families choose their lot first.', still: 'night' },
 ];
-const DURATION = 55;
+const DURATION = 60;
 
 export function ScrollFilm() {
   const root = useRef<HTMLDivElement>(null);
