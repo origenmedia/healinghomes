@@ -8,24 +8,27 @@ import { useEffect, useRef, useState } from 'react';
 // visitor drives the camera; nothing plays by itself. Captions are real HTML
 // over the picture. See the Scroll Film Sites playbook in the brain.
 
-type Chapter = { at: [number, number]; title: string; sub?: string; still: string };
+type Chapter = { at: [number, number]; title: string; sub?: string; still: string; concept?: boolean };
 
-// Times are seconds into the film. It opens on Nathaniel at his plan table; the
-// plans glow gold and unfold into the village. Each leg is 5 seconds; the water chapter is two
-// legs (the storm, then the glass at the tap). The ending runs from the fire up
-// into the stars; the call to action sits over the stars.
+// Times are seconds into the film. Each leg is 5 seconds. The film opens on the
+// lake at dawn, flies into the mist, finds Nathaniel at his plan table, then one
+// home's lines become stakes on the ground and the build runs until the wall
+// becomes the finished street wall and door. From the door on: the home, rain to
+// glass, the garden, the long table, the fire and the stars.
 const CHAPTERS: Chapter[] = [
-  { at: [0, 5], title: 'A place to feel human again.', sub: '12 homes above Lake Chapala, Mexico.', still: 'nathaniel' },
-  { at: [5, 15], title: '12 homes. One garden. One long table.', sub: 'A village small enough to know every name.', still: 'village' },
-  { at: [15, 20], title: 'Walls from the earth they stand on.', sub: 'Cool in May. Warm in January.', still: 'lane' },
-  { at: [20, 30], title: 'Your own water.', sub: 'Rain from your roof, cleaned for drinking and stored under your home.', still: 'storm' },
-  { at: [30, 35], title: 'Your own food. Your own power.', sub: 'Pick dinner from the garden. Solar and a battery on every home.', still: 'garden' },
-  { at: [35, 40], title: 'Every age is welcome.', sub: 'Couples, kids and grandparents. Neighbors by name.', still: 'dusk' },
-  { at: [40, 47], title: 'Picked at 5. On the table at 7.', still: 'table' },
-  { at: [47, 56.5], title: "More stars than you've seen in years.", still: 'fire' },
-  { at: [56.5, 60], title: '12 founding families. One long table.', sub: 'Homes from $321,000. Founding families choose their lot first.', still: 'night' },
+  { at: [0, 5], title: 'A place to feel human again.', sub: '12 homes above Lake Chapala, Mexico.', still: 'lake' },
+  { at: [5, 17], title: "I'm Nathaniel.", sub: 'I build homes here at Lake Chapala.', still: 'nathaniel' },
+  { at: [17, 30], title: 'Built by hand, by master masons.', still: 'build', concept: true },
+  { at: [30, 35], title: 'Thick earth walls.', sub: 'Cool in May. Warm in January.', still: 'lane' },
+  { at: [35, 40], title: '12 homes. One garden. One long table.', sub: 'A village small enough to know every name.', still: 'village' },
+  { at: [40, 50], title: 'Your own water.', sub: 'Rain from your roof, cleaned for drinking and stored under your home.', still: 'storm' },
+  { at: [50, 55], title: 'Your own food. Your own power.', sub: 'Pick dinner from the garden. Solar and a battery on every home.', still: 'garden' },
+  { at: [55, 65], title: 'Every age is welcome.', sub: 'Couples, kids and grandparents. Neighbors by name.', still: 'dusk' },
+  { at: [65, 72], title: 'Picked at 5. On the table at 7.', still: 'table' },
+  { at: [72, 81.5], title: "More stars than you've seen in years.", still: 'fire' },
+  { at: [81.5, 85], title: '12 founding families. One long table.', sub: 'Homes from $321,000. Founding families choose their lot first.', still: 'night' },
 ];
-const DURATION = 60;
+const DURATION = 85;
 
 export function ScrollFilm() {
   const root = useRef<HTMLDivElement>(null);
@@ -174,6 +177,7 @@ export function ScrollFilm() {
         <div className="sf-caps">
           {CHAPTERS.map((c, i) => (
             <div key={c.title} data-cap className={`sf-cap${i === 0 ? ' on' : ''}`}>
+              {c.concept && <span className="sf-tag">Concept</span>}
               <h2>{c.title}</h2>
               {c.sub && <p>{c.sub}</p>}
               {i === CHAPTERS.length - 1 && (

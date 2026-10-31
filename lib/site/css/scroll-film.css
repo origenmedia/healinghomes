@@ -32,6 +32,7 @@
 .sf-cap { grid-area: 1 / 1; align-self: end; display: grid; gap: 10px; max-width: 760px; opacity: 0; transform: translateY(10px); transition: opacity 0.5s ease, transform 0.5s ease; text-shadow: 0 1px 18px rgba(0, 0, 0, 0.45); }
 .sf-cap.on { opacity: 1; transform: none; pointer-events: auto; }
 .sf-cap h2 { margin: 0; color: var(--on-image); font: 300 clamp(32px, 5.4vw, 72px)/1.05 var(--display); letter-spacing: -0.01em; text-wrap: balance; }
+.sf-tag { justify-self: start; font: 600 11px/1 var(--body); letter-spacing: 0.18em; text-transform: uppercase; color: var(--on-image); border: 1px solid rgba(255, 255, 255, 0.7); padding: 6px 8px; }
 .sf-cap p { margin: 0; color: var(--on-image-2); font: 400 clamp(16px, 1.4vw, 20px)/1.45 var(--body); max-width: 40ch; }
 .sf-cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
 .sf-cta a { font: 600 15px/1 var(--body); padding: 16px 20px; text-decoration: none; text-shadow: none; }
