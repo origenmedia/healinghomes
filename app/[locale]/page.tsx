@@ -35,7 +35,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         <ScrollFilm />
         <section className="sf-after">
           <div className="wrap">
-            <h2>See it closer.</h2>
+            <h2>Learn more about El Refugio.</h2>
             <div className="links">
               <Link href="/en/el-refugio">
                 <b>El Refugio</b>

@@ -16,18 +16,20 @@ type Chapter = { at: [number, number]; title: string; sub?: string; still: strin
 // becomes the finished street wall and door. From the door on: the home, rain to
 // glass, the garden, the long table, the fire and the stars.
 const CHAPTERS: Chapter[] = [
-  { at: [0, 5], title: 'A place to feel human again.', sub: '12 homes above Lake Chapala, near Guadalajara, Mexico.', still: 'lake' },
-  { at: [5, 17], title: "I'm Nathaniel.", sub: 'I build homes at Lake Chapala, with respected local architects.', still: 'nathaniel' },
-  { at: [17, 30], title: 'Built by hand, by master masons.', sub: 'You pay in steps as your home is built, and watch every step from home.', still: 'build', concept: true },
-  { at: [30, 40], title: 'Thick earth walls.', sub: 'Cool in May. Warm in January.', still: 'lane' },
-  { at: [40, 50], title: 'Your own water.', sub: 'Rain from your roof, cleaned for drinking and stored under your home.', still: 'storm' },
-  { at: [50, 55], title: 'Your own food. Your own power.', sub: "Our gardener does the hard work. Solar keeps your lights on when the town's go out.", still: 'garden' },
-  { at: [55, 65], title: 'Every age is welcome.', sub: 'Grandparents on the porch. Kids on the path. Neighbors who know your name.', still: 'dusk' },
-  { at: [65, 74], title: 'Picked at 5. On the table at 7.', still: 'table' },
-  { at: [74, 82.5], title: "More stars than you've seen in years.", still: 'fire' },
-  { at: [82.5, 85], title: '12 founding families. One long table.', sub: 'Finished homes from $321,000, land included. Founding families pick their lots first.', still: 'night' },
+  { at: [0, 5.1], title: 'A place to feel human again.', sub: '12 homes above Lake Chapala, near Guadalajara, Mexico.', still: 'lake' },
+  { at: [5.1, 17], title: "I'm Nathaniel.", sub: 'I build homes at Lake Chapala, with respected local architects.', still: 'nathaniel' },
+  { at: [17, 31], title: 'Built by hand, by master masons.', still: 'build', concept: true },
+  { at: [31, 42], title: 'Your build, on your phone.', sub: 'You pay in steps as your home is built, and watch every step from home.', still: 'app', concept: true },
+  { at: [42, 48.75], title: 'Thick earth walls.', sub: 'Cool in May. Warm in January.', still: 'lane' },
+  { at: [48.75, 58.9], title: 'Your own water.', sub: 'Rain from your roof, cleaned for drinking and stored under your home.', still: 'storm' },
+  { at: [58.9, 64], title: 'Your own food. Your own power.', sub: "Our gardener does the hard work. Solar keeps your lights on when the town's go out.", still: 'garden' },
+  { at: [64, 74.2], title: 'Every age is welcome.', sub: 'Grandparents on the porch. Kids on the path. Neighbors who know your name.', still: 'dusk' },
+  { at: [74.2, 83.5], title: 'Picked at 5. On the table at 7.', still: 'table' },
+  { at: [83.5, 92], title: "More stars than you've seen in years.", still: 'fire' },
+  { at: [92, 94.5], title: '12 founding families. One long table.', sub: 'Finished homes from $321,000, land included. Founding families pick their lots first.', still: 'night' },
 ];
-const DURATION = 85;
+// Seconds, matching the film file. Chapter times are scaled to the real length.
+const DURATION = 94.5;
 
 export function ScrollFilm() {
   const root = useRef<HTMLDivElement>(null);
@@ -137,7 +139,7 @@ export function ScrollFilm() {
   const kind = tall ? 'tall' : 'wide';
 
   return (
-    <div className={`sf${still ? ' is-still' : ''}`} ref={root} style={{ height: `${(DURATION / 5) * 125}svh` }}>
+    <div className={`sf${still ? ' is-still' : ''}`} ref={root} style={{ height: `${Math.round((DURATION / 5) * 125)}svh` }}>
       <div className="sf-stage">
         {tall !== null && !still && (
           <video
