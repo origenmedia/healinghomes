@@ -330,3 +330,12 @@ footer .lockup .s { margin-top: 6px; }
 .archsvg.plan-home svg { max-width: 460px; margin: 0 auto; }
 
 }
+
+/* Final pass: every tap target at least 44px tall, and logos that fit on small phones. */
+.hh-home nav.main a.btn { padding: 15px 16px; }
+@media (max-width: 430px) { .hh-home nav.main a.btn { padding: 15px 11px; } }
+.hh-home .textlink { display: inline-block; padding: 13px 0; }
+.hh-home .doors-note a { display: inline-block; padding: 11px 0; }
+.hh-home footer nav { gap: 0 22px; }
+.hh-home footer nav a { display: inline-block; padding: 11px 0; }
+@media (max-width: 380px) { .hh-home .top .wrap { gap: 10px; } .hh-home .lockup .n { font-size: 21px; white-space: nowrap; } }

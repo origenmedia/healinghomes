@@ -1,8 +1,8 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { HEADS, TOPIC_IDS, toTopic, type Topic } from '@/lib/site/contactHeads';
 
-type Topic = 'call' | 'list' | 'invest' | 'question';
 type Status = 'idle' | 'sending' | 'sent' | 'error';
 
 const TOPICS: { id: Topic; label: string; prefix: string }[] = [
@@ -12,51 +12,25 @@ const TOPICS: { id: Topic; label: string; prefix: string }[] = [
   { id: 'question', label: 'Just a question', prefix: 'Question' },
 ];
 
-// The page head and intro change with the topic. They live in the static page
-// HTML (lib/site/pages/contact.ts) as #cf-head and #cf-lede.
-const HEADS: Record<Topic, { eyebrow: string; head: string; lede: string }> = {
-  list: {
-    eyebrow: 'Founding families',
-    head: 'Become a founding family',
-    lede: 'Be one of the first 12. Nathaniel reads every message and writes back within a day.',
-  },
-  call: {
-    eyebrow: 'A 20 minute call',
-    head: 'Talk with Nathaniel',
-    lede: 'Tell us when suits you. Nathaniel writes back within a day with times for a 20 minute call.',
-  },
-  invest: {
-    eyebrow: 'Investors',
-    head: 'Thinking about investing?',
-    lede: "Tell Nathaniel a little about what you're looking for, and he'll set up a call.",
-  },
-  question: {
-    eyebrow: 'Questions',
-    head: "Let's talk.",
-    lede: 'Ask anything. Nathaniel reads every message himself and writes back within a day.',
-  },
-};
-
 const HOMES = ['Casa Semilla', 'Casa Raíz', 'Casa Tierra', 'Not sure yet'];
 const WHEN = ['Soon', 'In the next few years', 'Just dreaming'];
 
 const PACKET = 'https://go.healinghomes.mx/el-refugio-founding/';
 
 const THANKS: Record<Exclude<Topic, 'list'>, string> = {
-  call: 'Thank you. Nathaniel will write back within a day with a few times for your call.',
-  invest: 'Thank you. Nathaniel will write to you within a day to set up a call.',
-  question: 'Thank you. Nathaniel will write back within a day.',
+  call: 'Nathaniel will write back within a day with a few times for your call.',
+  invest: 'Nathaniel will write to you within a day to set up a call.',
+  question: 'Nathaniel will write back within a day.',
 };
 
 // Only ever rendered on the client (inside FormSlot), so reading the URL here is safe.
 function urlHasTopic(): boolean {
   const t = new URLSearchParams(window.location.search).get('topic');
-  return TOPICS.some((x) => x.id === t);
+  return TOPIC_IDS.includes(t as Topic);
 }
 
 function topicFromUrl(): Topic {
-  const t = new URLSearchParams(window.location.search).get('topic');
-  return TOPICS.some((x) => x.id === t) ? (t as Topic) : 'call';
+  return toTopic(new URLSearchParams(window.location.search).get('topic'));
 }
 
 export function SiteContactForm() {
@@ -73,15 +47,25 @@ export function SiteContactForm() {
   const [status, setStatus] = useState<Status>('idle');
   const [error, setError] = useState<string | null>(null);
 
-  // Keep the page head and intro in step with the chosen topic.
+  // Keep the page head and intro in step with the chosen topic. Once sent,
+  // the head says thank you and the intro steps aside.
   useEffect(() => {
     const e = document.getElementById('cf-eyebrow');
-    if (e) e.textContent = HEADS[topic].eyebrow;
     const h = document.getElementById('cf-head');
     const l = document.getElementById('cf-lede');
-    if (h) h.textContent = HEADS[topic].head;
-    if (l) l.textContent = HEADS[topic].lede;
-  }, [topic]);
+    if (e) e.textContent = HEADS[topic].eyebrow;
+    if (status === 'sent') {
+      if (h) h.textContent = topic === 'list' ? 'Welcome to the founding families.' : 'Thank you.';
+      if (l) l.hidden = true;
+      window.scrollTo(0, 0);
+    } else {
+      if (h) h.textContent = HEADS[topic].head;
+      if (l) {
+        l.textContent = HEADS[topic].lede;
+        l.hidden = false;
+      }
+    }
+  }, [topic, status]);
 
   function pickTopic(t: Topic) {
     setTopic(t);
@@ -127,8 +111,8 @@ export function SiteContactForm() {
   if (status === 'sent') {
     if (topic === 'list') {
       return (
-        <div className="cf-thanks">
-          <p>Welcome. Nathaniel will write to you personally within a day. While you wait, here is the founding families packet.</p>
+        <div className="cf-thanks" role="status">
+          <p>Nathaniel will write to you personally within a day. While you wait, here is the founding families packet.</p>
           <p>
             <a className="btn" href={PACKET}>
               Open the founding families packet
@@ -137,7 +121,11 @@ export function SiteContactForm() {
         </div>
       );
     }
-    return <p className="cf-thanks">{THANKS[topic]}</p>;
+    return (
+      <p className="cf-thanks" role="status">
+        {THANKS[topic]}
+      </p>
+    );
   }
 
   const button =
@@ -205,10 +193,12 @@ export function SiteContactForm() {
           </fieldset>
         </>
       )}
-      <label className="cf-topic cf-check">
-        <input type="checkbox" checked={investing} onChange={(e) => setInvesting(e.target.checked)} />
-        <span>I&apos;m also interested in investing</span>
-      </label>
+      {topic !== 'invest' && (
+        <label className="cf-topic cf-check">
+          <input type="checkbox" checked={investing} onChange={(e) => setInvesting(e.target.checked)} />
+          <span>I&apos;m also interested in investing</span>
+        </label>
+      )}
       <label className="cf-field" htmlFor="cf-message">
         <span>{topic === 'call' ? 'Good days and times for you (optional)' : 'Message (optional)'}</span>
         <textarea id="cf-message" rows={3} value={message} onChange={(e) => setMessage(e.target.value)} maxLength={4000} />
@@ -221,6 +211,9 @@ export function SiteContactForm() {
       <button className="btn" type="submit" disabled={status === 'sending'}>
         {button}
       </button>
+      <p className="cf-note">
+        We only use your details to write to you about El&nbsp;Refugio. <a href="/en/privacy">Privacy notice</a>
+      </p>
     </form>
   );
 }

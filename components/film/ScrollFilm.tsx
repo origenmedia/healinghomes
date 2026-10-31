@@ -8,7 +8,7 @@ import { useEffect, useRef, useState } from 'react';
 // visitor drives the camera; nothing plays by itself. Captions are real HTML
 // over the picture. See the Scroll Film Sites playbook in the brain.
 
-type Chapter = { at: [number, number]; title: string; sub?: string; still: string; end?: boolean };
+type Chapter = { at: [number, number]; title: string; sub?: string; still: string; end?: boolean; side?: 'right' };
 
 // Times are seconds into the film, measured from the built file. The film opens
 // on a city crowd bowed over phones. Lightning strikes, the power fails from the
@@ -20,10 +20,10 @@ const CHAPTERS: Chapter[] = [
   { at: [0, 1.5], title: 'Life is speeding up.', still: 'rush' },
   { at: [1.5, 4.9], title: 'The future is unpredictable.', still: 'citystorm' },
   { at: [4.9, 8.6], title: "What's your plan?", still: 'answer' },
-  { at: [8.6, 15.42], title: 'A place to feel human again.', sub: 'El Refugio: 12 homes above Lake Chapala, near Guadalajara, Mexico.', still: 'lake' },
-  { at: [15.42, 38.63], title: "I'm Nathaniel.", sub: 'I build homes in Mexico.', still: 'nathaniel' },
+  { at: [8.6, 17.2], title: 'A place to feel human again.', sub: 'El Refugio: 12 homes above Lake Chapala, near Guadalajara, Mexico.', still: 'lake' },
+  { at: [17.2, 38.63], title: "I'm Nathaniel.", sub: 'I build homes in Mexico.', still: 'nathaniel' },
   { at: [38.63, 44.13], title: 'Your home, built by hand.', still: 'build' },
-  { at: [44.13, 52.32], title: 'The whole build, on your phone.', sub: 'You pay in steps as your home is built, and watch every step from home.', still: 'app' },
+  { at: [44.13, 52.32], title: 'The whole build, on your phone.', sub: 'You pay in steps as your home is built, and watch every step from home.', still: 'app', side: 'right' },
   { at: [52.32, 59.07], title: 'Thick earth walls.', sub: 'Cool on hot days. Warm on cold nights.', still: 'lane' },
   { at: [59.07, 73.6], title: 'Your own water.', sub: 'Rain from your roof, cleaned for drinking and stored under your home.', still: 'storm' },
   { at: [73.6, 79.1], title: 'Your own food. Your own power.', sub: 'A gardener does the hard work. Solar keeps the lights on.', still: 'garden' },
@@ -72,6 +72,14 @@ export function ScrollFilm() {
     let shown = -1;
     let raf = 0;
     let ready = false;
+    let revealed = false;
+    // The stills stay up until the video shows the frame for this scroll
+    // position, so a jump straight to the end never flashes the opening.
+    const reveal = () => {
+      if (revealed) return;
+      revealed = true;
+      el.classList.add('playing');
+    };
 
     const progress = () => {
       const r = el.getBoundingClientRect();
@@ -84,6 +92,11 @@ export function ScrollFilm() {
     const seek = () => {
       if (!v || !ready || v.seeking) return;
       if (Math.abs(v.currentTime - target) > 0.02) v.currentTime = target;
+      else reveal();
+    };
+    const onSeeked = () => {
+      reveal();
+      seek();
     };
 
     const frame = () => {
@@ -117,7 +130,6 @@ export function ScrollFilm() {
 
     const onReady = () => {
       ready = true;
-      el.classList.add('playing');
       frame();
     };
     // iOS paints a seeked frame only after the video has played once.
@@ -129,7 +141,7 @@ export function ScrollFilm() {
     };
     if (v && !still) {
       v.addEventListener('loadeddata', onReady, { once: true });
-      v.addEventListener('seeked', seek);
+      v.addEventListener('seeked', onSeeked);
       window.addEventListener('touchstart', prime, { once: true, passive: true });
       if (v.readyState >= 2) onReady();
     }
@@ -140,7 +152,7 @@ export function ScrollFilm() {
       window.removeEventListener('scroll', onScroll);
       window.removeEventListener('resize', onScroll);
       window.removeEventListener('touchstart', prime);
-      v?.removeEventListener('seeked', seek);
+      v?.removeEventListener('seeked', onSeeked);
       cancelAnimationFrame(raf);
     };
   }, [tall, still]);
@@ -149,6 +161,7 @@ export function ScrollFilm() {
 
   return (
     <div className={`sf${still ? ' is-still' : ''}`} ref={root} style={{ height: `${Math.round((DURATION / 5) * 125) + HOLD}svh` }}>
+      <h1 className="sf-vh">El Refugio: 12 homes above Lake Chapala, near Guadalajara, Mexico</h1>
       <div className="sf-stage">
         {tall !== null && !still && (
           <video
@@ -191,10 +204,10 @@ export function ScrollFilm() {
 
         <div className="sf-caps">
           {CHAPTERS.map((c, i) => (
-            <div key={c.title} data-cap className={`sf-cap${c.end ? ' end' : ''}${i === 0 ? ' on' : ''}`}>
+            <div key={c.title} data-cap className={`sf-cap${c.end ? ' end' : ''}${c.side === 'right' ? ' right' : ''}${i === 0 ? ' on' : ''}`}>
               {c.end && <span className="sf-eyebrow">Founding families</span>}
               <h2>{c.title}</h2>
-              {c.sub && <p>{c.sub}</p>}
+              {c.sub && <p>{c.end ? c.sub.split(/(?<=\.)\s+/).map((line) => <span key={line}>{line}</span>) : c.sub}</p>}
               {i === CHAPTERS.length - 1 && (
                 <div className="sf-cta">
                   <Link href="/en/contact?topic=list" className="main">
