@@ -20,9 +20,9 @@ const CHAPTERS: Chapter[] = [
   { at: [15, 25], title: 'Your own water.', sub: 'Rain from your roof, cleaned for drinking and stored under your home.', still: 'storm' },
   { at: [25, 30], title: 'Your own food. Your own power.', sub: 'Pick dinner from the garden. Solar and a battery on every home.', still: 'garden' },
   { at: [30, 35], title: 'Every age is welcome.', sub: 'Couples, kids and grandparents. Neighbors by name.', still: 'dusk' },
-  { at: [35, 40], title: 'Picked at 5. On the table at 7.', still: 'table' },
-  { at: [40, 46], title: "More stars than you've seen in years.", still: 'fire' },
-  { at: [46, 50], title: '12 founding families. One long table.', sub: 'Homes from $321,000. Founding families choose their lot first.', still: 'night' },
+  { at: [35, 42], title: 'Picked at 5. On the table at 7.', still: 'table' },
+  { at: [42, 47.5], title: "More stars than you've seen in years.", still: 'fire' },
+  { at: [47.5, 50], title: '12 founding families. One long table.', sub: 'Homes from $321,000. Founding families choose their lot first.', still: 'night' },
 ];
 const DURATION = 50;
 
