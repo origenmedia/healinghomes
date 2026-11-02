@@ -12,7 +12,7 @@ const TOPICS: { id: Topic; label: string; prefix: string }[] = [
   { id: 'question', label: 'Just a question', prefix: 'Question' },
 ];
 
-const HOMES = ['Casa Semilla', 'Casa Raíz', 'Casa Tierra', 'Not sure yet'];
+const HOMES = ['Small', 'Medium', 'Large', 'Not sure yet'];
 const WHEN = ['Soon', 'In the next few years', 'Just dreaming'];
 
 const PACKET = 'https://go.healinghomes.mx/el-refugio-founding/';
@@ -89,7 +89,7 @@ export function SiteContactForm() {
     const lines = [`[${prefix}]`];
     if (topic === 'list' && whatsapp.trim()) lines.push(`WhatsApp: ${whatsapp.trim()}`);
     if (topic === 'list') {
-      if (home) lines.push(`Home: ${home}`);
+      if (home) lines.push(`Home size: ${home}`);
       if (when) lines.push(`Hoping to change: ${when}`);
     }
     if (investing) lines.push('Also interested in investing: yes');
@@ -174,7 +174,7 @@ export function SiteContactForm() {
             <input id="cf-wa" type="tel" value={whatsapp} onChange={(e) => setWhatsapp(e.target.value)} autoComplete="tel" />
           </label>
           <fieldset className="cf-topics cf-chips">
-            <legend>Which home calls to you?</legend>
+            <legend>Which home size calls to you?</legend>
             {HOMES.map((h) => (
               <label key={h} className="cf-topic cf-chip">
                 <input type="radio" name="home" value={h} checked={home === h} onChange={() => setHome(h)} />

@@ -12,7 +12,7 @@ export const HEADS: Record<Topic, { eyebrow: string; head: string; lede: string;
   list: {
     eyebrow: 'Founding families',
     head: 'Become a founding family',
-    lede: 'Be one of the first 12. Nathaniel reads every message and writes back within a day.',
+    lede: 'Be one of the first 9. Nathaniel reads every message and writes back within a day.',
     title: 'Become a founding family · Healing Homes',
   },
   call: {

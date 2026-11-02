@@ -9,20 +9,20 @@ import '@/lib/site/css/scroll-film.css';
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.healinghomes.mx'),
   openGraph: {
-    title: 'El Refugio, 12 homes above Lake Chapala',
-    description: 'A place to feel human again. Finished homes from US$321,000, land included.',
-    images: [{ url: '/og/el-refugio.jpg', width: 1200, height: 630, alt: 'Lake Chapala at dawn in the mist, Mexico' }],
+    title: 'El Refugio: 9 homes near Lake Chapala, Mexico',
+    description: 'Your own water, food and power, with neighbors you trust. Finished homes from about US$365,000, land included.',
+    images: [{ url: '/og/el-refugio-9.jpg', width: 1200, height: 630, alt: 'Concept image: El Refugio at sunrise, 9 white homes with brick domes around one green garden' }],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'El Refugio, 12 homes above Lake Chapala',
-    description: 'A place to feel human again. Finished homes from US$321,000, land included.',
-    images: ['/og/el-refugio.jpg'],
+    title: 'El Refugio: 9 homes near Lake Chapala, Mexico',
+    description: 'Your own water, food and power, with neighbors you trust. Finished homes from about US$365,000, land included.',
+    images: ['/og/el-refugio-9.jpg'],
   },
-  title: 'Healing Homes · A place to feel human again',
+  title: 'El Refugio: 9 homes near Lake Chapala, Mexico · Healing Homes',
   description:
-    '12 homes above Lake Chapala, Mexico, with their own water, food and power. Every age is welcome. Finished homes from US$321,000, land included.',
+    'Your own water, food and power, with neighbors you trust. Every age is welcome. Finished homes from about US$365,000, land included.',
 };
 
 // The home page is the film. Details live on the inner pages.
@@ -39,7 +39,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             <div className="links">
               <Link href="/en/el-refugio">
                 <b>El Refugio</b>
-                <span>The village, the three home designs, the water and the plan.</span>
+                <span>The 9 homes, the garden and what the families share.</span>
               </Link>
               <Link href="/en/how-it-works">
                 <b>How it works</b>

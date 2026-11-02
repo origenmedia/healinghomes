@@ -3,47 +3,65 @@
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 
-// The home page film. One continuous camera flight, rendered twice: wide for
-// computers, tall (9:16) for phones. The scroll sets the video time, so the
+// The home page film. One continuous camera flight through El Refugio, the
+// 9 family village near Lake Chapala. The scroll sets the video time, so the
 // visitor drives the camera; nothing plays by itself. Captions are real HTML
 // over the picture. See the Scroll Film Sites playbook in the brain.
 
-type Chapter = { at: [number, number]; title: string; sub?: string; still: string; end?: boolean; side?: 'right' };
+type Chapter = {
+  at: [number, number];
+  title?: string;
+  sub?: string;
+  eyebrow?: string;
+  still: string;
+  end?: boolean;
+  side?: 'right';
+  // A single "Become a founding family" button under the words.
+  cta?: 'join';
+  // A quiet beat with no words on screen.
+  silent?: boolean;
+};
 
-// Times are seconds into the film, measured from the built file. The film opens
-// on a city crowd bowed over phones. Lightning strikes, the power fails from the
-// far end of the street toward you, the phones die one by one, and in the dark a
-// gold line draws the lake. Then dawn, Nathaniel at his plan table, the build,
-// the app, the finished wall and door, rain to glass, the garden, the long table,
-// the fire and the stars.
+// Times are seconds into the film, measured from the built file. Sunrise over
+// the village, Nathaniel at his plan table, the build, the app, the finished
+// home, rain to glass, the solar roofs, the garden, the garden pantry, the
+// long table, past the temazcal to the fire, and the stars.
 const CHAPTERS: Chapter[] = [
-  { at: [0, 1.5], title: 'Life is speeding up.', still: 'rush' },
-  { at: [1.5, 4.9], title: 'The future is unpredictable.', still: 'citystorm' },
-  { at: [4.9, 8.6], title: "What's your plan?", still: 'answer' },
-  { at: [8.6, 17.2], title: 'A place to feel human again.', sub: 'El Refugio: 12 homes above Lake Chapala, near Guadalajara, Mexico.', still: 'lake' },
-  { at: [17.2, 38.63], title: "I'm Nathaniel.", sub: 'I build homes in Mexico.', still: 'nathaniel' },
-  { at: [38.63, 44.13], title: 'Your home, built by hand.', still: 'build' },
-  { at: [44.13, 52.32], title: 'The whole build, on your phone.', sub: 'You pay in steps as your home is built, and watch every step from home.', still: 'app', side: 'right' },
-  { at: [52.32, 59.07], title: 'Thick earth walls.', sub: 'Cool on hot days. Warm on cold nights.', still: 'lane' },
-  { at: [59.07, 73.6], title: 'Your own water.', sub: 'Rain from your roof, cleaned for drinking and stored under your home.', still: 'storm' },
-  { at: [73.6, 79.1], title: 'Your own food. Your own power.', sub: 'A gardener does the hard work. Solar keeps the lights on.', still: 'garden' },
-  { at: [79.1, 89.6], title: 'Every age is welcome.', sub: 'Grandparents, parents and kids. Neighbors who know your name.', still: 'dusk' },
-  { at: [89.6, 94.5], title: 'Dinner from the garden, with your neighbors.', still: 'table' },
-  { at: [94.5, 104.45], title: 'A warm fire under a sky full of stars.', still: 'fire' },
-  { at: [104.45, 106.95], title: 'Be one of the first 12 families.', sub: 'Finished homes from US$321,000, land included. Pick your lot before anyone else.', still: 'night', end: true },
+  { at: [0, 4], title: 'Your own water, food and power, with neighbors you trust.', sub: 'El Refugio: 9 homes near Lake Chapala, Mexico.', still: 'sunrise' },
+  { at: [4, 11.4], eyebrow: '9 founding families', title: 'Finished homes from about US$365,000, land included.', still: 'village9', cta: 'join' },
+  { at: [11.4, 32.9], title: "I'm Nathaniel.", sub: 'I build homes in Mexico.', still: 'nathaniel' },
+  { at: [32.9, 38.4], title: 'Your home, built by hand.', still: 'build' },
+  { at: [38.4, 45.3], title: 'The whole build, on your phone.', sub: 'You pay in steps as your home is built, and watch every step from home.', still: 'app', side: 'right' },
+  { at: [45.3, 51], title: 'A finished home, ready to live in.', still: 'home' },
+  { at: [51, 60.6], title: 'Your own water.', sub: 'Rain from your roof, cleaned for drinking and stored under your home.', still: 'storm' },
+  { at: [60.6, 66.4], title: 'Your own power.', sub: "Solar on every roof. When the town's lights go out, yours stay on.", still: 'roofs' },
+  { at: [66.4, 73.2], title: 'Your own food.', sub: 'A gardener tends the garden. You pick what you need.', still: 'gardener' },
+  { at: [73.2, 78.6], title: 'A garden pantry for all 9 families.', sub: 'Shelves of jars, grains and water.', still: 'pantry' },
+  { at: [78.6, 81.9], title: 'Dinner from the garden, with your neighbors.', still: 'table' },
+  { at: [81.9, 85.4], title: 'Every age is welcome.', sub: 'Grandparents, parents and kids. Neighbors who know your name.', still: 'table' },
+  { at: [85.4, 88.4], still: 'temazcal', silent: true },
+  { at: [88.4, 96.6], title: 'A warm fire under a sky full of stars.', still: 'fire' },
+  { at: [96.6, 100.29], eyebrow: 'Founding families', title: 'Ready for hard times. Made for good ones.', sub: 'Be one of the first 9 families. Finished homes from about US$365,000, land included.', still: 'night', end: true },
 ];
 // Seconds, matching the film file. Chapter times are scaled to the real length.
-const DURATION = 106.95;
-// From the lake on, every picture is a concept image of homes not built yet.
-const FIRST_CONCEPT = 3;
+const DURATION = 100.29;
+// Every picture is a concept image of homes not built yet.
+const FIRST_CONCEPT = 0;
+// The sticky join button shows from this chapter on (the first screens have their own).
+const ASK_FROM = 2;
 // Extra scroll (in svh) that holds the last screen before the page moves on.
 const HOLD = 60;
+// Until a wide film for computers is made, computers play the phone film in a
+// centered column with the words beside it. Set to true once film-wide.mp4
+// and the -wide stills match this film.
+const WIDE_FILM = false;
 
 export function ScrollFilm() {
   const root = useRef<HTMLDivElement>(null);
   const video = useRef<HTMLVideoElement>(null);
   const [tall, setTall] = useState<boolean | null>(null);
   const [still, setStill] = useState(false);
+  const [side, setSide] = useState(false);
 
   // Pick the film for this screen shape, and honour reduced motion.
   useEffect(() => {
@@ -52,13 +70,18 @@ export function ScrollFilm() {
     const update = () => {
       setTall(mq.matches);
       setStill(rm.matches);
+      // On computers the words sit beside the column when there is room for them.
+      const col = Math.min(window.innerWidth, (window.innerHeight * 9) / 16);
+      setSide((window.innerWidth - col) / 2 >= 300);
     };
     update();
     mq.addEventListener('change', update);
     rm.addEventListener('change', update);
+    window.addEventListener('resize', update);
     return () => {
       mq.removeEventListener('change', update);
       rm.removeEventListener('change', update);
+      window.removeEventListener('resize', update);
     };
   }, []);
 
@@ -112,9 +135,9 @@ export function ScrollFilm() {
       CHAPTERS.forEach((c, i) => {
         if (at >= c.at[0]) idx = i;
       });
-      // The sticky join button shows through the film and hides on the last
-      // screen, which has its own buttons. The section after the film has them too.
-      el.classList.toggle('ask', p > 0.08 && idx < CHAPTERS.length - 1);
+      // The sticky join button shows through the film and hides on the screens
+      // that have their own buttons. The section after the film has them too.
+      el.classList.toggle('ask', idx >= ASK_FROM && idx < CHAPTERS.length - 1);
       el.classList.toggle('ending', idx === CHAPTERS.length - 1);
       el.classList.toggle('concept', idx >= FIRST_CONCEPT);
       if (idx !== shown) {
@@ -157,11 +180,16 @@ export function ScrollFilm() {
     };
   }, [tall, still]);
 
-  const kind = tall ? 'tall' : 'wide';
+  const kind = WIDE_FILM && tall === false ? 'wide' : 'tall';
+  const column = !WIDE_FILM && tall === false;
 
   return (
-    <div className={`sf${still ? ' is-still' : ''}`} ref={root} style={{ height: `${Math.round((DURATION / 5) * 125) + HOLD}svh` }}>
-      <h1 className="sf-vh">El Refugio: 12 homes above Lake Chapala, near Guadalajara, Mexico</h1>
+    <div
+      className={`sf${still ? ' is-still' : ''}${column ? ' column' : ''}${column && side ? ' side' : ''}`}
+      ref={root}
+      style={{ height: `${Math.round((DURATION / 5) * 125) + HOLD}svh` }}
+    >
+      <h1 className="sf-vh">El Refugio: 9 homes near Lake Chapala, Mexico</h1>
       <div className="sf-stage">
         {tall !== null && !still && (
           <video
@@ -178,9 +206,14 @@ export function ScrollFilm() {
         )}
         <div className="sf-stills" aria-hidden="true">
           {CHAPTERS.map((c, i) => (
-            <picture key={c.still} data-still className={i === 0 ? 'on' : undefined}>
-              <source media="(max-aspect-ratio: 3/4)" srcSet={`/film/${c.still}-tall.webp`} />
-              <img src={`/film/${c.still}-wide.webp`} alt="" loading={i === 0 ? 'eager' : 'lazy'} fetchPriority={i === 0 ? 'high' : 'auto'} />
+            <picture key={i} data-still className={i === 0 ? 'on' : undefined}>
+              {WIDE_FILM && <source media="(max-aspect-ratio: 3/4)" srcSet={`/film/${c.still}-tall.webp`} />}
+              <img
+                src={`/film/${c.still}-${WIDE_FILM ? 'wide' : 'tall'}.webp`}
+                alt=""
+                loading={i === 0 ? 'eager' : 'lazy'}
+                fetchPriority={i === 0 ? 'high' : 'auto'}
+              />
             </picture>
           ))}
         </div>
@@ -204,11 +237,23 @@ export function ScrollFilm() {
 
         <div className="sf-caps">
           {CHAPTERS.map((c, i) => (
-            <div key={c.title} data-cap className={`sf-cap${c.end ? ' end' : ''}${c.side === 'right' ? ' right' : ''}${i === 0 ? ' on' : ''}`}>
-              {c.end && <span className="sf-eyebrow">Founding families</span>}
-              <h2>{c.title}</h2>
+            <div
+              key={i}
+              data-cap
+              aria-hidden={c.silent ? true : undefined}
+              className={`sf-cap${c.end ? ' end' : ''}${c.side === 'right' ? ' right' : ''}${c.silent ? ' silent' : ''}${i === 0 ? ' on' : ''}`}
+            >
+              {c.eyebrow && <span className="sf-eyebrow">{c.eyebrow}</span>}
+              {c.title && <h2>{c.title}</h2>}
               {c.sub && <p>{c.end ? c.sub.split(/(?<=\.)\s+/).map((line) => <span key={line}>{line}</span>) : c.sub}</p>}
-              {i === CHAPTERS.length - 1 && (
+              {c.cta === 'join' && (
+                <div className="sf-cta">
+                  <Link href="/en/contact?topic=list" className="main">
+                    Become a founding family
+                  </Link>
+                </div>
+              )}
+              {c.end && (
                 <div className="sf-cta">
                   <Link href="/en/contact?topic=list" className="main">
                     Become a founding family
