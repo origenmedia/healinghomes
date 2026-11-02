@@ -24,7 +24,7 @@ export const HEADS: Record<Topic, { eyebrow: string; head: string; lede: string;
   invest: {
     eyebrow: 'Investors',
     head: 'Thinking about investing?',
-    lede: "Tell Nathaniel a little about what you're looking for, and he'll set up a call.",
+    lede: "Tell us a little about what you're looking for, and we'll set up a call.",
     title: 'Investors · Healing Homes',
   },
   question: {

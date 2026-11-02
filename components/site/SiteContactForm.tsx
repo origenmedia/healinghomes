@@ -19,7 +19,7 @@ const PACKET = 'https://go.healinghomes.mx/el-refugio-founding/';
 
 const THANKS: Record<Exclude<Topic, 'list'>, string> = {
   call: 'Nathaniel will write back within a day with a few times for your call.',
-  invest: 'Nathaniel will write to you within a day to set up a call.',
+  invest: "We'll write to you within a day to set up a call.",
   question: 'Nathaniel will write back within a day.',
 };
 
