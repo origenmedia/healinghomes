@@ -1,5 +1,5 @@
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages, setRequestLocale } from 'next-intl/server';
+import { setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing, type Locale } from '@/lib/i18n/routing';
 import { ThemeProvider } from '@/lib/theme/provider';
@@ -19,10 +19,12 @@ export default async function LocaleLayout({
   const { locale } = await params;
   if (!routing.locales.includes(locale as Locale)) notFound();
   setRequestLocale(locale);
-  const messages = await getMessages();
 
+  // No messages go to the browser from here. The few pages with client
+  // components that read messages add them with <ClientMessages> in their own
+  // layout, so the old site's copy is not in every page's source.
   return (
-    <NextIntlClientProvider messages={messages} locale={locale}>
+    <NextIntlClientProvider messages={{}} locale={locale}>
       <ThemeProvider>
         <AuthProvider>{children}</AuthProvider>
       </ThemeProvider>
