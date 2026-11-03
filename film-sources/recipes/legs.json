@@ -1,0 +1,62 @@
+{
+ "L01": {
+  "start": "v4/film/anchors/v0.png",
+  "end": "v4/film/anchors/v1.png",
+  "prompt": "Single continuous drone move, no cuts. At sunrise the drone glides slowly down and forward toward the small village as the thick morning mist lifts and thins, revealing nine white homes with round brick domes and solar panels on their flat roofs, spread far apart among oak trees around one oval green garden, with the long harvest kitchen, the round stone fire circle, the small brick dome temazcal, the caretaker house and the parking. Lake Chapala shines far away. No people. The village has only its nine white homes with brick domes, the harvest kitchen, the fire circle, the temazcal, the caretaker house and the parking: no other buildings, no barns, no sheds, no pool. Vertical 9:16 frame."
+ },
+ "L02": {
+  "start": "v4/film/anchors/v1.png",
+  "end": "v4/film/anchors/n1a.png",
+  "prompt": "Single continuous drone move, no cuts. The drone rises gently from the village and glides out over the green hills toward Lake Chapala, then descends into the soft glowing morning mist over the calm water until pale mist fills the frame. No people, no birds. The village has only its nine white homes with brick domes, the harvest kitchen, the fire circle, the temazcal, the caretaker house and the parking: no other buildings, no barns, no sheds, no pool. Vertical 9:16 frame."
+ },
+ "L10": {
+  "start": "v4/film/anchors/app.png",
+  "end": "v4/film/anchors/h5.png",
+  "prompt": "Single continuous move, no cuts. The camera pushes slowly into the phone screen held in the hand until the screen fills the frame and opens into a real place: a tall wooden door standing wide open, and through it a small private garden with a stone trough and a young olive tree, then open glass doors into a bright, finished living room with cream lime walls under a brick dome and a long wooden table set for lunch. Warm afternoon light. No people. Vertical 9:16 frame."
+ },
+ "L11": {
+  "start": "v4/film/anchors/h5.png",
+  "end": "v4/film/anchors/rain.png",
+  "prompt": "Single continuous move, no cuts. The camera glides forward through the open glass doors, across the bright finished living room and out to the covered courtyard beyond, as clouds gather and steady rain begins to pour off the flat roof edge into a long stone basin. The light turns soft and gray. No people. Vertical 9:16 frame."
+ },
+ "L13": {
+  "start": "v4/film/anchors/glass.png",
+  "end": "v4/film/anchors/r1.png",
+  "prompt": "Single continuous move, no cuts. From the hand filling a glass of clean water at the brass tap, the camera rises past the kitchen window and up through the clearing rain into warm late afternoon sun, then glides low over the flat rooftops of the village: dark solar panels on every roof catching the sun, round brick domes, deep wooden roof edges, oak trees between the homes, the green garden and the hills beyond. The village has only its nine white homes with brick domes, the harvest kitchen, the fire circle, the temazcal, the caretaker house and the parking: no other buildings, no barns, no sheds, no pool. Vertical 9:16 frame."
+ },
+ "L14": {
+  "start": "v4/film/anchors/r1.png",
+  "end": "v4/film/anchors/g1.png",
+  "prompt": "Single continuous drone move, no cuts. The drone glides off the solar roof and descends slowly into the green village garden in the late sun, down between raised vegetable beds and gravel paths, to a gardener in a straw hat kneeling at a raised bed and lifting fresh lettuce into a wooden crate, white homes with brick domes behind. Only one person, the gardener. The village has only its nine white homes with brick domes, the harvest kitchen, the fire circle, the temazcal, the caretaker house and the parking: no other buildings, no barns, no sheds, no pool. Vertical 9:16 frame."
+ },
+ "L15": {
+  "start": "v4/film/anchors/g1.png",
+  "end": "v4/film/anchors/m10.png",
+  "prompt": "Single continuous steadicam move, no cuts. The camera drifts slowly along the garden path past the raised beds as the light turns golden toward dusk, leaving the gardener behind, and settles on a young mother holding her small blond son on her hip with a basket of fresh tomatoes, smiling in the garden, white homes with brick domes behind. Only these people: the gardener, the mother and her son. No other people. The village has only its nine white homes with brick domes, the harvest kitchen, the fire circle, the temazcal, the caretaker house and the parking: no other buildings, no barns, no sheds, no pool. Vertical 9:16 frame."
+ },
+ "L16": {
+  "start": "v4/film/anchors/m10.png",
+  "end": "v4/film/anchors/pantry.png",
+  "prompt": "Single continuous steadicam move, no cuts. The camera leaves the mother and her son in the garden at dusk and glides along the gravel path to the open garden doors of the harvest kitchen, then through the doors into the garden pantry: a roomy room under a wide brick vault with one warm light, long wooden shelves of glass jars on both walls, sacks of rice and beans, glass water jugs, and a wooden table with a crate of tomatoes and a basket of vegetables. No people inside the pantry, no labels on anything. Vertical 9:16 frame."
+ },
+ "L17": {
+  "start": "v4/film/anchors/pantry.png",
+  "end": "v4/film/anchors/table.png",
+  "prompt": "Single continuous steadicam move, no cuts. The camera glides slowly through the garden pantry, past the table with the crate of tomatoes and between the shelves of jars, out through the open far doors onto the terrace at dusk, and comes to rest at the long dinner table under brick arches and string lights, where grandparents, parents and children share dinner from the garden. Lake Chapala and hills in the distance. Only the people at the table. No labels, no other buildings. Vertical 9:16 frame."
+ },
+ "L19": {
+  "start": "v4/film/anchors/table.png",
+  "end": "v4/film/anchors/tm.png",
+  "prompt": "Single continuous steadicam move, no cuts. The camera glides slowly along the long table past grandparents, parents and children, then drifts off the terrace into the blue dusk, past the round stone fire circle where a family sits around the flames, and turns to look down a straight stone path to a small brick dome temazcal, its open wooden door glowing warm and soft white steam rising from its dome, dark trees and the last dusk light behind. The village has only its nine white homes with brick domes, the harvest kitchen, the fire circle, the temazcal, the caretaker house and the parking: no other buildings, no barns, no sheds, no pool. Vertical 9:16 frame."
+ },
+ "L20": {
+  "start": "v4/film/anchors/tm.png",
+  "end": "v4/film/anchors/f11.png",
+  "prompt": "Single continuous steadicam move, no cuts. As dusk turns to night, the camera turns slowly from the steaming temazcal back toward the fire and settles low beside the flames with the family: a grandmother in a cream sweater holding a blond toddler on her lap, a man playing guitar, young women and a boy leaning in, all lit warm by the firelight, first stars above. Only one toddler. No other people. The village has only its nine white homes with brick domes, the harvest kitchen, the fire circle, the temazcal, the caretaker house and the parking: no other buildings, no barns, no sheds, no pool. Vertical 9:16 frame."
+ },
+ "L21": {
+  "start": "v4/film/anchors/f11.png",
+  "end": "v4/film/anchors/fire.png",
+  "prompt": "Single continuous steadicam move, no cuts. The camera lowers and pushes in slowly over the fire circle until the round stone fire pit fills the frame, hands warming at its edge, dark trees and a starry night sky behind. The fire burns low and calm with gentle flames. Vertical 9:16 frame."
+ }
+}

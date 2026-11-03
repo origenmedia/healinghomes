@@ -1,0 +1,2 @@
+const {chromium}=require('playwright');(async()=>{const b=await chromium.launch();const p=await b.newPage({viewport:{width:1280,height:800}});await p.goto('http://localhost:8765/');await p.waitForTimeout(800);
+console.log(await p.evaluate(()=>[JSON.stringify(document.getElementById('cv').getBoundingClientRect()),JSON.stringify(document.getElementById('film').getBoundingClientRect()),getComputedStyle(document.body).margin,getComputedStyle(document.body).padding]));await b.close()})();

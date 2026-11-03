@@ -1,0 +1,7 @@
+{
+  "git": {
+    "deploymentEnabled": {
+      "claude/film-sources-2026-11-03": false
+    }
+  }
+}
