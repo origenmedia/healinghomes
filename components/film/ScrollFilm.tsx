@@ -151,12 +151,11 @@ export function ScrollFilm() {
       if (!raf) raf = requestAnimationFrame(frame);
     };
 
-    // iOS paints a seeked frame only after the video has played once. The film
-    // loads after the page, so prime it once it is in, and again on a touch
-    // if that first try was refused.
+    // iOS paints a seeked frame only after the video has played once. Prime it
+    // as soon as a film is in, and again on a touch if that try was refused.
     let primed = false;
     const prime = () => {
-      if (!v || !ready || primed) return;
+      if (!v || primed || !v.src) return;
       v.play()
         .then(() => {
           v.pause();
@@ -171,28 +170,54 @@ export function ScrollFilm() {
       prime();
       frame();
     };
-    // Load the whole film into memory before the scroll drives it. Streaming
-    // it while scrubbing made every seek wait on the network, so the film
-    // jumped from scene to scene. The stills show until it is in.
+    // The film streams at once so the scroll drives it from the first second.
+    // Streamed seeks wait on the network, so on a slow phone the picture can
+    // lag. The whole file loads in the background (thin line at the top) and
+    // takes over when it is in; from then on every seek is instant.
     let blobUrl = '';
     let dead = false;
+    let abort: AbortController | null = null;
     if (v && !still) {
       const file = `/film/film-${WIDE_FILM && tall === false ? 'wide' : 'tall'}.mp4`;
       v.addEventListener('loadeddata', onReady, { once: true });
       v.addEventListener('seeked', onSeeked);
       window.addEventListener('touchstart', prime, { passive: true });
-      fetch(file)
-        .then((r) => {
-          if (!r.ok) throw new Error(String(r.status));
-          return r.blob();
-        })
-        .then((b) => {
-          if (dead) return;
-          blobUrl = URL.createObjectURL(b);
-          v.src = blobUrl;
+      v.src = file;
+      if (v.readyState >= 2) onReady();
+      abort = new AbortController();
+      const swap = (b: Blob) => {
+        if (dead) return;
+        blobUrl = URL.createObjectURL(b);
+        // Show the still for this chapter while the swap happens, so there is
+        // no black frame, then reveal again on the first seek of the new file.
+        ready = false;
+        primed = false;
+        revealed = false;
+        el.classList.remove('playing');
+        v.addEventListener('loadeddata', onReady, { once: true });
+        v.src = blobUrl;
+        el.style.setProperty('--load', '1');
+        el.classList.add('loaded');
+      };
+      fetch(file, { signal: abort.signal })
+        .then(async (r) => {
+          if (!r.ok || !r.body) throw new Error(String(r.status));
+          const total = Number(r.headers.get('content-length')) || 0;
+          const reader = r.body.getReader();
+          const parts: Uint8Array[] = [];
+          let got = 0;
+          for (;;) {
+            const { done, value } = await reader.read();
+            if (done) break;
+            parts.push(value);
+            got += value.length;
+            if (total) el.style.setProperty('--load', String(Math.min(1, got / total)));
+          }
+          swap(new Blob(parts as unknown as BlobPart[], { type: 'video/mp4' }));
         })
         .catch(() => {
-          if (!dead) v.src = file;
+          // The streamed film keeps working; just hide the line.
+          if (!dead) el.classList.add('loaded');
         });
     }
     frame();
@@ -206,6 +231,7 @@ export function ScrollFilm() {
       v?.removeEventListener('loadeddata', onReady);
       cancelAnimationFrame(raf);
       dead = true;
+      abort?.abort();
       if (blobUrl) URL.revokeObjectURL(blobUrl);
     };
   }, [tall, still]);
@@ -299,6 +325,7 @@ export function ScrollFilm() {
           ))}
         </div>
         <span className="sf-line" aria-hidden="true" />
+        <span className="sf-load" aria-hidden="true" />
         <span className="sf-hint" aria-hidden="true">
           Scroll
         </span>
