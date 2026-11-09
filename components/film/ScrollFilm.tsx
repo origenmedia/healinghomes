@@ -151,16 +151,25 @@ export function ScrollFilm() {
       if (!raf) raf = requestAnimationFrame(frame);
     };
 
+    // iOS paints a seeked frame only after the video has played once. The film
+    // loads after the page, so prime it once it is in, and again on a touch
+    // if that first try was refused.
+    let primed = false;
+    const prime = () => {
+      if (!v || !ready || primed) return;
+      v.play()
+        .then(() => {
+          v.pause();
+          primed = true;
+          frame();
+          window.removeEventListener('touchstart', prime);
+        })
+        .catch(() => {});
+    };
     const onReady = () => {
       ready = true;
+      prime();
       frame();
-    };
-    // iOS paints a seeked frame only after the video has played once.
-    const prime = () => {
-      if (!v) return;
-      v.play()
-        .then(() => v.pause())
-        .catch(() => {});
     };
     // Load the whole film into memory before the scroll drives it. Streaming
     // it while scrubbing made every seek wait on the network, so the film
@@ -171,7 +180,7 @@ export function ScrollFilm() {
       const file = `/film/film-${WIDE_FILM && tall === false ? 'wide' : 'tall'}.mp4`;
       v.addEventListener('loadeddata', onReady, { once: true });
       v.addEventListener('seeked', onSeeked);
-      window.addEventListener('touchstart', prime, { once: true, passive: true });
+      window.addEventListener('touchstart', prime, { passive: true });
       fetch(file)
         .then((r) => {
           if (!r.ok) throw new Error(String(r.status));
