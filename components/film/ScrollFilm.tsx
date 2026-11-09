@@ -162,11 +162,29 @@ export function ScrollFilm() {
         .then(() => v.pause())
         .catch(() => {});
     };
+    // Load the whole film into memory before the scroll drives it. Streaming
+    // it while scrubbing made every seek wait on the network, so the film
+    // jumped from scene to scene. The stills show until it is in.
+    let blobUrl = '';
+    let dead = false;
     if (v && !still) {
+      const file = `/film/film-${WIDE_FILM && tall === false ? 'wide' : 'tall'}.mp4`;
       v.addEventListener('loadeddata', onReady, { once: true });
       v.addEventListener('seeked', onSeeked);
       window.addEventListener('touchstart', prime, { once: true, passive: true });
-      if (v.readyState >= 2) onReady();
+      fetch(file)
+        .then((r) => {
+          if (!r.ok) throw new Error(String(r.status));
+          return r.blob();
+        })
+        .then((b) => {
+          if (dead) return;
+          blobUrl = URL.createObjectURL(b);
+          v.src = blobUrl;
+        })
+        .catch(() => {
+          if (!dead) v.src = file;
+        });
     }
     frame();
     window.addEventListener('scroll', onScroll, { passive: true });
@@ -176,7 +194,10 @@ export function ScrollFilm() {
       window.removeEventListener('resize', onScroll);
       window.removeEventListener('touchstart', prime);
       v?.removeEventListener('seeked', onSeeked);
+      v?.removeEventListener('loadeddata', onReady);
       cancelAnimationFrame(raf);
+      dead = true;
+      if (blobUrl) URL.revokeObjectURL(blobUrl);
     };
   }, [tall, still]);
 
@@ -196,7 +217,6 @@ export function ScrollFilm() {
             key={kind}
             ref={video}
             className="sf-video"
-            src={`/film/film-${kind}.mp4`}
             poster={`/film/film-${kind}-poster.jpg`}
             muted
             playsInline
