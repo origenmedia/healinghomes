@@ -4,6 +4,10 @@ export const routing = defineRouting({
   locales: ['en', 'es'],
   defaultLocale: 'en',
   localePrefix: 'always',
+  // English only for now (Spanish addresses redirect in next.config.ts), so
+  // never send a Spanish browser to /es on its own.
+  localeDetection: false,
+  alternateLinks: false,
   // Localized route names. English slugs are canonical and match the copy spec.
   // Spanish slugs are sensible placeholders to refine during the Spanish
   // authoring pass; changing them here updates every link automatically.
