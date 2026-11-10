@@ -481,18 +481,10 @@ ol.road span { font-size: 14.5px; line-height: 1.4; color: var(--ink-2); }
 
 /* Booking page: Healing Homes chrome around the LeadsZen booking form. */
 .book { padding: 0 0 clamp(56px, 7vw, 96px); }
-.book-grid { display: grid; grid-template-columns: minmax(0, 320px) minmax(0, 1fr); gap: clamp(28px, 4vw, 56px); align-items: start; }
-.book-photo { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; margin-bottom: 24px; }
-.book-side h2 { font: 500 24px/1.2 var(--display); margin: 0 0 12px; }
-.book-qs { margin: 0 0 22px; padding-left: 1.2em; color: var(--ink-2); font-size: 16px; }
-.book-qs li { margin: 0 0 6px; }
-.book-facts { font: 400 18px/1.45 var(--display); margin: 0 0 16px; }
-.book-packet, .book-alt { font-size: 15px; color: var(--ink-2); }
-.book-packet a, .book-alt a { color: var(--lake); }
+.book-one { max-width: 920px; }
 .book-embed { min-height: 640px; }
 .book-embed iframe { display: block; width: 100%; background: var(--paper); }
-@media (max-width: 860px) {
-  .book-grid { grid-template-columns: 1fr; }
-  .book-frame { order: -1; }
-  .book-photo { max-width: 240px; }
-}
+.book-alt { font-size: 15px; color: var(--ink-2); margin: 14px 0 28px; }
+.book-facts { font: 400 20px/1.45 var(--display); margin: 0 0 12px; max-width: 60ch; }
+.book-packet { font-size: 15px; color: var(--ink-2); }
+.book-packet a, .book-alt a { color: var(--lake); }
