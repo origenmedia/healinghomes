@@ -479,12 +479,14 @@ ol.road span { font-size: 14.5px; line-height: 1.4; color: var(--ink-2); }
 .hh-std .cf-chosen { flex-wrap: nowrap; justify-content: space-between; align-items: center; padding-top: 2px; padding-bottom: 2px; }
 .hh-std .cf-chosen > span { padding: 10px 0; }
 
-/* Booking page: Healing Homes chrome around the LeadsZen booking form. */
-.book-head { padding-bottom: 8px; }
-.book { padding: 0 0 clamp(56px, 7vw, 96px); }
-.book-embed { min-height: 640px; margin-top: -12px; }
-.book-embed iframe { display: block; width: 100%; background: var(--paper); }
-.book-alt { font-size: 15px; color: var(--ink-2); margin: 14px 0 28px; }
-.book-facts { font: 400 20px/1.45 var(--display); margin: 0 0 12px; max-width: 60ch; }
-.book-packet { font-size: 15px; color: var(--ink-2); }
-.book-packet a, .book-alt a { color: var(--lake); }
+/* Booking page: Healing Homes chrome around the LeadsZen booking form.
+   These sit outside the .hh-std block above, so each selector carries
+   .hh-std and enough weight to beat `.hh-std section` and `.hh-std .pagehead`. */
+.hh-std .pagehead.book-head { padding-bottom: 0; }
+.hh-std .pagehead.book-head .head { margin-bottom: 28px; }
+.hh-std section.book { padding-top: 0; padding-bottom: clamp(56px, 7vw, 96px); }
+.hh-std .book-embed { min-height: 640px; }
+.hh-std .book-alt { font-size: 15px; color: var(--ink-2); margin: 28px 0 32px; }
+.hh-std .book-facts { font: 400 20px/1.45 var(--display); margin: 0 0 12px; max-width: 60ch; }
+.hh-std .book-packet { font-size: 15px; color: var(--ink-2); margin: 0; }
+.hh-std .book-packet a, .hh-std .book-alt a { color: var(--lake); }
