@@ -12,13 +12,13 @@ export const HEADS: Record<Topic, { eyebrow: string; head: string; lede: string;
   list: {
     eyebrow: 'Founding families',
     head: 'Become a founding family',
-    lede: 'Be one of the first 9. Nathaniel reads every message and writes back within a day.',
+    lede: 'Be one of the first 9. Every message is read, and a member of our team will reach out very soon.',
     title: 'Become a founding family · Healing Homes',
   },
   call: {
     eyebrow: 'A 20 minute call',
     head: 'Talk with Nathaniel',
-    lede: 'Tell us when suits you. Nathaniel writes back within a day with times for a 20 minute call.',
+    lede: 'Tell us when suits you. A member of our team will reach out very soon with times for a 20 minute call.',
     title: 'Talk with Nathaniel · Healing Homes',
   },
   invest: {
@@ -30,7 +30,7 @@ export const HEADS: Record<Topic, { eyebrow: string; head: string; lede: string;
   question: {
     eyebrow: 'Questions',
     head: "Let's talk.",
-    lede: 'Ask anything. Nathaniel reads every message himself and writes back within a day.',
+    lede: 'Ask anything. Every message is read, and a member of our team will reach out very soon.',
     title: "Let's talk · Healing Homes",
   },
 };

@@ -18,9 +18,9 @@ const WHEN = ['Soon', 'In the next few years', 'Just dreaming'];
 const PACKET = 'https://go.healinghomes.mx/el-refugio-founding/';
 
 const THANKS: Record<Exclude<Topic, 'list'>, string> = {
-  call: 'Nathaniel will write back within a day with a few times for your call.',
-  invest: "We'll write to you within a day to set up a call.",
-  question: 'Nathaniel will write back within a day.',
+  call: 'A member of our team will reach out to you very soon.',
+  invest: 'A member of our team will reach out to you very soon.',
+  question: 'A member of our team will reach out to you very soon.',
 };
 
 // Only ever rendered on the client (inside FormSlot), so reading the URL here is safe.
@@ -112,7 +112,7 @@ export function SiteContactForm() {
     if (topic === 'list') {
       return (
         <div className="cf-thanks" role="status">
-          <p>Nathaniel will write to you personally within a day. While you wait, here is the founding families packet.</p>
+          <p>A member of our team will reach out to you very soon. While you wait, here is the founding families packet.</p>
           <p>
             <a className="btn" href={PACKET}>
               Open the founding families packet
