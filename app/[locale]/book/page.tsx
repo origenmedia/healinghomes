@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import { SitePage } from '@/components/site/SitePage';
+import { LeadsZenEmbed } from '@/components/site/LeadsZenEmbed';
 import { html } from '@/lib/site/pages/book';
 import '@/lib/site/css/site-std.css';
 
@@ -12,5 +13,10 @@ export const metadata: Metadata = {
 export default async function Page({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  return <SitePage html={html} theme="std" />;
+  return (
+    <>
+      <SitePage html={html} theme="std" />
+      <LeadsZenEmbed />
+    </>
+  );
 }
