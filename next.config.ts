@@ -1,5 +1,6 @@
 import type { NextConfig } from 'next';
 import createNextIntlPlugin from 'next-intl/plugin';
+import { BOOKING_URL } from './lib/site/booking';
 
 const withNextIntl = createNextIntlPlugin('./lib/i18n/request.ts');
 
@@ -34,7 +35,16 @@ const nextConfig: NextConfig = {
       { source: '/es', destination: '/en', permanent: false },
       { source: '/es/:path*', destination: '/en/:path*', permanent: false },
     ];
+    // Old links to the call, founding families and investor forms (shared
+    // before the booking page) go to the booking page.
+    const booking = ['call', 'list', 'invest'].map((topic) => ({
+      source: '/:locale/contact',
+      has: [{ type: 'query' as const, key: 'topic', value: topic }],
+      destination: BOOKING_URL,
+      permanent: false,
+    }));
     return [
+      ...booking,
       ...old.map(([from, to]) => ({ source: `/:locale/${from}`, destination: `/en/${to}`, permanent: false })),
       ...credits,
       ...spanish,

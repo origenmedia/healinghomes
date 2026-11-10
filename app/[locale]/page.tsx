@@ -5,6 +5,7 @@ import { ScrollFilm } from '@/components/film/ScrollFilm';
 import { footer } from '@/lib/site/pages/home';
 import '@/lib/site/css/site-home.css';
 import '@/lib/site/css/scroll-film.css';
+import { BOOKING_URL } from '@/lib/site/booking';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.healinghomes.mx'),
@@ -51,15 +52,15 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               </Link>
             </div>
             <div className="next">
-              <Link href="/en/contact?topic=list" className="btn light">
+              <a href={BOOKING_URL} className="btn light">
                 Become a founding family
-              </Link>
-              <Link href="/en/contact?topic=call" className="call">
+              </a>
+              <a href={BOOKING_URL} className="call">
                 Talk with Nathaniel
-              </Link>
+              </a>
             </div>
             <p className="inv">
-              Thinking about investing? <Link href="/en/contact?topic=invest">Let&apos;s talk.</Link>
+              Thinking about investing? <a href={BOOKING_URL}>Let&apos;s talk.</a>
             </p>
           </div>
         </section>

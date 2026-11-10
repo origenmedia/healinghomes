@@ -34,7 +34,9 @@ function topicFromUrl(): Topic {
 }
 
 export function SiteContactForm() {
-  const [topic, setTopic] = useState<Topic>(topicFromUrl);
+  // Calls, founding families and investors go to the booking page now
+  // (lib/site/booking.ts), so the form only takes questions.
+  const [topic, setTopic] = useState<Topic>('question');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [whatsapp, setWhatsapp] = useState('');
@@ -43,7 +45,7 @@ export function SiteContactForm() {
   const [investing, setInvesting] = useState(() => topicFromUrl() === 'invest');
   const [message, setMessage] = useState('');
   // Arriving from a button with a topic: show the choice as one line.
-  const [chooserOpen, setChooserOpen] = useState(() => !urlHasTopic());
+  const [chooserOpen, setChooserOpen] = useState(false);
   const [status, setStatus] = useState<Status>('idle');
   const [error, setError] = useState<string | null>(null);
 
@@ -139,7 +141,7 @@ export function SiteContactForm() {
 
   return (
     <form className="cf" onSubmit={handleSubmit} noValidate>
-      {chooserOpen ? (
+      {chooserOpen && (
         <fieldset className="cf-topics">
           <legend>What would you like?</legend>
           {TOPICS.map((t) => (
@@ -149,15 +151,6 @@ export function SiteContactForm() {
             </label>
           ))}
         </fieldset>
-      ) : (
-        <p className="cf-chosen">
-          <span>
-            You chose: <b>{TOPICS.find((x) => x.id === topic)!.label}</b>
-          </span>
-          <button type="button" className="cf-change" onClick={() => setChooserOpen(true)}>
-            Change
-          </button>
-        </p>
       )}
       <label className="cf-field" htmlFor="cf-name">
         <span>Your name</span>

@@ -11,7 +11,7 @@ type Props = {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
-const DESCRIPTION = 'Become a founding family at El Refugio, or talk with Nathaniel on a 20 minute call.';
+const DESCRIPTION = 'Questions about Healing Homes or El Refugio? Ask anything.';
 
 export async function generateMetadata({ searchParams }: Props): Promise<Metadata> {
   const topic = toTopic((await searchParams).topic);

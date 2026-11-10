@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
+import { BOOKING_URL } from '@/lib/site/booking';
 
 // The home page film. One continuous camera flight through El Refugio, the
 // 9 family village near Lake Chapala. The scroll sets the video time, so the
@@ -283,9 +284,9 @@ export function ScrollFilm() {
             <Link href="/en/el-refugio">El Refugio</Link>
             <Link href="/en/how-it-works">How it works</Link>
             <Link href="/en/my-story">My story</Link>
-            <Link href="/en/contact?topic=call" className="sf-call">
+            <a href={BOOKING_URL} className="sf-call">
               Talk with Nathaniel
-            </Link>
+            </a>
           </nav>
         </header>
         <span className="sf-concept">Concept images</span>
@@ -303,22 +304,22 @@ export function ScrollFilm() {
               {c.sub && <p>{c.end ? c.sub.split(/(?<=\.)\s+/).map((line) => <span key={line}>{line}</span>) : c.sub}</p>}
               {c.cta === 'join' && (
                 <div className="sf-cta">
-                  <Link href="/en/contact?topic=list" className="main">
+                  <a href={BOOKING_URL} className="main">
                     Become a founding family
-                  </Link>
+                  </a>
                 </div>
               )}
               {c.end && (
                 <div className="sf-cta">
-                  <Link href="/en/contact?topic=list" className="main">
+                  <a href={BOOKING_URL} className="main">
                     Become a founding family
-                  </Link>
-                  <Link href="/en/contact?topic=call" className="quiet">
+                  </a>
+                  <a href={BOOKING_URL} className="quiet">
                     Talk with Nathaniel
-                  </Link>
-                  <Link href="/en/contact?topic=invest" className="inv">
+                  </a>
+                  <a href={BOOKING_URL} className="inv">
                     Investing? Let&apos;s talk.
-                  </Link>
+                  </a>
                 </div>
               )}
             </div>
@@ -330,9 +331,9 @@ export function ScrollFilm() {
           Scroll
         </span>
       </div>
-      <Link href="/en/contact?topic=list" className="sf-ask">
+      <a href={BOOKING_URL} className="sf-ask">
         Become a founding family
-      </Link>
+      </a>
     </div>
   );
 }
