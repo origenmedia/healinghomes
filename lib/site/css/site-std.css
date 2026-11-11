@@ -483,7 +483,7 @@ ol.road span { font-size: 14.5px; line-height: 1.4; color: var(--ink-2); }
    These sit outside the .hh-std block above, so each selector carries
    .hh-std and enough weight to beat `.hh-std section` and `.hh-std .pagehead`. */
 .hh-std .pagehead.book-head { padding-bottom: 0; }
-.hh-std .pagehead.book-head .head { margin-bottom: 28px; }
+.hh-std .pagehead.book-head .head { margin: 0 auto 28px; max-width: 600px; }
 .hh-std section.book { padding-top: 0; padding-bottom: clamp(56px, 7vw, 96px); }
 .hh-std .book-embed { min-height: 640px; max-width: 600px; margin-inline: auto; }
 .hh-std .book-alt { font-size: 15px; color: var(--ink-2); margin: 28px auto 32px; max-width: 600px; }
