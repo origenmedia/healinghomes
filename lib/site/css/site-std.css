@@ -485,8 +485,8 @@ ol.road span { font-size: 14.5px; line-height: 1.4; color: var(--ink-2); }
 .hh-std .pagehead.book-head { padding-bottom: 0; }
 .hh-std .pagehead.book-head .head { margin-bottom: 28px; }
 .hh-std section.book { padding-top: 0; padding-bottom: clamp(56px, 7vw, 96px); }
-.hh-std .book-embed { min-height: 640px; }
-.hh-std .book-alt { font-size: 15px; color: var(--ink-2); margin: 28px 0 32px; }
-.hh-std .book-facts { font: 400 20px/1.45 var(--display); margin: 0 0 12px; max-width: 60ch; }
-.hh-std .book-packet { font-size: 15px; color: var(--ink-2); margin: 0; }
+.hh-std .book-embed { min-height: 640px; max-width: 600px; margin-inline: auto; }
+.hh-std .book-alt { font-size: 15px; color: var(--ink-2); margin: 28px auto 32px; max-width: 600px; }
+.hh-std .book-facts { font: 400 20px/1.45 var(--display); margin: 0 auto 12px; max-width: 600px; }
+.hh-std .book-packet { font-size: 15px; color: var(--ink-2); margin: 0 auto; max-width: 600px; }
 .hh-std .book-packet a, .hh-std .book-alt a { color: var(--lake); }
